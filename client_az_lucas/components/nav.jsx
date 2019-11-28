@@ -7,7 +7,7 @@ const links = [
   { href: '/rondleiding', label: 'Rondleiding' },
   { href: '/spelletjes', label: 'Spelletjes' },
   { href: '/wieIsWie', label: 'Wie is wie?' },
-  { href: '/filmpjes', label: 'Filmpjes' }
+  { href: '/filmpjes', label: 'Filmpjes' },
 
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
