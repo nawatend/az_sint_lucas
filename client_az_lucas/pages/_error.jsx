@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import BaseLayout from '../layouts/base';
 
-const HomePage = () => (
+const ErrorPage = () => (
   <div>
     <Head>
       <title>Home</title>
@@ -12,7 +12,7 @@ const HomePage = () => (
 
 
     <div className='hero'>
-      <h1 className='title'>Welcome to AZ Sint Lucas</h1>
+      <h1 className='title'>Welcome to Error Page</h1>
       <p className='description'>
         To get started, edit <code>pages/index.js</code> and save to reload.
       </p>
@@ -68,4 +68,4 @@ const HomePage = () => (
   </div>
 )
 
-export default BaseLayout(HomePage)
+export default BaseLayout(ErrorPage)

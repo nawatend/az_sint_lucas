@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import BaseLayout from '../layouts/base';
+import BaseLayout from '../../layouts/base';
 
 
-class WhoIsWhoPage extends Component {
+class WieIsWiePage extends Component {
     state = {}
     render() {
         return (<div>Wie is Wie?</div>);
     }
 }
 
-export default BaseLayout(WhoIsWhoPage);
+export default BaseLayout(WieIsWiePage);
