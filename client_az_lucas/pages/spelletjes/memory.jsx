@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BaseLayout from '../layouts/base';
-import MemoryCard from '../components/spelletjes/memory/MemoryCard';
+import BaseLayout from '../../layouts/base';
+import MemoryCard from '../../components/spelletjes/memory/MemoryCard';
 
 class MemoryPage extends Component {
     state = {}

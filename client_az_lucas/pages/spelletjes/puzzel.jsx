@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BaseLayout from '../layouts/base';
+import BaseLayout from '../../layouts/base';
 
 
 class PuzzelPage extends Component {
