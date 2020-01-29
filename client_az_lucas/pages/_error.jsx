@@ -12,7 +12,7 @@ const ErrorPage = () => (
 
 
     <div className='hero'>
-      <h1 className='title'>Welcome to Error Page</h1>
+      <h1 className='title'>Welcome to 404 Error Page</h1>
       <p className='description'>
         To get started, edit <code>pages/index.js</code> and save to reload.
       </p>

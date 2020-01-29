@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../sass/main.scss'
+import '../sass/main.sass'
 
 const links = [
   { href: '/', label: 'home' },
