@@ -1,12 +1,12 @@
 /* eslint-disable react/display-name */
 import React from 'react';
-// import Nav from '../components/nav'
+import Navigation from '../components/navigation/Nagivation'
 
 const BaseLayout = (Page) => {
 
     return () => (
         <div className="background__main" style={{ backgroundImage: `url(/svgs/bg_main_min.svg)` }}>
-            {/* // <Nav /> */}
+            <Navigation />
             <main className="container">
                 <Page />
             </main>

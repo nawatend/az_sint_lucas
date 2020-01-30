@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/base';
 
 let ToursPage = () => {
     return (
-        <div>RONDLEIDING</div >
+        <div className="page">RONDLEIDING</div >
     )
 }
 
