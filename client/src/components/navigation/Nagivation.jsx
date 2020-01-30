@@ -6,7 +6,7 @@ import Logo from '../Logo'
 
 export default function Nagivation() {
     return (
-        <nav>
+        <nav id="nav-main">
             <div className="nav__main">
                 <NavItem path="/rondleiding" iconName="tours" title="rondleiding" />
                 <NavItem path="/spelletjes" iconName="games" title="spelletjes" />

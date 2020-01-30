@@ -4,7 +4,6 @@ export default function Sound() {
 
     const [isSoundOn, setIsSoundOn] = useState(true)
 
-
     return (
         <div onClick={() => {
             console.log('Sound onClick')

@@ -1,11 +1,10 @@
 /* For small Mobile */
-nav
+#nav-main
     z-index: 9999
     position: absolute
     width: 100vw
     display: flex
     justify-content: center
-    
     .nav__main
         width: 60%
         display: flex
@@ -45,8 +44,50 @@ nav
 $maxHeightNav: 40
 $step: 17
 @for $i from 1 through 10
-    .nav__item:nth-child(#{$i})
-        margin-top: #{$step * $i % $maxHeightNav}px !important
+    .nav__detail
+        .nav__item:nth-child(#{$i})
+            margin-top: #{$step * $i *2 % $maxHeightNav}px !important
+    .nav__main
+        .nav__item:nth-child(#{$i})
+            margin-top: #{$step * $i % $maxHeightNav}px !important
+
+#nav-detail
+    z-index: 9999
+    position: absolute
+    width: 100vw
+    display: flex
+    justify-content: flex-start
+    .nav__detail
+        margin-left: 5%
+        width: 20%
+        display: flex
+        justify-content: flex-start
+        align-items: flex-start
+        .nav__item
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: center
+            text-decoration: none
+            color: $main-color
+            max-width: 60px
+            max-height: 180px
+            margin-top: 80px
+            .nav__item--icon
+                width: 60px
+                img
+                    max-width: 100%
+                    max-height: 100%
+                    display: block
+
+    .nav__setting
+        width: 20%
+        display: flex
+        justify-content: flex-end
+        position: absolute
+        right: 0
+        margin: 10px
 
 
 /* For mobile landscape */
@@ -54,10 +95,14 @@ $step: 17
     $maxHeightNav: 60
     $step: 25
     @for $i from 1 through 10
-        .nav__item:nth-child(#{$i})
-            margin-top: #{$step * $i % $maxHeightNav}px !important
+        .nav__detail
+            .nav__item:nth-child(#{$i})
+                margin-top: #{$step * $i * 2 % $maxHeightNav}px !important
+        .nav__main
+            .nav__item:nth-child(#{$i})
+                margin-top: #{$step * $i % $maxHeightNav}px !important
 
-    nav
+    #nav-main
         .nav__main
             width: 60%
             .nav__item
@@ -68,6 +113,14 @@ $step: 17
                 .nav__item--title
                     margin-top: 8px
                     font-size: 16px
+    #nav-detail
+        .nav__detail
+            width: 20%
+            .nav__item
+                max-width: 60px
+                max-height: 180px
+                .nav__item--icon
+                    width: 60px
 
 
 @media only screen and (min-width: 768px) 
@@ -75,10 +128,13 @@ $step: 17
     $maxHeightNav: 50
     $step: 20
     @for $i from 1 through 10
-        .nav__item:nth-child(#{$i})
-            margin-top: #{$step * $i % $maxHeightNav}px !important
-    nav
-        
+        .nav__detail
+            .nav__item:nth-child(#{$i})
+                margin-top: #{$step * $i * 2 % $maxHeightNav}px !important
+        .nav__main
+            .nav__item:nth-child(#{$i})
+                margin-top: #{$step * $i % $maxHeightNav}px !important
+    #nav-main
         .nav__main
             width: 50%
             .nav__item
@@ -89,16 +145,28 @@ $step: 17
                 .nav__item--title
                     margin-top: 8px
                     font-size: 16px
+    #nav-detail
+        .nav__detail
+            width: 20%
+            .nav__item
+                max-width: 70px
+                max-height: 180px
+                .nav__item--icon
+                    width: 70px
 
 @media only screen and (min-width: 1024px) 
     /* For desktop or big tablet */
     $maxHeightNav: 100
     $step: 40
     @for $i from 1 through 10
-        .nav__item:nth-child(#{$i})
-            margin-top: #{$step * $i % $maxHeightNav}px !important
+        .nav__detail
+            .nav__item:nth-child(#{$i})
+                margin-top: #{$step * $i * 2 % $maxHeightNav}px !important
+        .nav__main
+            .nav__item:nth-child(#{$i})
+                margin-top: #{$step * $i % $maxHeightNav}px !important
     /* For mobile landscape */
-    nav
+    #nav-main
         .nav__main
             width: 65%
             .nav__item
@@ -109,3 +177,12 @@ $step: 17
                 .nav__item--title
                     margin-top: 10px
                     font-size: 26px
+    #nav-detail
+        .nav__detail
+            width: 20%
+            .nav__item
+                max-width: 140px
+                max-height: 180px
+                .nav__item--icon
+                    width: 140px
+                
