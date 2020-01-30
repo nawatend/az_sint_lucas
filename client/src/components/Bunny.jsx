@@ -11,7 +11,7 @@ export default function Bunny() {
         <div onClick={() => {
             console.log('bunny onClick')
         }} className="bunny">
-            <img src="./svgs/bunny_hi.svg" alt="bunny" />
+            <img src="/svgs/bunny_hi.svg" alt="bunny" />
         </div>
     )
 }

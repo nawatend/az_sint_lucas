@@ -11,7 +11,7 @@ export default function Bush() {
         <div onClick={() => {
             console.log('bush onClick')
         }} className="bush_right_bottom">
-            <img src="./svgs/bush_right_bottom.svg" alt="Bush" />
+            <img src="/svgs/bush_right_bottom.svg" alt="Bush" />
         </div>
     )
 }

@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/base';
 
 let PersonsPage = () => {
     return (
-        <div>PERSONS</div >
+        <div className="page">PERSONS</div >
     )
 }
 export default BaseLayout(PersonsPage);

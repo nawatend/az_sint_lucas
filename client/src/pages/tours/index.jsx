@@ -3,8 +3,12 @@ import BaseLayout from '../../layouts/base';
 
 let ToursPage = () => {
     return (
-        <div className="page">RONDLEIDING</div >
+        <div className="background__main" style={{ backgroundImage: `url(./svgs/backgrounds/bg_water.svg)` }}>
+            <main className="page">
+                hi
+            </main>
+        </div>
     )
 }
 
-export default BaseLayout(ToursPage);
+export default ToursPage;

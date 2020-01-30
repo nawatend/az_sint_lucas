@@ -14,7 +14,7 @@ export default function Hospital() {
             console.log('wrapper onClick')
             setIsOn(!isOn)
         }} className="hospital">
-            <img src={(isOn) ? "./svgs/hospital_on.svg" : "./svgs/hospital.svg"} alt="Hospital Building" />
+            <img src={(isOn) ? "/svgs/hospital_on.svg" : "/svgs/hospital.svg"} alt="Hospital Building" />
         </div>
     )
 }

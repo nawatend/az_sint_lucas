@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/base';
 
 let GamesPage = () => {
     return (
-        <div>GAMES</div >
+        <div className="page">GAMES</div >
     )
 }
 

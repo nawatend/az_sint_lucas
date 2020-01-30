@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/base';
 
 let FilmsPage = () => {
     return (
-        <div>FILMS?</div>
+        <div className="page">FILMS?</div>
     );
 }
 

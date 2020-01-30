@@ -2,10 +2,10 @@
 import React from 'react';
 import Navigation from '../components/navigation/Nagivation'
 
-const BaseLayout = (Page) => {
+const TourLayout = (Page) => {
 
     return () => (
-        <div className="background__main" style={{ backgroundImage: `url(/svgs/bg_main_min.svg)` }}>
+        <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_grass.svg)` }}>
             <Navigation />
             <main className="container">
                 <Page />
@@ -14,5 +14,5 @@ const BaseLayout = (Page) => {
     )
 }
 
-BaseLayout.displayName = "Base Layout"
-export default BaseLayout
+TourLayout.displayName = "Tour Base Layout"
+export default TourLayout

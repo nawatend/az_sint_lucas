@@ -6,27 +6,23 @@ import {
     Link, useRouteMatch, useParams
 } from "react-router-dom";
 
-import { FilmsPage, GamesPage, HomePage, PersonsPage, ToursPage } from '../pages'
+import { FilmsPage, GamesPage, HomePage, PersonsPage, ToursPage, TourDetailPage } from '../pages'
+
 
 export default function router() {
     return (
         <Router>
             <Switch>
-                <Route path="/" exact>
-                    <HomePage />
-                </Route>
-                <Route path="/filmpjes" exact>
-                    <FilmsPage />
-                </Route>
-                <Route path="/spelletjes" exact>
-                    <GamesPage />
-                </Route>
-                <Route path="/wieiswie" exact>
-                    <PersonsPage />
-                </Route>
-                <Route path="/rondleiding" exact>
-                    <ToursPage />
-                </Route>
+                <Route path="/" exact component={HomePage} />
+
+                {/* Tours */}
+                <Route path="/rondleiding" exact component={ToursPage} />
+                <Route path="/rondleiding/:roomName" component={TourDetailPage} />
+
+
+                <Route path="/filmpjes" exact component={FilmsPage} />
+                <Route path="/spelletjes" exact component={GamesPage} />
+                <Route path="/wieiswie" exact component={PersonsPage} />
             </Switch>
         </Router >
     )
