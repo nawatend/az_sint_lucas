@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BaseLayout from '../../layouts/base';
+import FilmLayout from '../../layouts/filmBase';
 
 
 class FilmPage extends Component {
@@ -9,4 +9,4 @@ class FilmPage extends Component {
     }
 }
 
-export default BaseLayout(FilmPage);
+export default FilmLayout(FilmPage);

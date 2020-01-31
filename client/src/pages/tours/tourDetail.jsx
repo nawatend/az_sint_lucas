@@ -33,7 +33,20 @@ const TourDetailPage = ({ match }) => {
                         autoLoad
                         onLoad={() => {
                             console.log("panorama loaded");
-                        }}></Pannellum>
+
+                        }}
+                        hotspotDebug
+                    >
+
+
+                        <Pannellum.Hotspot
+                            type="info"
+                            pitch={-11.36}
+                            yaw={123.957}
+                            text="Info Hotspot Text 3"
+                            URL="https://github.com/farminf"
+                        />
+                    </Pannellum>
                 </div>
             </div>
 
