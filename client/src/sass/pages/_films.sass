@@ -4,18 +4,18 @@
     justify-content: center
     align-items: center
     flex-wrap: wrap
-    width: 80%
+    width: 90%
     height: 100vh
     padding: 10% 0
     .content__film
         position: relative
         overflow: hidden
-        margin: 10px
-        width: $sr-width * 2.2px
-        height:  $sr-height * 2.2px
+        margin: 6px
+        width: $sr-width * 0.8px
+        height:  $sr-height * 0.8px
         background-color: white
-        border-radius: $br-sm
-        border: 6px solid $second-color
+        border-radius: $br-xs
+        border: 4px solid $second-color
     .content__film--overlay
         position: absolute
         top: 0
@@ -26,49 +26,85 @@
 
 
 .content__film:hover
-    transform: scale(1.1)
+    transform: scale(1.08)
 
 /* For mobile landscape */
 @media only screen and (min-width: 600px) 
-    // .films__content
-    //     width: 100%
-    //     height: 100vh
-    //     .content__film
-    //         margin-top: 30px
-    //         width: $sr-width * 3.2px
-    //         height:  $sr-height * 3.2px
-    //         border: 6px solid $second-color
+    .films__content
+        width: 80%
+        height: 100vh
+        padding: 8% 0
+        .content__film
+            margin: 6px
+            width: $sr-width * 1px
+            height:  $sr-height * 1px
+            border: 4px solid $second-color
+        .content__film--overlay
+            width: 105%
+            height:  105%
 
 
+/* For tablet landscape */
 @media only screen and (min-width: 768px) 
-    /* For tablet landscape */
-    // .films__content
-    //     width: 100%
-    //     height: 100vh
-    //     .content__film
-    //         margin-top: 20px
-    //         width: $sr-width * 3.2px
-    //         height:  $sr-height * 3.2px
-    //         border: 6px solid $second-color
+    
+    .films__content
+        width: 80%
+        height: 100vh
+        padding: 8% 0
+        .content__film
+            margin: 6px
+            width: $sr-width * 1.2px
+            height:  $sr-height * 1.2px
+            border: 4px solid $second-color
+        .content__film--overlay
+            width: 105%
+            height:  105%
 
+/* For tablet portrair */
+@media only screen and (min-width: 768px) and (orientation: portrait)
+    
+    .films__content
+        width: 80%
+        height: 100vh
+        padding: 8% 0
+        .content__film
+            margin: 6px
+            width: $sr-width * 1.8px
+            height:  $sr-height * 1.8px
+            border: 6px solid $second-color
+        .content__film--overlay
+            width: 105%
+            height:  105%
+
+
+/* For desktop or big tablet */
 @media only screen and (min-width: 1024px) 
-    /* For desktop or big tablet */
-    // .films__content
-    //     width: 80%
-    //     height: 100vh
-    //     .content__film
-    //         margin-top: 80px
-    //         width: $sr-width * 5px
-    //         height:  $sr-height * 5px
-    //         border: 6px solid $second-color
+    
+    .films__content
+        width: 80%
+        height: 100vh
+        padding: 14% 0
+        .content__film
+            margin: 10px
+            width: $sr-width * 2.1px
+            height:  $sr-height * 2.1px
+            border: 6px solid $second-color
+        .content__film--overlay
+            width: 105%
+            height:  105%
 
+/* For desktop or big tablet */
 @media only screen and (min-width: 1920px) 
     /* For desktop or big tablet */
     .films__content
         width: 80%
         height: 100vh
+        padding: 10% 0
         .content__film
-            margin-top: 80px
-            width: $sr-width * 8px
-            height:  $sr-height * 8px
+            margin: 10px
+            width: $sr-width * 2.8px
+            height:  $sr-height * 2.8px
             border: 6px solid $second-color
+        .content__film--overlay
+            width: 105%
+            height:  105%

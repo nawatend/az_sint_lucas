@@ -21,7 +21,7 @@ let FilmsPage = () => {
                 <div className="films__content">
                     {/* MAX 6 VIDEOS */}
                     {films.map(film => (
-                        <div key={film.url} className="content__film">
+                        <div key={film.id} className="content__film">
                             <Vimeo
                                 video={`https://vimeo.com/${film.id}`}
                                 responsive
