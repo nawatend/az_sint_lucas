@@ -4,7 +4,7 @@ import PersonsPage from './persons/index'
 import ToursPage from './tours/index'
 import HomePage from './home/index'
 import TourDetailPage from './tours/tourDetail'
-
+import FilmDetailPage from './films/filmDetail'
 export {
-    FilmsPage, GamesPage, PersonsPage, ToursPage, HomePage, TourDetailPage
+    FilmsPage, GamesPage, PersonsPage, ToursPage, HomePage, TourDetailPage, FilmDetailPage
 }

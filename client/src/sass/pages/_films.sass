@@ -1,0 +1,74 @@
+.films__content
+    margin: 0px auto
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    width: 80%
+    height: 100vh
+    padding: 10% 0
+    .content__film
+        position: relative
+        overflow: hidden
+        margin: 10px
+        width: $sr-width * 2.2px
+        height:  $sr-height * 2.2px
+        background-color: white
+        border-radius: $br-sm
+        border: 6px solid $second-color
+    .content__film--overlay
+        position: absolute
+        top: 0
+        left: 0
+        width: 105%
+        height:  105%
+        background-color: rgba(1,1,1,0.2)
+
+
+.content__film:hover
+    transform: scale(1.1)
+
+/* For mobile landscape */
+@media only screen and (min-width: 600px) 
+    // .films__content
+    //     width: 100%
+    //     height: 100vh
+    //     .content__film
+    //         margin-top: 30px
+    //         width: $sr-width * 3.2px
+    //         height:  $sr-height * 3.2px
+    //         border: 6px solid $second-color
+
+
+@media only screen and (min-width: 768px) 
+    /* For tablet landscape */
+    // .films__content
+    //     width: 100%
+    //     height: 100vh
+    //     .content__film
+    //         margin-top: 20px
+    //         width: $sr-width * 3.2px
+    //         height:  $sr-height * 3.2px
+    //         border: 6px solid $second-color
+
+@media only screen and (min-width: 1024px) 
+    /* For desktop or big tablet */
+    // .films__content
+    //     width: 80%
+    //     height: 100vh
+    //     .content__film
+    //         margin-top: 80px
+    //         width: $sr-width * 5px
+    //         height:  $sr-height * 5px
+    //         border: 6px solid $second-color
+
+@media only screen and (min-width: 1920px) 
+    /* For desktop or big tablet */
+    .films__content
+        width: 80%
+        height: 100vh
+        .content__film
+            margin-top: 80px
+            width: $sr-width * 8px
+            height:  $sr-height * 8px
+            border: 6px solid $second-color
