@@ -1,0 +1,143 @@
+.persons__content
+    z-index: 9998
+    margin: 0px auto
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    width: 90%
+    height: 100vh
+    padding: 12% 0
+    .content__person
+        z-index: 9998
+        position: relative
+        overflow: hidden
+        margin: 6px
+        width: $sr-width * 1.6px
+        height:  $sr-height * 5.5px
+        background-color: $yellow-color
+        border-radius: $br-xs
+        border: $b-main solid $white-color
+        text-decoration: none
+        color: $white-color
+        .person__title
+            margin: 4px auto
+            font-size: $font-size-md
+            text-align: center
+            font-weight: $font-bold-md
+        .person__image
+            width: 100%
+            height: 100%
+            background-repeat: no-repeat
+            background-size: cover
+            overflow: hidden
+            background-position: center
+
+
+
+
+.content__person:hover
+    transform: scale(1.05)
+
+/* For mobile landscape */
+@media only screen and (min-width: 600px) 
+    .persons__content
+        margin: 0px auto
+        width: 90%
+        height: 100vh
+        padding: 12% 0
+        .content__person
+            margin: 6px
+            width: $sr-width * 0.8px
+            height:  $sr-height * 3px
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-sm solid $white-color
+            .person__title
+                margin: 4px auto
+                font-size: $font-size-sm
+                font-weight: $font-bold-md
+
+
+
+/* For tablet landscape */
+@media only screen and (min-width: 768px) 
+    .persons__content
+        margin: 0px auto
+        width: 90%
+        height: 100vh
+        padding: 12% 0
+        .content__person
+            margin: 6px
+            width: $sr-width * 1px
+            height:  $sr-height * 3px
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-sm solid $white-color
+            .person__title
+                margin: 4px auto
+                font-size: $font-size-sm
+                font-weight: $font-bold-md
+
+// /* For tablet portrair */
+@media only screen and (min-width: 768px) and (orientation: portrait)
+    .persons__content
+        margin: 0px auto
+        width: 100%
+        height: 100vh
+        padding: 16% 0 12% 0
+        .content__person
+            z-index: 9998
+            margin: 6px
+            width: $sr-width * 1.6px
+            height:  $sr-height * 4.5px
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-main solid $white-color
+            .person__title
+                margin: 4px auto
+                font-size: $font-size-md
+                font-weight: $font-bold-md
+
+
+
+/* For desktop or big tablet */
+@media only screen and (min-width: 1024px) 
+    .persons__content
+        margin: 0px auto
+        width: 100%
+        height: 100vh
+        padding: 16% 0 12% 0
+        .content__person
+            z-index: 9998
+            margin: 6px
+            width: $sr-width * 1.4px
+            height:  $sr-height * 5px
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-main solid $white-color
+            .person__title
+                margin: 4px auto
+                font-size: $font-size-md
+                font-weight: $font-bold-md
+
+
+/* For desktop or big tablet */
+@media only screen and (min-width: 1920px) 
+    .persons__content
+        margin: 0px auto
+        width: 90%
+        height: 100vh
+        padding: 12% 0
+        .content__person
+            z-index: 9998
+            margin: 6px
+            width: $sr-width * 1.6px
+            height:  $sr-height * 5.5px
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-main solid $white-color
+            .person__title
+                margin: 4px auto
+                font-size: $font-size-md
+                font-weight: $font-bold-md

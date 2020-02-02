@@ -5,6 +5,7 @@ import ToursPage from './tours/index'
 import HomePage from './home/index'
 import TourDetailPage from './tours/tourDetail'
 import FilmDetailPage from './films/filmDetail'
+import PersonDetailPage from './persons/personDetail'
 export {
-    FilmsPage, GamesPage, PersonsPage, ToursPage, HomePage, TourDetailPage, FilmDetailPage
+    FilmsPage, GamesPage, PersonsPage, ToursPage, HomePage, TourDetailPage, FilmDetailPage, PersonDetailPage
 }

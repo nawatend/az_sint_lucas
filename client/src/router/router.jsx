@@ -6,7 +6,7 @@ import {
     Link, useRouteMatch, useParams
 } from "react-router-dom";
 
-import { FilmsPage, FilmDetailPage, GamesPage, HomePage, PersonsPage, ToursPage, TourDetailPage } from '../pages'
+import { FilmsPage, FilmDetailPage, GamesPage, HomePage, PersonsPage, PersonDetailPage, ToursPage, TourDetailPage } from '../pages'
 
 
 export default function router() {
@@ -25,7 +25,10 @@ export default function router() {
 
                 {/* games */}
                 <Route path="/spelletjes" exact component={GamesPage} />
+
+                {/* games */}
                 <Route path="/wieiswie" exact component={PersonsPage} />
+                <Route path="/wieiswie/:person" component={PersonDetailPage} />
             </Switch>
         </Router >
     )
