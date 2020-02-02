@@ -32,8 +32,11 @@ let FilmsPage = () => {
                         </div>
 
                     ))}
-
-
+                </div>
+                <div onClick={() => {
+                    console.log('popcorn onClick')
+                }} className="popcorn">
+                    <img src="/svgs/film/popcorn.svg" alt="Pop corn" />
                 </div>
             </main>
         </div>
