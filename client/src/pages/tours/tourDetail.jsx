@@ -20,7 +20,7 @@ const TourDetailPage = ({ match }) => {
     return (
         <div className="page">
             Tour Detail => {roomName}
-            <div className="content">
+            <div className="tour__content">
                 <div className="content__image">
 
                     <Pannellum
