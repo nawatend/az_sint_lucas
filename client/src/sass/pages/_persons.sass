@@ -32,12 +32,13 @@
             background-size: cover
             overflow: hidden
             background-position: center
+    .content__person:hover
+        transform: scale(1.05)
 
 
 
 
-.content__person:hover
-    transform: scale(1.05)
+
 
 /* For mobile landscape */
 @media only screen and (min-width: 600px) 
@@ -58,8 +59,6 @@
                 font-size: $font-size-sm
                 font-weight: $font-bold-md
 
-
-
 /* For tablet landscape */
 @media only screen and (min-width: 768px) 
     .persons__content
@@ -79,7 +78,7 @@
                 font-size: $font-size-sm
                 font-weight: $font-bold-md
 
-// /* For tablet portrair */
+/* For tablet portrair */
 @media only screen and (min-width: 768px) and (orientation: portrait)
     .persons__content
         margin: 0px auto

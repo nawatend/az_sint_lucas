@@ -13,7 +13,7 @@ let PersonsPage = () => {
     ]
 
     return (
-        <div className="background__main" style={{ backgroundImage: `url(./svgs/backgrounds/bg_grass.svg)` }}>
+        <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_grass.svg)` }}>
             <NavigationDetail path="/wieiswie" iconName="persons" />
             <main className="page">
                 <div className="persons__content">
@@ -21,7 +21,7 @@ let PersonsPage = () => {
                     {persons.map(person => (
                         <Link to={`/wieiswie/${person.id}`} key={person.id} className="content__person">
                             <div className="person__title">{person.title}</div>
-                            <div className="person__image" style={{ backgroundImage: `url(./images/doctors/test.png)` }}></div>
+                            <div className="person__image" style={{ backgroundImage: `url(/images/doctors/test.png)` }}></div>
                         </Link>
                     ))}
                 </div>

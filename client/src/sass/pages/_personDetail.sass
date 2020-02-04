@@ -1,0 +1,326 @@
+.person__content__detail
+    z-index: 9998
+    margin: 0px auto
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    flex-wrap: wrap
+    width: 80%
+    height: 100vh
+    padding: 12% 4%
+    position: relative
+    .content__person__detail
+        z-index: 9998
+        margin: 6px
+        width: $sr-width * 1px
+        height:  $sr-height * 2.5px
+        background-color: $yellow-color
+        border-radius: $br-xxs
+        border: $b-sm solid $white-color
+        text-decoration: none
+        color: $white-color
+        
+        .person__detail__title
+            margin: 4px auto
+            font-size: $font-size-md
+            text-align: center
+            font-weight: $font-bold-md
+        .person__detail__image
+            border-radius: $br-xxs
+            width: 100%
+            height: 100%
+            background-repeat: no-repeat
+            background-size: cover
+            overflow: hidden
+            background-position: center
+        .person__detail__text
+            padding: $p-md
+            position: relative
+            bottom: 58%
+            left: 65%
+            min-width: 150%
+            width: 150%
+            height: 60%
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-sm solid $white-color
+            text-decoration: none
+            color: $white-color
+            font-size: $font-size-xxs
+            font-weight: $font-bold-sm
+        .person__detail__mind
+            position: relative
+            left: 110%            
+            bottom: 170%
+            max-width: 100%
+            max-height: 100%
+            display: block
+            width: 40%
+            .mind__terms
+                position: absolute
+                top: -50%
+                left: 100%
+                width: 250%
+            .mind__terms--text
+                overflow: hidden
+                word-wrap: break-word
+                overflow-wrap: break-word
+                padding: 25% 15%
+                position: absolute
+                top: 0%
+                left: 0%
+                width: 100%
+                height: 74%
+                color: $second-color
+                font-size: $font-size-sm
+                font-weight: $font-bold-lg
+
+
+
+
+/* For mobile landscape */
+@media only screen and (min-width: 600px) 
+    .person__content__detail
+        margin: 0px auto
+        width: 80%
+        height: 100vh
+        padding: 12% 2%
+        .content__person__detail
+            z-index: 9998
+            margin: 6px
+            width: $sr-width * 1.1px
+            height:  $sr-height * 3px
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-sm solid $white-color
+            .person__detail__title
+                margin: 4px auto
+                font-size: $font-size-md
+                text-align: center
+                font-weight: $font-bold-md
+            .person__detail__image
+                border-radius: $br-xxs
+            .person__detail__text
+                padding: $p-sm
+                bottom: 38%
+                left: 60%
+                min-width: 170%
+                width: 170%
+                height: 40%
+                font-size: $font-size-xs
+                font-weight: $font-bold-sm
+                border: $b-sm solid $white-color
+            .person__detail__mind
+                left: 130%            
+                bottom: 150%
+                width: 60%
+                .mind__terms
+                    top: -50%
+                    left: 100%
+                    width: 200%
+                .mind__terms--text
+                    padding: 25% 15% 
+                    top: 0%
+                    left: 0%
+                    width: 100%
+                    height: 74%
+                    font-size: $font-size-sm
+                    font-weight: $font-bold-md
+
+/* For tablet landscape */
+@media only screen and (min-width: 768px) 
+    .person__content__detail
+        margin: 0px auto
+        width: 80%
+        height: 100vh
+        padding: 10% 2%
+        .content__person__detail
+            z-index: 9998
+            margin: 6px
+            width: $sr-width * 1px
+            height:  $sr-height * 3px
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-sm solid $white-color
+            .person__detail__title
+                margin: 4px auto
+                font-size: $font-size-md
+                text-align: center
+                font-weight: $font-bold-md
+            .person__detail__image
+                border-radius: $br-xxs
+            .person__detail__text
+                padding: $p-md
+                bottom: 48%
+                left: 60%
+                min-width: 180%
+                width: 180%
+                height: 50%
+                font-size: $font-size-xs
+                font-weight: $font-bold-sm
+                border: $b-sm solid $white-color
+            .person__detail__mind
+                left: 130%            
+                bottom: 150%
+                width: 60%
+                .mind__terms
+                    top: -50%
+                    left: 100%
+                    width: 200%
+                .mind__terms--text
+                    padding: 25% 15% 
+                    top: 0%
+                    left: 0%
+                    width: 100%
+                    height: 74%
+                    font-size: $font-size-xs
+                    font-weight: $font-bold-sm
+
+/* For tablet portrair */
+@media only screen and (min-width: 768px) and (orientation: portrait)
+    .person__content__detail
+        margin: 0px auto
+        width: 80%
+        height: 100vh
+        padding: 10% 0%
+        .content__person__detail
+            z-index: 9998
+            margin: 6px
+            width: $sr-width * 1.6px
+            height:  $sr-height * 5px
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-sm solid $white-color
+            .person__detail__title
+                margin: 4px auto
+                font-size: $font-size-md
+                text-align: center
+                font-weight: $font-bold-md
+            .person__detail__image
+                border-radius: $br-xxs
+            .person__detail__text
+                padding: $p-md
+                bottom: 34%
+                left: 60%
+                min-width: 120%
+                width: 150%
+                height: 60%
+                font-size: $font-size-md
+                font-weight: $font-bold-sm
+                border: $b-sm solid $white-color
+            .person__detail__mind
+                left: 110%            
+                bottom: 150%
+                width: 50%
+                .mind__terms
+                    top: -50%
+                    left: 100%
+                    width: 200%
+                .mind__terms--text
+                    padding: 24% 16% 
+                    top: 0%
+                    left: 0%
+                    width: 100%
+                    height: 73%
+                    font-size: $font-size-xs
+                    font-weight: $font-bold-sm
+
+
+
+/* For desktop or big tablet */
+@media only screen and (min-width: 1024px) 
+    .person__content__detail
+        margin: 0px auto
+        width: 80%
+        height: 100vh
+        padding: 12% 8%
+        .content__person__detail
+            z-index: 9998
+            margin: 6px
+            width: $sr-width * 1.6px
+            height:  $sr-height * 5.5px
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-main solid $white-color
+            
+            .person__detail__title
+                margin: 4px auto
+                font-size: $font-size-md
+                text-align: center
+                font-weight: $font-bold-md
+            .person__detail__image
+                border-radius: $br-xxs
+            .person__detail__text
+                padding: $p-md
+                bottom: 38%
+                left: 84%
+                min-width: 150%
+                width: 150%
+                height: 40%
+                font-size: $font-size-sm
+                font-weight: $font-bold-md
+            .person__detail__mind
+                left: 130%            
+                bottom: 150%
+                width: 80%
+                .mind__terms
+                    top: -50%
+                    left: 100%
+                    width: 200%
+                .mind__terms--text
+                    padding: 90px 60px 30px 50px
+                    top: 0%
+                    left: 0%
+                    width: 100%
+                    height: 74%
+                    font-size: $font-size-md
+                    font-weight: $font-bold-lg
+
+
+/* For desktop or big tablet */
+@media only screen and (min-width: 1920px) 
+    .person__content__detail
+        margin: 0px auto
+        width: 80%
+        height: 100vh
+        padding: 12% 8%
+        .content__person__detail
+            z-index: 9998
+            margin: 6px
+            width: $sr-width * 2px
+            height:  $sr-height * 6.2px
+            background-color: $yellow-color
+            border-radius: $br-xs
+            border: $b-main solid $white-color
+            .person__detail__title
+                margin: 4px auto
+                font-size: $font-size-md
+                text-align: center
+                font-weight: $font-bold-md
+            .person__detail__image
+                border-radius: $br-xxs
+            .person__detail__text
+                padding: $p-md
+                bottom: 38%
+                left: 84%
+                min-width: 170%
+                width: 170%
+                height: 40%
+                font-size: $font-size-md
+                font-weight: $font-bold-md
+            .person__detail__mind
+                left: 130%            
+                bottom: 150%
+                width: 80%
+                .mind__terms
+                    top: -50%
+                    left: 100%
+                    width: 200%
+                .mind__terms--text
+                    padding: 25% 15% 
+                    top: 0%
+                    left: 0%
+                    width: 100%
+                    height: 74%
+                    font-size: $font-size-md
+                    font-weight: $font-bold-lg
