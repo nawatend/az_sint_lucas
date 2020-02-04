@@ -1,18 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import TourLayout from '../../layouts/tourBase';
-import { Pannellum, PannellumVideo } from 'pannellum-react'
+import { Pannellum } from 'pannellum-react'
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link, useRouteMatch, useParams
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 const TourDetailPage = ({ match }) => {
 
     let { roomName } = useParams()
+    const [isLandscape, setIsLandscape] = useState(true)
+
+    let checkScreen = (media) => {
+        if (media.matches) {
+            setIsLandscape(true)
+        } else {
+            setIsLandscape(false)
+        }
+    }
+
+    useEffect(() => {
+        let media = window.matchMedia("(orientation: landscape)")
+        checkScreen(media)
+        media.addListener(checkScreen)
+    }, [isLandscape])
+
     useEffect(() => {
         console.log(roomName)
     }, [match, roomName])
@@ -22,7 +33,6 @@ const TourDetailPage = ({ match }) => {
             Tour Detail => {roomName}
             <div className="tour__content">
                 <div className="content__image">
-
                     <Pannellum
                         width="100%"
                         height="100%"
@@ -49,7 +59,7 @@ const TourDetailPage = ({ match }) => {
                     </Pannellum>
                 </div>
             </div>
-
+            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
         </div >
     )
 }

@@ -8,9 +8,28 @@ const PersonDetailPage = ({ match }) => {
 
     let terms = ['lachen', 'hello', 'spannend', 'Noodle', 'opbsadsadeeun', 'kinding']
     let { person } = useParams()
+
+
+    const [isLandscape, setIsLandscape] = useState(true)
+
+    let checkScreen = (media) => {
+        if (media.matches) {
+            setIsLandscape(true)
+        } else {
+            setIsLandscape(false)
+        }
+    }
+
+    useEffect(() => {
+        let media = window.matchMedia("(orientation: landscape)")
+        checkScreen(media)
+        media.addListener(checkScreen)
+    }, [isLandscape])
+
     useEffect(() => {
         console.log(person)
     }, [match, person])
+
 
     return (
         <div className="page">
@@ -56,7 +75,7 @@ const PersonDetailPage = ({ match }) => {
                     </div>
                 </div>
             </div>
-
+            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
         </div >
     )
 }

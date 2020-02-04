@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import BaseLayout from '../../layouts/base';
 import NavigationDetail from '../../components/navigation/NavigationDetail'
 import Vimeo from '@u-wave/react-vimeo';
 import { Link } from 'react-router-dom'
 let FilmsPage = () => {
 
-    
+
     let films = [
         { title: "Lucas en de Fotodokter", id: "90773323" }
         , { title: "Lucas en de slaapdokter", id: "90773322" }
@@ -13,6 +13,22 @@ let FilmsPage = () => {
         , { title: "Lucas gaat naar het", id: "90016638" }
         , { title: "De spoedafdeling", id: "90013587" }
     ]
+
+    const [isLandscape, setIsLandscape] = useState(true)
+
+    let checkScreen = (media) => {
+        if (media.matches) {
+            setIsLandscape(true)
+        } else {
+            setIsLandscape(false)
+        }
+    }
+
+    useEffect(() => {
+        let media = window.matchMedia("(orientation: landscape)")
+        checkScreen(media)
+        media.addListener(checkScreen)
+    }, [isLandscape])
 
 
     return (
@@ -31,7 +47,6 @@ let FilmsPage = () => {
                             />
                             <Link to={`/filmpjes/${film.id}`} className="content__film--overlay"></Link>
                         </div>
-
                     ))}
                 </div>
                 <div onClick={() => {
@@ -40,6 +55,7 @@ let FilmsPage = () => {
                     <img src="/svgs/film/popcorn.svg" alt="Pop corn" />
                 </div>
             </main>
+            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
         </div>
     );
 }

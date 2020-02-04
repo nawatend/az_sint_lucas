@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavigationDetail from '../../components/navigation/NavigationDetail'
 import { Link } from 'react-router-dom'
 
@@ -12,6 +12,23 @@ let PersonsPage = () => {
         , { title: "Dokter Kid", id: "90016638" }
     ]
 
+    const [isLandscape, setIsLandscape] = useState(true)
+
+    let checkScreen = (media) => {
+        if (media.matches) {
+            setIsLandscape(true)
+        } else {
+            setIsLandscape(false)
+        }
+    }
+
+    useEffect(() => {
+        let media = window.matchMedia("(orientation: landscape)")
+        checkScreen(media)
+        media.addListener(checkScreen)
+    }, [isLandscape])
+
+    
     return (
         <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_grass.svg)` }}>
             <NavigationDetail path="/wieiswie" iconName="persons" />
@@ -26,6 +43,7 @@ let PersonsPage = () => {
                     ))}
                 </div>
             </main>
+            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
         </div>
     );
 }

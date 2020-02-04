@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigation from '../components/navigation/Nagivation'
 
 const BaseLayout = (Page) => {

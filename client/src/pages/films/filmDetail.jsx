@@ -7,6 +7,24 @@ import { useParams } from "react-router-dom";
 const FilmDetailPage = ({ match }) => {
 
     let { id } = useParams()
+
+
+    const [isLandscape, setIsLandscape] = useState(true)
+
+    let checkScreen = (media) => {
+        if (media.matches) {
+            setIsLandscape(true)
+        } else {
+            setIsLandscape(false)
+        }
+    }
+
+    useEffect(() => {
+        let media = window.matchMedia("(orientation: landscape)")
+        checkScreen(media)
+        media.addListener(checkScreen)
+    }, [isLandscape])
+
     useEffect(() => {
         console.log(id)
     }, [id, match])
@@ -24,6 +42,7 @@ const FilmDetailPage = ({ match }) => {
                     />
                 </div>
             </div>
+            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
         </div >
     )
 }

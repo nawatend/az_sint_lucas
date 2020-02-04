@@ -1,9 +1,28 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavigationDetail from '../../components/navigation/NavigationDetail'
 import { Link } from 'react-router-dom'
 
 
 let ToursPage = () => {
+
+
+    const [isLandscape, setIsLandscape] = useState(true)
+
+    let checkScreen = (media) => {
+        if (media.matches) {
+            setIsLandscape(true)
+        } else {
+            setIsLandscape(false)
+        }
+    }
+
+    useEffect(() => {
+        let media = window.matchMedia("(orientation: landscape)")
+        checkScreen(media)
+        media.addListener(checkScreen)
+    }, [isLandscape])
+
+
     return (
         <div className="background__main" style={{ backgroundImage: `url(./svgs/backgrounds/bg_water.svg)` }}>
             <NavigationDetail path="/rondleiding" iconName="tours" />
@@ -58,6 +77,7 @@ let ToursPage = () => {
 
                 </div>
             </main>
+            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
         </div>
     )
 }
