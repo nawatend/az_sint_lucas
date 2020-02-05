@@ -5,27 +5,27 @@ import Navigation from '../components/navigation/Nagivation'
 const BaseLayout = (Page) => {
 
     return () => (
-        <div className="background__main" style={{ backgroundImage: `url(/svgs/bg_main_min.svg)` }}>
+        <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_main_min.svg)` }}>
             <Navigation />
             <main className="container">
                 <Page />
             </main>
             <div className="clouds">
                 <div id="background-wrap">
-                    <div class="x1">
-                        <div class="cloud"></div>
+                    <div className="x1">
+                        <div className="cloud"></div>
                     </div>
 
-                    <div class="x2">
-                        <div class="cloud"></div>
+                    <div className="x2">
+                        <div className="cloud"></div>
                     </div>
 
-                    <div class="x3">
-                        <div class="cloud"></div>
+                    <div className="x3">
+                        <div className="cloud"></div>
                     </div>
 
-                    <div class="x4">
-                        <div class="cloud"></div>
+                    <div className="x4">
+                        <div className="cloud"></div>
                     </div>
 
                 </div>
