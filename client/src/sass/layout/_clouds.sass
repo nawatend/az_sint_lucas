@@ -1,0 +1,129 @@
+#background-wrap
+    bottom: 0
+    left: 0
+    padding-top: 10%
+    position: fixed
+    right: 0
+    top: 0
+    z-index: 0
+    height: 20%
+
+
+/* KEYFRAMES */
+@-webkit-keyframes animateCloud
+    0% 
+        margin-left: -1000px
+    100% 
+        margin-left: 100%
+
+
+@-moz-keyframes animateCloud
+    0% 
+        margin-left: -1000px
+    100% 
+        margin-left: 100%
+
+
+
+@keyframes animateCloud
+    0% 
+        margin-left: -1000px
+    
+    100% 
+        margin-left: 100%
+    
+
+@keyframes animateCloudRL
+    0% 
+        margin-left: -1000px
+    
+    100% 
+        margin-left: 100%
+    
+/* ANIMATIONS */
+
+.x1
+	-webkit-animation: animateCloudRL 30s linear infinite
+	-moz-animation: animateCloudRL 30s linear infinite
+	animation: animateCloudRL 30s linear infinite
+	
+	-webkit-transform: scale(0.65)
+	-moz-transform: scale(0.65)
+	transform: scale(0.65)
+
+
+.x2
+	-webkit-animation: animateCloud 25s linear infinite
+	-moz-animation: animateCloud 25s linear infinite
+	animation: animateCloud 25s linear infinite
+	
+	-webkit-transform: scale(0.3)
+	-moz-transform: scale(0.3)
+	transform: scale(0.3)
+
+
+.x3
+	-webkit-animation: animateCloud 30s linear infinite
+	-moz-animation: animateCloud 30s linear infinite
+	animation: animateCloud 30s linear infinite
+	
+	-webkit-transform: scale(0.5)
+	-moz-transform: scale(0.5)
+	transform: scale(0.5)
+
+
+.x4
+	-webkit-animation: animateCloud 18s linear infinite
+	-moz-animation: animateCloud 18s linear infinite
+	animation: animateCloud 18s linear infinite
+	
+	-webkit-transform: scale(0.4)
+	-moz-transform: scale(0.4)
+	transform: scale(0.4)
+
+
+
+/* OBJECTS */
+
+.cloud
+	background: #fff
+	-webkit-border-radius: 100px
+	-moz-border-radius: 100px
+	border-radius: 100px
+
+	-webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1)
+	-moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1)
+	box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1)
+
+	height: 60px
+	position: relative
+	width: 175px
+
+
+.cloud:after, .cloud:before
+    background: #fff
+    content: ''
+    position: absolute
+    z-indeX: -1
+
+
+.cloud:after
+	-webkit-border-radius: 100px
+	-moz-border-radius: 100px
+	border-radius: 100px
+
+	height: 50px
+	left: 25px
+	top: -25px
+	width: 50px
+
+
+.cloud:before
+	-webkit-border-radius: 200px
+	-moz-border-radius: 200px
+	border-radius: 200px
+
+	width: 90px
+	height: 90px
+	right: 25px
+	top: -45px
