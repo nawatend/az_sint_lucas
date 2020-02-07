@@ -46,7 +46,7 @@
                 <td>{{$post['description']}}</td>
                 <td>{{$post['image']}}</td>
                 <td>
-                <button type="button" href="/rooms/{{$post['id']}}/edit" class="btn btn-success">Edit</button>
+                <a class="btn btn-primary" href="/rooms/{{$post['id']}}/edit" role="button">Edit</a>
                 </td>
             </tr>
             @endforeach

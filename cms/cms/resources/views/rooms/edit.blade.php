@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Who is who Dashboard')
+@section('title', 'Rooms Edit')
 
 @section('content_header')
 <div class="container-fluid">
@@ -14,7 +14,7 @@
            <a href="/home">Home</a>
            </li>
            <li class="breadcrumb-item">
-           <a href="/whoiswho">Who is Who</a>
+           <a href="/rooms">Rooms</a>
            </li>
            <li class="breadcrumb-item active">
            Edit {{$post['title']}}
@@ -27,7 +27,7 @@
 @stop
 
 @section('content')
-<form action="{{ route('whoiswho.update',$post['id']) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('rooms.update',  $post['id']) ,}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
   <div class="form-group">

@@ -73,7 +73,11 @@ class RoomController extends Controller
         //return $all_post;
         return view('rooms.dashboard', compact('all_post'));
     }
+
     public function edit($id){
+        $url =  url()->previous();
+
+        $var = preg_split("/\//", $url);
         $found_post;
         $factory = (new Factory)
         ->withServiceAccount(__DIR__.'/firebasekey.json');  
@@ -81,16 +85,21 @@ class RoomController extends Controller
 
         // get all posts
         $references = $database
-        ->getReference('rooms/labo/lamp');
+        ->getReference('rooms/'.$var[4]);
         $posts = $references->getValue();
 
         foreach($posts as $post){
             if($post != null)
+
            if($post['id'] == $id){
                 $found_post = $post;
            }
+        
         }
 
         return view('rooms.edit')->with('post', $found_post); 
+    }
+
+    public function update(Request $request, $id){
     }
 }

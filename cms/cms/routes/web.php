@@ -19,9 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/rooms', 'RoomController@index')->name('room');
 Route::get('/rooms/{id}', 'RoomController@room');
 
+Route::resource('rooms','RoomController')->except(['create', 'destroy']);
 
 Route::resource('whoiswho','WhoController')->except(['create', 'destroy']);
 
