@@ -2,14 +2,13 @@
 import React from 'react';
 import NavigationDetail from '../components/navigation/NavigationDetail'
 
+const GameLayout = (Page) => {
 
-const TourLayout = (Page) => {
     return () => (
         <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_grass.svg)` }}>
-            <NavigationDetail path="/rondleiding" iconName="tours" />
+            <NavigationDetail path="/spelletjes" iconName="games" />
             <main className="container">
                 <Page />
-
             </main>
             <div className="clouds">
                 <div id="background-wrap">
@@ -34,5 +33,5 @@ const TourLayout = (Page) => {
     )
 }
 
-TourLayout.displayName = "Tour Base Layout"
-export default TourLayout
+GameLayout.displayName = "Game Base Layout"
+export default GameLayout

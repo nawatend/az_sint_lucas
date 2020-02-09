@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import BaseLayout from '../../layouts/base';
-
+import { Link } from 'react-router-dom'
+import NavigationDetail from '../../components/navigation/NavigationDetail'
 
 let GamesPage = () => {
 
@@ -21,10 +21,52 @@ let GamesPage = () => {
     }, [isLandscape])
 
     return (
-        <div className="page">GAMES
-         {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
+        <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_grass.svg)` }}>
+            <NavigationDetail path="/spelletjes" iconName="games" />
+            <main className="page">
+                <div className="games__content">
+                    <div className="content__game__menu">
+                        <Link to="/spelletjes/memory" className="content__game__menu__item">
+                            <div className="game__title">memory</div>
+                            <div id="hand-memory" className="game__hand"><img src="/svgs/games/hand_memory.svg" alt="" srcset="" /></div>
+                        </Link>
+                        <Link to="/spelletjes/virusspel" className="content__game__menu__item">
+                            <div className="game__title">virusspel</div>
+                            <div id="hand-virus" className="game__hand"><img src="/svgs/games/hand_virus.svg" alt="" srcset="" /></div>
+                        </Link>
+                        <Link to="/spelletjes/watneemikmee" className="content__game__menu__item">
+                            <div className="game__title">wat neem ik mee</div>
+                            <div id="hand-list" className="game__hand"><img src="/svgs/games/hand_list.svg" alt="" srcset="" /></div>
+                        </Link>
+                        <Link to="/spelletjes/lichaam" className="content__game__menu__item">
+                            <div className="game__title">het lichaam</div>
+                            <div id="hand-body" className="game__hand"><img src="/svgs/games/hand_body.svg" alt="" srcset="" /></div>
+                        </Link>
+                    </div>
+                </div>
+            </main>
+            <div className="clouds">
+                <div id="background-wrap">
+                    <div className="x1">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x2">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x3">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x4">
+                        <div className="cloud"></div>
+                    </div>
+                </div>
+            </div>
+            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
         </div >
     )
 }
 
-export default BaseLayout(GamesPage);
+export default GamesPage

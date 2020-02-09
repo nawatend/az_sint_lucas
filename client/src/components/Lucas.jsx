@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import fitty from 'fitty'
+export default function Lucas({ type, title = "" }) {
 
-export default function Lucas({ type }) {
+
+    useEffect(() => {
+        let fitties = fitty('.lucas__title--title', {
+            minSize: 4,
+            maxSize: 100
+        })
+
+        fitties.forEach(title => {
+            title.fit()
+            console.log('fited')
+        });
+    }, [])
 
     switch (type) {
         case "HI":
@@ -20,7 +33,15 @@ export default function Lucas({ type }) {
         case "LOOK":
             return (
                 <div className={`lucas__${type}`}>
-                    <img src="/svgs/lucas/lucas_look.svg" alt="Lucas Hi Svg" />
+                    <img src="/svgs/lucas/lucas_look_0.svg" alt="Lucas Hi Svg" />
+                    <div className="lucas__title">
+                        <div className="lucas__title--title">
+                            {title}
+                        </div>
+
+
+
+                    </div>
                 </div>
             )
 

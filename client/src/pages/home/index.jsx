@@ -36,6 +36,7 @@ let HomePage = () => {
             <Bunny />
             <Bush />
             <Pole />
+            <div className="welcome__text">Welkom bij <span>AZ Sint-Lucas!</span></div>
             {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
         </div >
     )

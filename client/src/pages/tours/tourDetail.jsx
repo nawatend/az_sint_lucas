@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TourLayout from '../../layouts/tourBase';
 import { Pannellum } from 'pannellum-react'
-
+import Lucas from '../../components/Lucas'
 import { useParams } from "react-router-dom";
 
 
@@ -54,12 +54,13 @@ const TourDetailPage = ({ match }) => {
                             pitch={-11.36}
                             yaw={123.957}
                             text="Info Hotspot Text 3"
-                            URL="https://github.com/farminf"
+                            // URL="https://github.com/farminf"
                         />
                     </Pannellum>
                 </div>
             </div>
             {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
+            <Lucas type="LOOK" title={roomName} />
         </div >
     )
 }

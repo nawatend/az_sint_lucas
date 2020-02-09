@@ -27,7 +27,6 @@ const BaseLayout = (Page) => {
                     <div className="x4">
                         <div className="cloud"></div>
                     </div>
-
                 </div>
             </div>
         </div>
