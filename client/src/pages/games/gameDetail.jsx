@@ -30,10 +30,10 @@ const GameDetailPage = ({ match }) => {
 
     return (
         <div className="page">
-            Film Detail => {gameName}
+            Game Detail => {gameName}
             <div className="game__content">
                 <div className="content__game">
-                    Film Detail => {gameName}
+                    Game Name => {gameName}
                 </div>
             </div>
             {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}

@@ -7,9 +7,16 @@ export default function NavItem({ title = "", path, iconName }) {
 
     const [audio] = useState(new Audio('/audios/test4.mp3'));
 
+    const playSound = () => {
+        let currentSound = document.getElementById(`audio__${iconName}`)
+
+        currentSound.play()
+    }
 
     return (
-        <Link onMouseEnter={() => audio.play()} to={path} className="nav__item">
+        <Link onMouseEnter={() => playSound()} to={path} className="nav__item">
+            <audio id={`audio__${iconName}`} src='/audios/test4.mp3' type="audio/mpeg" >
+            </audio>
             <div className="nav__item--icon">
                 <img src={`/svgs/nav/${iconName}.svg`} alt={iconName} />
             </div>
