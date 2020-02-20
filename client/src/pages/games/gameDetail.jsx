@@ -36,7 +36,7 @@ const GameDetailPage = ({ match }) => {
                     Game Name => {gameName}
                 </div>
             </div>
-            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device.svg" alt="" /></div>) : ""}
+            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
         </div >
     )
 }
