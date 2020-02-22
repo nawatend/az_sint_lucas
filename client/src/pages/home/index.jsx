@@ -14,6 +14,7 @@ let HomePage = () => {
 
     const [isLandscape, setIsLandscape] = useState(true)
     const [loading, setLoading] = useState(true)
+
     let checkScreen = (media) => {
         if (media.matches) {
             setIsLandscape(true)
@@ -26,6 +27,7 @@ let HomePage = () => {
         let media = window.matchMedia("(orientation: landscape)")
         checkScreen(media)
         media.addListener(checkScreen)
+        setLoading(false)
     }, [isLandscape])
 
 

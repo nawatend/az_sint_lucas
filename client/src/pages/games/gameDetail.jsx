@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import GameLayout from '../../layouts/gameBase';
 import { useParams } from "react-router-dom";
-
+import { BodyGame } from '../../components/games/index'
 
 const GameDetailPage = ({ match }) => {
 
@@ -33,7 +33,7 @@ const GameDetailPage = ({ match }) => {
             Game Detail => {gameName}
             <div className="game__content">
                 <div className="content__game">
-                    Game Name => {gameName}
+                    <BodyGame />
                 </div>
             </div>
             {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}

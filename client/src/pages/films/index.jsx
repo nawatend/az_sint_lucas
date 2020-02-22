@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/base';
 import NavigationDetail from '../../components/navigation/NavigationDetail'
 import Vimeo from '@u-wave/react-vimeo';
 import { Link } from 'react-router-dom'
+import Loading from '../../components/Loading'
+
 let FilmsPage = () => {
 
 
@@ -15,6 +17,7 @@ let FilmsPage = () => {
     ]
 
     const [isLandscape, setIsLandscape] = useState(true)
+    const [loading, setLoading] = useState(true)
 
     let checkScreen = (media) => {
         if (media.matches) {
@@ -30,34 +33,37 @@ let FilmsPage = () => {
         media.addListener(checkScreen)
     }, [isLandscape])
 
-
-    return (
-        <div className="background__main" style={{ backgroundImage: `url(./svgs/backgrounds/bg_grass.svg)` }}>
-            <NavigationDetail path="/filmpjes" iconName="films" />
-            <main className="page">
-                <div className="films__content">
-                    {/* MAX 6 VIDEOS */}
-                    {films.map(film => (
-                        <div key={film.id} className="content__film">
-                            <Vimeo
-                                video={`https://vimeo.com/${film.id}`}
-                                responsive
-                                color="ee7358"
-                                controls={false}
-                            />
-                            <Link to={`/filmpjes/${film.id}`} className="content__film--overlay"></Link>
-                        </div>
-                    ))}
-                </div>
-                <div onClick={() => {
-                    console.log('popcorn onClick')
-                }} className="popcorn">
-                    <img src="/svgs/film/popcorn.svg" alt="Pop corn" />
-                </div>
-            </main>
-            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
-        </div>
-    );
+    if (loading) {
+        return (<Loading />)
+    } else {
+        return (
+            <div className="background__main" style={{ backgroundImage: `url(./svgs/backgrounds/bg_grass.svg)` }}>
+                <NavigationDetail path="/filmpjes" iconName="films" />
+                <main className="page">
+                    <div className="films__content">
+                        {/* MAX 6 VIDEOS */}
+                        {films.map(film => (
+                            <div key={film.id} className="content__film">
+                                <Vimeo
+                                    video={`https://vimeo.com/${film.id}`}
+                                    responsive
+                                    color="ee7358"
+                                    controls={false}
+                                />
+                                <Link to={`/filmpjes/${film.id}`} className="content__film--overlay"></Link>
+                            </div>
+                        ))}
+                    </div>
+                    <div onClick={() => {
+                        console.log('popcorn onClick')
+                    }} className="popcorn">
+                        <img src="/svgs/film/popcorn.svg" alt="Pop corn" />
+                    </div>
+                </main>
+                {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
+            </div>
+        )
+    }
 }
 
 export default FilmsPage;
