@@ -183,6 +183,16 @@ return [
             'icon'    => 'fas fa-fw fa-book',
             'submenu' => [
                 [
+                    'text'        => 'General',
+                    'url'         => '/general',
+                    'icon'        => 'far fa-fw fa-file',
+                ],
+                [
+                    'text'        => 'Tours',
+                    'url'         => '/tours',
+                    'icon'        => 'far fa-fw fa-file',
+                ],
+                [
                     'text'        => 'Rooms',
                     'url'         => '/rooms',
                     'icon'        => 'far fa-fw fa-file',
@@ -200,6 +210,11 @@ return [
                 [
                     'text'        => 'Exit Text',
                     'url'         => '/exittext',
+                    'icon'        => 'far fa-fw fa-file',
+                ],
+                [
+                    'text'        => 'Games',
+                    'url'         => '/games',
                     'icon'        => 'far fa-fw fa-file',
                 ],
             ],

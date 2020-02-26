@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Rooms Edit')
+@section('title', 'Who is who Dashboard')
 
 @section('content_header')
 <div class="container-fluid">
@@ -14,7 +14,7 @@
            <a href="/home">Home</a>
            </li>
            <li class="breadcrumb-item">
-           <a href="/rooms">Rooms</a>
+           <a href="/hometext">Games</a>
            </li>
            <li class="breadcrumb-item active">
            Edit {{$post['title']}}
@@ -27,20 +27,12 @@
 @stop
 
 @section('content')
-<form action="{{ route('rooms.update',  $post['id']) ,}}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('games.update',$post['id']) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
   <div class="form-group">
     <label for="title">Title</label>
     <input type="text" name="title" class="form-control" value="{{$post['title']}}">
-  </div>
-  <div class="form-group">
-    <label for="description">Description</label>
-    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" >{{$post['description']}}</textarea>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">File input</label>
-    <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
   </div>
   <div class="form-group">
     <label for="exampleFormControlFile1">Audio input</label>

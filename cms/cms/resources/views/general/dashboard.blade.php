@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Who is who Dashboard</h1>
+            <h1>General Dashboard</h1>
         </div>
         <div class="col-sm-6">
            <ol class="breadcrumb float-sm-right">
@@ -14,7 +14,7 @@
            <a href="/home">Home</a>
            </li>
            <li class="breadcrumb-item active">
-           Who is who
+            General
            </li>
            </ol>
         </div>
@@ -30,9 +30,6 @@
         <table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Image</th>
             <th>Audio</th>
             <th>Actions</th>
             </tr>
@@ -40,12 +37,9 @@
             <tbody>
             @foreach($all_post as $post)
             <tr>
-                <td>{{$post['title']}}</td>
-                <td>{{$post['description']}}</td>
-                <td><img height="100px" src="{{url('/uploads/'.$post['image'])}}" alt="{{$post['image']}}"></td>
                 <td>{{$post['audio']}}</td>
                 <td>
-                <a class="btn btn-primary" href="/whoiswho/{{$post['id']}}/edit" role="button">Edit</a>
+                <a class="btn btn-primary" href="/general/{{$post['id']}}/edit" role="button">Edit</a>
                 </td>
             </tr>
             @endforeach
