@@ -1,3 +1,3 @@
 import BodyGame from './body/BodyGame'
-
-export {BodyGame}
+import BagGame from './bag/BagGame'
+export {BodyGame, BagGame}
