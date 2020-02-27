@@ -41,7 +41,7 @@
             <td>{{$post['id']}}</td>
                 <td>{{$post['audio']}}</td>
                 <td>
-                <a class="btn btn-primary" href="/general/{{$post['id']}}/edit" role="button">Edit</a>
+                <a class="btn btn-primary" href="/tours/{{$post['id']}}/edit" role="button">Edit</a>
                 </td>
             </tr>
             @endforeach

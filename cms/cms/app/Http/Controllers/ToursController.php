@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Kreait\Firebase\Factory;
 use Google\Cloud\Storage\StorageClient;
 use Illuminate\Support\Facades\Storage;
+use Validator;
+
 
 class ToursController extends Controller
 {
@@ -61,11 +63,45 @@ class ToursController extends Controller
 
         $database = $factory->createDatabase();
 
-        $database->getReference('home/home_message')->update([
-            'title' => $request->get('title'),
-        ]); 
+        $storage = (new Factory())
+        ->withServiceAccount(__DIR__.'/firebasekey.json')
+        ->createStorage();
 
-        notify()->success('Character updated successfully');
-        return redirect()->route('hometext.index');
+        $validator = Validator::make($request->all(), [
+            'audio' => 'required|mimes:mpga',
+        ]);
+
+            if($validator->fails()){
+                notify()->error('Audio not updated successfully');
+                return redirect()->back();
+                //return redirect()->back()->withErrors($validator)->withInput();
+            }else {
+                if ( $request->hasFile('audio')){
+
+                $file = $request->file('audio');
+                $extension = $file->getClientOriginalExtension();
+                $name = $id .'.'. $extension;
+
+                $path = Storage::disk('public')->putFileAs('', $file, $name);
+                $content = Storage::disk('public')->get($path);
+                
+                $defaultBucket = $storage->getBucket();
+
+                $defaultBucket->upload(
+                    $content,
+                    [
+                        'name' => $name
+                    ]);
+                    $database->getReference('tours/'.$id)->update([
+                        'audio' => $name
+                    ]);
+                
+
+                notify()->success('Audio updated successfully');
+                return redirect()->route('tours.index');
+                }
+                
+            }
+
     }
 }

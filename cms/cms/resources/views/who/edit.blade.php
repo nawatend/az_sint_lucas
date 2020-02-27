@@ -43,6 +43,11 @@
     <label for="exampleFormControlFile1">File input</label>
     <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
   </div>
+  <p>{{$post['audio']}}</p>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Audio input</label>
+    <input type="file" name="audio" class="form-control-file" id="exampleFormControlFile1">
+  </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   <button class="btn btn-danger">Cancel</button>
 </form>

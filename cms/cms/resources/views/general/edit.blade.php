@@ -27,7 +27,8 @@
 @stop
 
 @section('content')
-<form action="{{ route('hometext.update',$post['id']) }}" method="POST" enctype="multipart/form-data">
+<p>Currently uploaded: {{$post['audio']}} </p>
+<form action="{{ route('general.update',$post['id']) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">

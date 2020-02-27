@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Kreait\Firebase\Factory;
 use Google\Cloud\Storage\StorageClient;
 use Illuminate\Support\Facades\Storage;
+use Validator;
 
 class GamesController extends Controller
 {
@@ -59,13 +60,51 @@ class GamesController extends Controller
         $factory = (new Factory)
         ->withServiceAccount(__DIR__.'/firebasekey.json');
 
+        $storage = (new Factory())
+        ->withServiceAccount(__DIR__.'/firebasekey.json')
+        ->createStorage();
+
         $database = $factory->createDatabase();
 
         $database->getReference('games/'.  $id )->update([
             'title' => $request->get('title'),
         ]); 
 
-        notify()->success('Game updated successfully');
-        return redirect()->route('games.index');
+        $validator = Validator::make($request->all(), [
+            'audio' => 'required|mimes:mpga',
+        ]);
+
+            if($validator->fails()){
+                notify()->error('Audio not updated successfully');
+                return redirect()->back();
+                //return redirect()->back()->withErrors($validator)->withInput();
+            }else {
+                if ( $request->hasFile('audio')){
+
+                $file = $request->file('audio');
+                $extension = $file->getClientOriginalExtension();
+                $name = $id .'.'. $extension;
+                
+
+                $path = Storage::disk('public')->putFileAs('', $file, $name);
+                $content = Storage::disk('public')->get($path);
+                
+                $defaultBucket = $storage->getBucket();
+
+                $defaultBucket->upload(
+                    $content,
+                    [
+                        'name' => $name
+                    ]);
+                    $database->getReference('games/'.$id)->update([
+                        'audio' => $name
+                    ]);
+                
+
+                notify()->success('Audio updated successfully');
+                return redirect()->route('games.index');
+                }
+                
+            }
     }
 }
