@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import GameLayout from '../../layouts/gameBase';
 import { useParams } from "react-router-dom";
-import { BodyGame } from '../../components/games/index'
+import { BodyGame, BagGame } from '../../components/games/index'
 
 const GameDetailPage = ({ match }) => {
 
