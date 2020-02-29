@@ -4,12 +4,12 @@
     justify-content: space-between
     .game__body--body
         max-width: 40%
-        max-height: 90%
+        max-height: 96%
         display: flex
         justify-content: center
         align-items: center
         .whole__body
-            width: 50%
+            width: 56%
             height: auto
         .organs
             cursor: pointer
@@ -29,3 +29,32 @@
             cursor: pointer
         .organs__labels--disable
             display: none
+.organs:hover
+    path
+        stroke-width: 2px
+        stroke: white
+
+.organs__labels:hover
+    rect
+        stroke-width: 4px
+        stroke: white
+
+.organs:active
+    path
+        stroke-width: 2px
+        stroke: white
+
+.disable
+    display: none
+
+.disable__label
+    opacity: 0.2
+
+.white__stroke
+    rect
+        stroke-width: 4px
+        stroke: white
+.white__stroke
+    path
+        stroke-width: 4px
+        stroke: white

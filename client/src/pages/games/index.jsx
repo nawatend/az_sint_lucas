@@ -28,19 +28,19 @@ let GamesPage = () => {
                     <div className="content__game__menu">
                         <Link to="/spelletjes/memory" className="content__game__menu__item">
                             <div className="game__title">memory</div>
-                            <div id="hand-memory" className="game__hand"><img src="/svgs/games/hand_memory.svg" alt="" srcset="" /></div>
+                            <div id="hand-memory" className="game__hand"><img src="/svgs/games/hand_memory.svg" alt=""  /></div>
                         </Link>
                         <Link to="/spelletjes/virusspel" className="content__game__menu__item">
                             <div className="game__title">virusspel</div>
-                            <div id="hand-virus" className="game__hand"><img src="/svgs/games/hand_virus.svg" alt="" srcset="" /></div>
+                            <div id="hand-virus" className="game__hand"><img src="/svgs/games/hand_virus.svg" alt=""  /></div>
                         </Link>
                         <Link to="/spelletjes/watneemikmee" className="content__game__menu__item">
                             <div className="game__title">wat neem ik mee</div>
-                            <div id="hand-list" className="game__hand"><img src="/svgs/games/hand_list.svg" alt="" srcset="" /></div>
+                            <div id="hand-list" className="game__hand"><img src="/svgs/games/hand_list.svg" alt=""  /></div>
                         </Link>
                         <Link to="/spelletjes/lichaam" className="content__game__menu__item">
                             <div className="game__title">het lichaam</div>
-                            <div id="hand-body" className="game__hand"><img src="/svgs/games/hand_body.svg" alt="" srcset="" /></div>
+                            <div id="hand-body" className="game__hand"><img src="/svgs/games/hand_body.svg" alt=""  /></div>
                         </Link>
                     </div>
                 </div>
