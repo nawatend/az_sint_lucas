@@ -11,22 +11,17 @@ export default function BodyGame() {
     const [labelSelected, setLabelSelected] = useState()
     const [organSelected, setOrganSelected] = useState()
 
-
     const [matchOrgans, setMatchOrgans] = useState([])
-
-
-
-
 
     const selectOrgan = (e) => {
         console.log(e.target.parentNode.dataset.organ)
         const organ = e.target.parentNode.dataset.organ
+
         setOrganSelected(organ)
 
         //give selected a white stroke
         let organs = document.getElementsByClassName("organs")
         let organsLabels = document.getElementsByClassName("organs__labels")
-
 
         Array.from(organs).forEach(function (organ) {
             organ.classList.remove('white__stroke')
@@ -35,10 +30,7 @@ export default function BodyGame() {
         //give selected organ a white stroke
         e.target.parentNode.classList.add('white__stroke')
 
-
-
         if (labelSelected !== undefined) {
-
             if (labelSelected === organ) {
                 console.log("WE HAVE A MATCH")
                 setMatchOrgans([
@@ -254,7 +246,9 @@ export default function BodyGame() {
                         </g>
                     </g>
                 </svg>
-
+            </div>
+            <div className="body__info">
+                <img src="/svgs/games/lichaam/info.svg" alt="Info van Body Game" />
             </div>
         </div>
     )

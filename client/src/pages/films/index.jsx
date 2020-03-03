@@ -31,6 +31,8 @@ let FilmsPage = () => {
         let media = window.matchMedia("(orientation: landscape)")
         checkScreen(media)
         media.addListener(checkScreen)
+
+        setLoading(false)
     }, [isLandscape])
 
     if (loading) {

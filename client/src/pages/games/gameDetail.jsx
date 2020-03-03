@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import GameLayout from '../../layouts/gameBase';
 import { useParams } from "react-router-dom";
-import { BodyGame, BagGame } from '../../components/games/index'
+import { BodyGame, BagGame, MemoryGame } from '../../components/games/index'
 
 const GameDetailPage = ({ match }) => {
 
     let { gameName } = useParams()
-
 
     const [isLandscape, setIsLandscape] = useState(true)
 
@@ -33,7 +32,19 @@ const GameDetailPage = ({ match }) => {
             Game Detail => {gameName}
             <div className="game__content">
                 <div className="content__game">
-                    <BodyGame />
+                    {gameName === 'lichaam' &&
+                        <BodyGame />
+                    }
+                    {gameName === 'virusspel' &&
+                        "Hier komt Virusspel component"
+                    }
+                    {gameName === 'watneemikmee' &&
+                        "Hier komt Wat Neem Ik Mee component"
+                    }
+                    {gameName === 'memory' &&
+                        <MemoryGame />
+                    }
+
                 </div>
             </div>
             {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
