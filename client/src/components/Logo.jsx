@@ -4,7 +4,7 @@ export default function Logo() {
     return (
         <div className="setting__item setting__logo">
             <a href="https://www.youtube.com">
-                <img src={`/svgs/nav/logo.svg`} alt="logo link to main site" />
+                <img src={`${window.location.origin}/svgs/nav/logo.svg`} alt="logo link to main site" />
             </a>
         </div>
     )

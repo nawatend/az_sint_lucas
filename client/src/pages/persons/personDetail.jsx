@@ -36,7 +36,7 @@ const PersonDetailPage = ({ match }) => {
 
             <div className="person__content__detail">
                 <div className="content__person__detail">
-                    <div className="person__detail__image" style={{ backgroundImage: `url(/images/doctors/test2.jpg)` }}>
+                    <div className="person__detail__image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/doctors/test2.jpg)` }}>
                     </div>
                     <div className="person__detail__text">
                         Person Detail => {person} Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -49,11 +49,11 @@ const PersonDetailPage = ({ match }) => {
                     <div className="person__detail__title">Dokter Man</div>
 
                     <div className="person__detail__mind">
-                        <img src="/svgs/person/thinking.svg" alt="Thinking bubble" />
+                        <img src={`${process.env.PUBLIC_URL}/svgs/person/thinking.svg`} alt="Thinking bubble" />
 
                     </div>
                     <div className="mind__terms" >
-                        <img src="/svgs/person/mind_terms.svg" alt="Thinking bubble main" />
+                        <img src={`${process.env.PUBLIC_URL}/svgs/person/mind_terms.svg`} alt="Thinking bubble main" />
                         <div className="mind__terms--text">
                             <TagCloud
                                 style={{
@@ -75,7 +75,7 @@ const PersonDetailPage = ({ match }) => {
                     </div>
                 </div>
             </div>
-            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
+            {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="" /></div>) : ""}
         </div >
     )
 }

@@ -11,7 +11,8 @@ import { FilmsPage, FilmDetailPage, GamesPage, GameDetailPage, HomePage, Persons
 
 export default function router() {
     return (
-        <Router>
+
+        <Router >
             <Switch>
                 <Route path="/" exact component={HomePage} />
 

@@ -4,7 +4,7 @@ import PoleItem from './PoleItem'
 
 export default function Pole() {
     return (
-        <div className="pole" style={{ backgroundImage: `url(/svgs/home/pole.svg)` }}>
+        <div className="pole" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/home/pole.svg)` }}>
 
             <div className="pole__items">
 

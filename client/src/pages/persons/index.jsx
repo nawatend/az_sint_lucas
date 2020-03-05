@@ -30,7 +30,7 @@ let PersonsPage = () => {
 
     
     return (
-        <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_grass.svg)` }}>
+        <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
             <NavigationDetail path="/wieiswie" iconName="persons" />
             <main className="page">
                 <div className="persons__content">
@@ -38,12 +38,12 @@ let PersonsPage = () => {
                     {persons.map(person => (
                         <Link to={`/wieiswie/${person.id}`} key={person.id} className="content__person">
                             <div className="person__title">{person.title}</div>
-                            <div className="person__image" style={{ backgroundImage: `url(/images/doctors/test.png)` }}></div>
+                            <div className="person__image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/doctors/test.png)` }}></div>
                         </Link>
                     ))}
                 </div>
             </main>
-            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
+            {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="" /></div>) : ""}
         </div>
     );
 }

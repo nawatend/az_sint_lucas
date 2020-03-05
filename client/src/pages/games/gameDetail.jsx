@@ -36,7 +36,7 @@ const GameDetailPage = ({ match }) => {
                         <BodyGame />
                     }
                     {gameName === 'virusspel' &&
-                        "Hier komt Virusspel component"
+                        "Hier komt Virusspel component build"
                     }
                     {gameName === 'watneemikmee' &&
                         "Hier komt Wat Neem Ik Mee component"
@@ -47,7 +47,7 @@ const GameDetailPage = ({ match }) => {
 
                 </div>
             </div>
-            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
+            {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="" /></div>) : ""}
         </div >
     )
 }

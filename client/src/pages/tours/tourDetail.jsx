@@ -36,7 +36,7 @@ const TourDetailPage = ({ match }) => {
                     <Pannellum
                         width="100%"
                         height="100%"
-                        image="/images/360tours/test.jpg"
+                        image={`${process.env.PUBLIC_URL}/images/360tours/bloedafname.png`}
                         pitch={10}
                         yaw={180}
                         hfov={110}
@@ -59,7 +59,7 @@ const TourDetailPage = ({ match }) => {
                     </Pannellum>
                 </div>
             </div>
-            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
+            {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="LOADING ..." /></div>) : ""}
             <Lucas type="LOOK" title={roomName} />
         </div >
     )

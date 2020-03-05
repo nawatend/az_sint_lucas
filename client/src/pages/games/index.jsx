@@ -21,26 +21,26 @@ let GamesPage = () => {
     }, [isLandscape])
 
     return (
-        <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_grass.svg)` }}>
+        <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
             <NavigationDetail path="/spelletjes" iconName="games" />
             <main className="page">
                 <div className="games__content">
                     <div className="content__game__menu">
                         <Link to="/spelletjes/memory" className="content__game__menu__item">
                             <div className="game__title">memory</div>
-                            <div id="hand-memory" className="game__hand"><img src="/svgs/games/hand_memory.svg" alt=""  /></div>
+                            <div id="hand-memory" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_memory.svg`} alt=""  /></div>
                         </Link>
                         <Link to="/spelletjes/virusspel" className="content__game__menu__item">
                             <div className="game__title">virusspel</div>
-                            <div id="hand-virus" className="game__hand"><img src="/svgs/games/hand_virus.svg" alt=""  /></div>
+                            <div id="hand-virus" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_virus.svg`} alt=""  /></div>
                         </Link>
                         <Link to="/spelletjes/watneemikmee" className="content__game__menu__item">
                             <div className="game__title">wat neem ik mee</div>
-                            <div id="hand-list" className="game__hand"><img src="/svgs/games/hand_list.svg" alt=""  /></div>
+                            <div id="hand-list" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_list.svg`} alt=""  /></div>
                         </Link>
                         <Link to="/spelletjes/lichaam" className="content__game__menu__item">
                             <div className="game__title">het lichaam</div>
-                            <div id="hand-body" className="game__hand"><img src="/svgs/games/hand_body.svg" alt=""  /></div>
+                            <div id="hand-body" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_body.svg`} alt=""  /></div>
                         </Link>
                     </div>
                 </div>
@@ -64,7 +64,7 @@ let GamesPage = () => {
                     </div>
                 </div>
             </div>
-            {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
+            {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="" /></div>) : ""}
         </div >
     )
 }

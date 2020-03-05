@@ -11,8 +11,8 @@ export default function Loading() {
     return (
         <div className="loading">
             <div className="loading__bunny">
-                <img src="/svgs/loading.svg" alt="Loading Bunny" />
-                <img className="loading__wheel" src="/svgs/wheel.svg" alt="Loading Wheel Bunny" />
+                <img src={`${process.env.PUBLIC_URL}/svgs/loading.svg`} alt="Loading Bunny" />
+                <img className="loading__wheel" src={`${process.env.PUBLIC_URL}/svgs/wheel.svg`} alt="Loading Wheel Bunny" />
             </div>
         </div>
     )

@@ -5,7 +5,7 @@ import Navigation from '../components/navigation/Nagivation'
 const BaseLayout = (Page) => {
 
     return () => (
-        <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_main_min.svg)` }}>
+        <div className="background__main" style={{ backgroundImage: `url(${window.location.origin}/svgs/backgrounds/bg_main_min.svg)` }}>
             <Navigation />
             <main className="container">
                 <Page />

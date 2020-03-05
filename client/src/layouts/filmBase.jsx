@@ -5,7 +5,7 @@ import NavigationDetail from '../components/navigation/NavigationDetail'
 const FilmLayout = (Page) => {
 
     return () => (
-        <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_film.svg)` }}>
+        <div className="background__main" style={{ backgroundImage: `url(${window.location.origin}/svgs/backgrounds/bg_film.svg)` }}>
             <NavigationDetail path="/filmpjes" iconName="films" />
             <main className="container">
                 <Page />
