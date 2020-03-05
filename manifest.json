@@ -1,0 +1,36 @@
+{
+  "short_name": "Lucas",
+  "name": "AZ Sint-Lucas",
+  "icons": [{
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon_lucas_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon_lucas_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "src": "apple-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "src": "apple-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#00ff0f",
+  "background_color": "#ffffff"
+}

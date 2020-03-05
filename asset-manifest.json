@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/nawatend/az_lucas_test/static/css/main.830ef48e.chunk.css",
+    "main.js": "/nawatend/az_lucas_test/static/js/main.d0bf87da.chunk.js",
+    "main.js.map": "/nawatend/az_lucas_test/static/js/main.d0bf87da.chunk.js.map",
+    "runtime-main.js": "/nawatend/az_lucas_test/static/js/runtime-main.dab91f08.js",
+    "runtime-main.js.map": "/nawatend/az_lucas_test/static/js/runtime-main.dab91f08.js.map",
+    "static/css/2.037862af.chunk.css": "/nawatend/az_lucas_test/static/css/2.037862af.chunk.css",
+    "static/js/2.1edadfcf.chunk.js": "/nawatend/az_lucas_test/static/js/2.1edadfcf.chunk.js",
+    "static/js/2.1edadfcf.chunk.js.map": "/nawatend/az_lucas_test/static/js/2.1edadfcf.chunk.js.map",
+    "index.html": "/nawatend/az_lucas_test/index.html",
+    "precache-manifest.89f75cb4acbe39d4be87bb76ffe779f3.js": "/nawatend/az_lucas_test/precache-manifest.89f75cb4acbe39d4be87bb76ffe779f3.js",
+    "service-worker.js": "/nawatend/az_lucas_test/service-worker.js",
+    "static/css/2.037862af.chunk.css.map": "/nawatend/az_lucas_test/static/css/2.037862af.chunk.css.map",
+    "static/css/main.830ef48e.chunk.css.map": "/nawatend/az_lucas_test/static/css/main.830ef48e.chunk.css.map",
+    "static/js/2.1edadfcf.chunk.js.LICENSE": "/nawatend/az_lucas_test/static/js/2.1edadfcf.chunk.js.LICENSE",
+    "static/media/pannellum.css": "/nawatend/az_lucas_test/static/media/sprites.f37aa8ca.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dab91f08.js",
+    "static/css/2.037862af.chunk.css",
+    "static/js/2.1edadfcf.chunk.js",
+    "static/css/main.830ef48e.chunk.css",
+    "static/js/main.d0bf87da.chunk.js"
+  ]
+}
