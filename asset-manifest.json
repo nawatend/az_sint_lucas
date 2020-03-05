@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/az_sint_lucas/static/css/main.830ef48e.chunk.css",
-    "main.js": "/az_sint_lucas/static/js/main.c8d85ab2.chunk.js",
-    "main.js.map": "/az_sint_lucas/static/js/main.c8d85ab2.chunk.js.map",
-    "runtime-main.js": "/az_sint_lucas/static/js/runtime-main.054d1d11.js",
-    "runtime-main.js.map": "/az_sint_lucas/static/js/runtime-main.054d1d11.js.map",
-    "static/css/2.f2447c18.chunk.css": "/az_sint_lucas/static/css/2.f2447c18.chunk.css",
-    "static/js/2.1edadfcf.chunk.js": "/az_sint_lucas/static/js/2.1edadfcf.chunk.js",
-    "static/js/2.1edadfcf.chunk.js.map": "/az_sint_lucas/static/js/2.1edadfcf.chunk.js.map",
-    "index.html": "/az_sint_lucas/index.html",
-    "precache-manifest.f7a46fcd4b1037336e33e6475b731e33.js": "/az_sint_lucas/precache-manifest.f7a46fcd4b1037336e33e6475b731e33.js",
-    "service-worker.js": "/az_sint_lucas/service-worker.js",
-    "static/css/2.f2447c18.chunk.css.map": "/az_sint_lucas/static/css/2.f2447c18.chunk.css.map",
-    "static/css/main.830ef48e.chunk.css.map": "/az_sint_lucas/static/css/main.830ef48e.chunk.css.map",
-    "static/js/2.1edadfcf.chunk.js.LICENSE": "/az_sint_lucas/static/js/2.1edadfcf.chunk.js.LICENSE",
-    "static/media/pannellum.css": "/az_sint_lucas/static/media/sprites.f37aa8ca.svg"
+    "main.css": "./static/css/main.830ef48e.chunk.css",
+    "main.js": "./static/js/main.0d44133d.chunk.js",
+    "main.js.map": "./static/js/main.0d44133d.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.d257a575.js",
+    "runtime-main.js.map": "./static/js/runtime-main.d257a575.js.map",
+    "static/css/2.9b2a28df.chunk.css": "./static/css/2.9b2a28df.chunk.css",
+    "static/js/2.1edadfcf.chunk.js": "./static/js/2.1edadfcf.chunk.js",
+    "static/js/2.1edadfcf.chunk.js.map": "./static/js/2.1edadfcf.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.6699145e33746d0b21dab589b7d4232c.js": "./precache-manifest.6699145e33746d0b21dab589b7d4232c.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.9b2a28df.chunk.css.map": "./static/css/2.9b2a28df.chunk.css.map",
+    "static/css/main.830ef48e.chunk.css.map": "./static/css/main.830ef48e.chunk.css.map",
+    "static/js/2.1edadfcf.chunk.js.LICENSE": "./static/js/2.1edadfcf.chunk.js.LICENSE",
+    "static/media/pannellum.css": "./static/media/sprites.f37aa8ca.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.054d1d11.js",
-    "static/css/2.f2447c18.chunk.css",
+    "static/js/runtime-main.d257a575.js",
+    "static/css/2.9b2a28df.chunk.css",
     "static/js/2.1edadfcf.chunk.js",
     "static/css/main.830ef48e.chunk.css",
-    "static/js/main.c8d85ab2.chunk.js"
+    "static/js/main.0d44133d.chunk.js"
   ]
 }
