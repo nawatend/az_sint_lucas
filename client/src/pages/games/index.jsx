@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import NavigationDetail from '../../components/navigation/NavigationDetail'
+import Loading from '../../components/Loading'
 
 let GamesPage = () => {
 

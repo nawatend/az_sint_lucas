@@ -3,7 +3,7 @@ import TourLayout from '../../layouts/tourBase';
 import { Pannellum } from 'pannellum-react'
 import Lucas from '../../components/Lucas'
 import { useParams } from "react-router-dom";
-
+import Loading from '../../components/Loading'
 
 const TourDetailPage = ({ match }) => {
 

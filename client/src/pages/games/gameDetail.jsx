@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import GameLayout from '../../layouts/gameBase';
 import { useParams } from "react-router-dom";
 import { BodyGame, BagGame, MemoryGame } from '../../components/games/index'
+import GameHand from '../../components/GameHand'
+import Loading from '../../components/Loading'
 
 const GameDetailPage = ({ match }) => {
 
@@ -47,6 +49,8 @@ const GameDetailPage = ({ match }) => {
 
                 </div>
             </div>
+
+            <GameHand />
             {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="" /></div>) : ""}
         </div >
     )

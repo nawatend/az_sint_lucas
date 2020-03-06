@@ -14,7 +14,7 @@ export default function NavItem({ title = "", path, iconName }) {
     }
 
     return (
-        <Link onMouseEnter={() => playSound()} to={path} className="nav__item">
+        <Link onMouseEnter={() => playSound()} onTouchStart={() => playSound()} to={path} className="nav__item">
             <audio id={`audio__${iconName}`} src={`${window.location.origin}/audios/test4.mp3`} type="audio/mpeg" >
             </audio>
             <div className="nav__item--icon">

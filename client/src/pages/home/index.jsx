@@ -8,12 +8,16 @@ import Bush from '../../components/Bush'
 import Pole from '../../components/Pole'
 import Loading from '../../components/Loading'
 
+//firebase
+import { db } from '../../utils/firebase'
 
 
 let HomePage = () => {
 
     const [isLandscape, setIsLandscape] = useState(true)
     const [loading, setLoading] = useState(true)
+
+    let exitRef = db.ref('/exit')
 
     let checkScreen = (media) => {
         if (media.matches) {
@@ -28,7 +32,15 @@ let HomePage = () => {
         checkScreen(media)
         media.addListener(checkScreen)
         setLoading(false)
-    }, [isLandscape])
+
+        exitRef.on('value', (snapshots) => {
+
+            let data = snapshots.val()
+
+            console.log(data)
+        })
+
+    }, [exitRef, isLandscape])
 
 
     if (loading) {

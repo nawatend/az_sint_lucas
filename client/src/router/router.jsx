@@ -30,7 +30,7 @@ export default function router() {
 
                 {/* persons */}
                 <Route path="/wieiswie" exact component={PersonsPage} />
-                <Route path="/wieiswie/:person" component={PersonDetailPage} />
+                <Route path="/wieiswie/:id/:person" component={PersonDetailPage} />
             </Switch>
         </Router >
     )

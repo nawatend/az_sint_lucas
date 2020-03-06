@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import React from 'react';
 import NavigationDetail from '../components/navigation/NavigationDetail'
-
+import GameHand from '../components/GameHand'
 const GameLayout = (Page) => {
 
     return () => (
@@ -29,6 +29,7 @@ const GameLayout = (Page) => {
                     </div>
                 </div>
             </div>
+           
         </div>
     )
 }

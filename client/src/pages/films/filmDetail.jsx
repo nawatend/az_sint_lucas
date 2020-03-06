@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import FilmLayout from '../../layouts/filmBase';
 import Vimeo from '@u-wave/react-vimeo';
 import { useParams } from "react-router-dom";
-
+import Loading from '../../components/Loading'
 
 const FilmDetailPage = ({ match }) => {
 
@@ -42,7 +42,10 @@ const FilmDetailPage = ({ match }) => {
                     />
                 </div>
             </div>
+
+
             {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="" /></div>) : ""}
+
         </div >
     )
 }
