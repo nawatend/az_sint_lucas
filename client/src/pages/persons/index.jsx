@@ -11,7 +11,6 @@ let PersonsPage = () => {
 
 
     let personsRef = db.ref('/who_is_who')
-
     let persons = []
 
     const [isLandscape, setIsLandscape] = useState(true)
@@ -33,24 +32,19 @@ let PersonsPage = () => {
 
         const getPersonsInfo = () => {
             personsRef.once('value', (snapshots) => {
-
                 let data = snapshots.val()
-
                 data.forEach(element => {
-                    console.log(element)
                     persons.push(element)
                 })
-
-                setLoading(false)
             }).then(() => {
                 setPersonsInfo(persons)
+                setLoading(false)
             });
         }
 
-
-        getPersonsInfo()
-
-
+        if (loading) {
+            getPersonsInfo()
+        }
 
     }, [loading, persons, personsRef])
 
@@ -58,7 +52,7 @@ let PersonsPage = () => {
         return (<Loading />)
     } else {
         return (
-            <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
+            <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)`}}>
                 <NavigationDetail path="/wieiswie" iconName="persons" />
                 <main className="page">
                     <div className="persons__content">

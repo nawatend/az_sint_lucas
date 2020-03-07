@@ -15,18 +15,28 @@ const PersonDetailPage = ({ match }) => {
     let terms = ['lachen', 'hello', 'spannend', 'Noodle', 'opbsadsadeeun', 'kinding']
     let { person, id } = useParams()
 
+    let imagesNames = {
+        fotodokter: "photo_doctor_image",
+        kinderdokter: "kid_doctor_image",
+        ziekenhuisclowns: "clown_image",
+        slaapdokter: "sleep_doctor_image",
+        verpleegkundige: "nurse_image",
+        spelbegeleider: "game_leader_image",
+        kiderpsycholoog: "kid_psychology_image"
+    }
+
 
     const personRef = db.ref(`/who_is_who/${id}`)
-    const personImageRef = storage.ref().child('images/Kinderdokter.jpg')
+    const personImageRef = storage.ref().child(`images/${imagesNames[person]}.jpg`)
 
     const [isLandscape, setIsLandscape] = useState(true)
     const [imageUrl, setImageUrl] = useState("")
     const [personInfo, setPersonInfo] = useState({
-        'audio': "doctor.mp3",
+        'audio': "test.mp3",
         'description': "Geen Description",
-        'id': 2,
+        'id': 0,
         'image': "unnamed.jpg",
-        'title': "kinderdokter",
+        'title': "testdokter",
     })
     const [loading, setLoading] = useState(true)
 
@@ -94,7 +104,6 @@ const PersonDetailPage = ({ match }) => {
                         <div className="person__detail__image" style={{ backgroundImage: `url(${imageUrl})` }}>
                         </div>
                         <div className="person__detail__text">
-                            Person Detail => {person} id=> {id}
                             {personInfo.description}
                         </div>
                         <div className="person__detail__title">{person}</div>
