@@ -1,6 +1,5 @@
 import React from 'react';
 import Intro from './Intro';
-import PlayPause from './PlayPause';
 import Lives from './Lives';
 import Score from './Score';
 import GameOver from './GameOver';
@@ -18,7 +17,6 @@ export default function UI(props) {
   } else if (hasStarted) {
     uiView = (
       <div className="game__ui">
-        <PlayPause />
         <div className="top-right">
           <Lives lives={lives} />
           <Score score={score} />

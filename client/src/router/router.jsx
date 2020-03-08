@@ -12,9 +12,8 @@ import { FilmsPage, FilmDetailPage, GamesPage, GameDetailPage, HomePage, Persons
 export default function router() {
     return (
 
-        <Router basename={window.location.pathname || ''} >
+        <Router basename={process.env.PUBLIC_URL} >
             <Switch>
-
 
                 {/* Tours */}
                 <Route path="/rondleiding" exact component={ToursPage} />

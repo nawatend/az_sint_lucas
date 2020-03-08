@@ -5,7 +5,7 @@ export default function GameHand() {
         <div onClick={() => {
             console.log('game hand onClick')
         }} id="game__hand--detail" className="game__hand--detail">
-            <img src={`${window.location.origin}/svgs/games/game_hand.svg`} alt="bunny" />
+            <img src={`${process.env.PUBLIC_URL}/svgs/games/game_hand.svg`} alt="Gaming Hand" />
         </div>
     )
 }

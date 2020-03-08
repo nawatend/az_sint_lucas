@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
-$yellow-light: #f8fa94;
-$yellow-dark: #f9df1b;
-$red: #e30104;
+$yellow-light: #78C1B9;
+$yellow-dark: #1B9A82;
+$red: #FFFFFF;
 
 .game {
   &__view {
@@ -10,11 +9,12 @@ $red: #e30104;
     height: 100%;
     font-size: 22px;
     color: #fefefe;
+    border-radius: 50px;
   }
 
   &__overlay {
     position: absolute;
-    background: #04162e;
+    background: #FFD45C;
     color: #fefefe;
     height: 100%;
     width: 100%;
@@ -22,6 +22,8 @@ $red: #e30104;
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
+    overflow: hidden;
+    border-radius: 50px;
 
     h1 {
       margin-bottom: 16px;
@@ -29,21 +31,26 @@ $red: #e30104;
       width: auto;
       padding: 8px 32px;
       text-transform: none;
+
     }
 
     .btn {
+      font-family: 'laca';
       cursor: pointer;
       font-size: 22px;
       margin: 10px 10px;
-      padding: 5px 10px;
-      width: 200px;
-      font-family: "Fredoka One";
+      padding: 10px 16px;
+      width: auto;
       background-color: $yellow-light;
-      border: 5px solid $yellow-dark;
+
       border-radius: 50px;
       color: $red;
       transition: transform 0.2s;
       text-align: center;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
     }
   }
 }
@@ -52,7 +59,6 @@ $red: #e30104;
   position: absolute;
   left: 5%;
   top: 5%;
-  font-family: "Fredoka One", sans-serif;
   text-decoration: none;
   color: inherit;
 }
@@ -71,4 +77,223 @@ a {
 .virus__game--size {
   width: 100% !important;
   height: 100% !important;
+  border-radius: 50px !important;
+}
+
+.virus__life {
+  width: 4vw;
+  margin: 2px;
+}
+
+.game__virus__info {
+  width: 50%;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+}
+
+.game__virus__end {
+  width: 50%;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+}
+
+.game__virus__score {
+  width: auto;
+  padding: 12px 40px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #F17343;
+  border-radius: 90px;
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .score__count {
+    color: #009481;
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+
+
+
+/* For smaller mobile landscape */
+@media only screen and (max-width: 600px) {
+  .game__overlay {
+    h1 {
+      padding: 0;
+      margin: 20px 0 0 0;
+      font-size: 28px;
+    }
+
+    .btn {
+      font-size: 18px;
+      margin: 6px;
+      padding: 4px 8px;
+      border-radius: 50px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .game__virus__info {
+    width: 56%;
+  }
+
+
+  .game__virus__score {
+    width: auto;
+    padding: 6px 26px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #F17343;
+    border-radius: 90px;
+
+    h2 {
+      font-size: 24px;
+    }
+
+    .score__count {
+      color: #009481;
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+
+}
+
+/* For mobile landscape */
+@media only screen and (min-width: 600px) {
+  .game__overlay {
+    h1 {
+      padding: 0;
+      margin: 20px 0 0 0;
+    }
+  }
+
+  .game__virus__info {
+    width: 56%;
+  }
+
+
+  .game__virus__score {
+    padding: 8px 40px;
+    border-radius: 90px;
+
+    .score__count {
+      color: #009481;
+      font-size: 50px;
+      font-weight: bold;
+    }
+  }
+
+}
+
+
+
+@media only screen and (min-width: 768px)
+
+/* For tablet landscape */
+  {
+  .game__overlay {
+    h1 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .game__virus__info {
+    width: 56%;
+  }
+
+  .game__virus__score {
+    padding: 8px 40px;
+    border-radius: 90px;
+
+    .score__count {
+      color: #009481;
+      font-size: 50px;
+      font-weight: bold;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1024px)
+
+/* For desktop or big tablet */
+  {
+
+  .game__overlay {
+    h1 {
+
+      margin: 10px 0;
+    }
+  }
+
+  .game__virus__info {
+    width: 70%;
+  }
+
+  .game__virus__score {
+    padding: 8px 40px;
+    border-radius: 90px;
+
+    .score__count {
+      color: #009481;
+      font-size: 50px;
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 1920px)
+
+/* For desktop or big tablet */
+  {
+  .game__overlay {
+    h1 {
+
+      margin: 10px 0;
+    }
+  }
+
+  .game__virus__info {
+    width: 70%;
+  }
+
+  .game__virus__score {
+    padding: 8px 40px;
+    border-radius: 90px;
+
+    .score__count {
+      color: #009481;
+      font-size: 50px;
+      font-weight: bold;
+    }
+  }
+
 }

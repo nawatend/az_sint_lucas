@@ -6,9 +6,6 @@ import Logo from '../Logo'
 
 export default function Nagivation() {
 
-    console.log(window.location.origin)
-    console.log(process.env.PUBLIC_URL)
-
     return (
         <nav id="nav-main">
             <div className="nav__main">

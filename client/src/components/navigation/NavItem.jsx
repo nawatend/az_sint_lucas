@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 
 
 export default function NavItem({ title = "", path, iconName }) {
-
+    console.log("window.location.origin =>" + window.location.origin)
+    console.log("window.location.pathname =>" + window.location.pathname)
+    console.log("process.env.PUBLIC_URL =>" + process.env.PUBLIC_URL)
 
     const [audio] = useState(new Audio(`${process.env.PUBLIC_URL}/audios/test4.mp3`));
 
