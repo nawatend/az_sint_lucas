@@ -11,7 +11,7 @@ export default function Pole() {
                 <PoleItem title="er" path="/rondleiding/spoed" />
                 <PoleItem title="kids" path="/rondleiding/kindafdeling" />
                 <PoleItem title="lab" path="/rondleiding/labo" />
-                <PoleItem title="radio" path="/rondleiding/radioloog" />
+                <PoleItem title="radio" path="/rondleiding/radiologie" />
             </div>
         </div>
     )

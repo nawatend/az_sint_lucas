@@ -33,14 +33,7 @@ let HomePage = () => {
         media.addListener(checkScreen)
         setLoading(false)
 
-        exitRef.on('value', (snapshots) => {
-
-            let data = snapshots.val()
-
-            console.log(data)
-        })
-
-    }, [exitRef, isLandscape])
+    }, [ isLandscape])
 
 
     if (loading) {

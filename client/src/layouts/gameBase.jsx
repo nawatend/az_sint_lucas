@@ -5,7 +5,7 @@ import GameHand from '../components/GameHand'
 const GameLayout = (Page) => {
 
     return () => (
-        <div className="background__main" style={{ backgroundImage: `url(${window.location.origin}/svgs/backgrounds/bg_grass.svg)` }}>
+        <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
             <NavigationDetail path="/spelletjes" iconName="games" />
             <main className="container">
                 <Page />

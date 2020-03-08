@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import GameLayout from '../../layouts/gameBase';
 import { useParams } from "react-router-dom";
-import { BodyGame, BagGame, MemoryGame } from '../../components/games/index'
+import { BodyGame, BagGame, MemoryGame, VirusGame } from '../../components/games/index'
 import GameHand from '../../components/GameHand'
 import Loading from '../../components/Loading'
 
@@ -38,7 +38,7 @@ const GameDetailPage = ({ match }) => {
                         <BodyGame />
                     }
                     {gameName === 'virusspel' &&
-                        "Hier komt Virusspel component build"
+                        <VirusGame />
                     }
                     {gameName === 'watneemikmee' &&
                         "Hier komt Wat Neem Ik Mee component"

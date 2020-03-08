@@ -35,7 +35,7 @@ export default function Sound() {
 
 
         }} className="setting__item setting__sound">
-            <img src={(isSoundOn) ? `${window.location.origin}/svgs/nav/sound_on.svg` : `${window.location.origin}/svgs/nav/sound_off.svg`} alt="Sound Setting" />
+            <img src={(isSoundOn) ? `${process.env.PUBLIC_URL}/svgs/nav/sound_on.svg` : `${process.env.PUBLIC_URL}/svgs/nav/sound_off.svg`} alt="Sound Setting" />
         </div>
     )
 }
