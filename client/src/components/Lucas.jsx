@@ -19,21 +19,21 @@ export default function Lucas({ type, title = "" }) {
         case "HI":
             return (
                 <div className={`lucas__${type}`}>
-                    <img src="/svgs/lucas/lucas_hi.svg" alt="Lucas Hi Svg" />
+                    <img src={`${process.env.PUBLIC_URL}/svgs/lucas/lucas_hi.svg`} alt="Lucas Hi Svg" />
                 </div>
             )
 
         case "SICK":
             return (
                 <div className={`lucas__${type}`}>
-                    <img src="/svgs/lucas/lucas_sick.svg" alt="Lucas Hi Svg" />
+                    <img src={`${process.env.PUBLIC_URL}/svgs/lucas/lucas_sick.svg`} alt="Lucas Hi Svg" />
                 </div>
             )
 
         case "LOOK":
             return (
                 <div className={`lucas__${type}`}>
-                    <img src="/svgs/lucas/lucas_look_0.svg" alt="Lucas Hi Svg" />
+                    <img src={`${process.env.PUBLIC_URL}/svgs/lucas/lucas_look_0.svg`} alt="Lucas Hi Svg" />
                     <div className="lucas__title">
                         <div className="lucas__title--title">
                             {title}
@@ -48,7 +48,7 @@ export default function Lucas({ type, title = "" }) {
         case "BYE":
             return (
                 <div className={`lucas__${type}`}>
-                    <img src="/svgs/lucas/lucas_bye.svg" alt="Lucas Hi Svg" />
+                    <img src={`${process.env.PUBLIC_URL}/svgs/lucas/lucas_bye.svg`} alt="Lucas Hi Svg" />
                 </div>
             )
 
@@ -56,7 +56,7 @@ export default function Lucas({ type, title = "" }) {
         default:
             return (
                 <div className={`lucas__${type}`}>
-                    <img src="/svgs/lucas/lucas_bye.svg" alt="Lucas Hi Svg" />
+                    <img src={`${process.env.PUBLIC_URL}/svgs/lucas/lucas_bye.svg`} alt="Lucas Hi Svg" />
                 </div>
             )
 

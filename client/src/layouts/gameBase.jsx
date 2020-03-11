@@ -1,11 +1,11 @@
 /* eslint-disable react/display-name */
 import React from 'react';
 import NavigationDetail from '../components/navigation/NavigationDetail'
-
+import GameHand from '../components/GameHand'
 const GameLayout = (Page) => {
 
     return () => (
-        <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_grass.svg)` }}>
+        <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
             <NavigationDetail path="/spelletjes" iconName="games" />
             <main className="container">
                 <Page />
@@ -29,6 +29,7 @@ const GameLayout = (Page) => {
                     </div>
                 </div>
             </div>
+           
         </div>
     )
 }

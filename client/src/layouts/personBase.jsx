@@ -5,7 +5,7 @@ import NavigationDetail from '../components/navigation/NavigationDetail'
 const PersonLayout = (Page) => {
 
     return () => (
-        <div className="background__main" style={{ backgroundImage: `url(/svgs/backgrounds/bg_grass.svg)` }}>
+        <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
             <NavigationDetail path="/wieiswie" iconName="persons" />
             <main className="container">
                 <Page />

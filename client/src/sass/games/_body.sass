@@ -1,10 +1,11 @@
 .game__container
-    padding: 10px
+    position: relative
     display: flex
     justify-content: space-between
     .game__body--body
         max-width: 40%
         max-height: 90%
+        width: 50%
         display: flex
         justify-content: center
         align-items: center
@@ -19,6 +20,7 @@
     .game__body--labels
         max-width: 40%
         max-height: 90%
+        width: 40%
         display: flex
         justify-content: center
         align-items: center
@@ -29,3 +31,44 @@
             cursor: pointer
         .organs__labels--disable
             display: none
+    .body__info
+        margin-bottom: 40px
+        width: 20%
+        align-self: flex-end
+        img
+            max-width: 100%
+            height: auto
+            display: block
+.organs:hover
+    path
+        stroke-width: 2px
+        stroke: white
+
+.organs__labels:hover
+    rect
+        stroke-width: 4px
+        stroke: white
+
+.organs:active
+    path
+        stroke-width: 2px
+        stroke: white
+
+.disable
+    display: none
+
+.disable__label
+    opacity: 0.2
+
+.white__stroke
+    rect
+        stroke-width: 4px
+        stroke: white
+
+.white__stroke
+    path
+        stroke-width: 4px
+        stroke: white
+
+
+

@@ -1,3 +1,5 @@
 import BodyGame from './body/BodyGame'
 import BagGame from './bag/BagGame'
-export {BodyGame, BagGame}
+import MemoryGame from './memory/MemoryGame'
+import VirusGame from './virus-game/'
+export { BodyGame, BagGame, MemoryGame, VirusGame }

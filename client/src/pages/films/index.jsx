@@ -31,13 +31,15 @@ let FilmsPage = () => {
         let media = window.matchMedia("(orientation: landscape)")
         checkScreen(media)
         media.addListener(checkScreen)
+
+        setLoading(false)
     }, [isLandscape])
 
     if (loading) {
         return (<Loading />)
     } else {
         return (
-            <div className="background__main" style={{ backgroundImage: `url(./svgs/backgrounds/bg_grass.svg)` }}>
+            <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
                 <NavigationDetail path="/filmpjes" iconName="films" />
                 <main className="page">
                     <div className="films__content">
@@ -57,10 +59,10 @@ let FilmsPage = () => {
                     <div onClick={() => {
                         console.log('popcorn onClick')
                     }} className="popcorn">
-                        <img src="/svgs/film/popcorn.svg" alt="Pop corn" />
+                        <img src={`${process.env.PUBLIC_URL}/svgs/film/popcorn.svg`} alt="Pop corn" />
                     </div>
                 </main>
-                {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
+                {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="" /></div>) : ""}
             </div>
         )
     }

@@ -21,7 +21,7 @@ export default function Bunny() {
         <div onClick={() => {
             console.log('bunny onClick')
         }} id="bunny" className="bunny">
-            <img src="/svgs/bunny_hi.svg" alt="bunny" />
+            <img src={`${process.env.PUBLIC_URL}/svgs/bunny_hi.svg`} alt="bunny" />
         </div>
     )
 }

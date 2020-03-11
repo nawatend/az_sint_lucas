@@ -5,7 +5,7 @@ export default function PoleItem({ title, path }) {
 
         <div className="pole__item">
             <Link to={path}>
-                <img src={`/svgs/home/${title}.svg`} alt={title} />
+                <img src={`${process.env.PUBLIC_URL}/svgs/home/${title}.svg`} alt={title} />
             </Link>
         </div>
     )

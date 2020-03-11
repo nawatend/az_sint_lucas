@@ -8,12 +8,16 @@ import Bush from '../../components/Bush'
 import Pole from '../../components/Pole'
 import Loading from '../../components/Loading'
 
+//firebase
+import { db } from '../../utils/firebase'
 
 
 let HomePage = () => {
 
     const [isLandscape, setIsLandscape] = useState(true)
     const [loading, setLoading] = useState(true)
+
+    let exitRef = db.ref('/exit')
 
     let checkScreen = (media) => {
         if (media.matches) {
@@ -28,7 +32,8 @@ let HomePage = () => {
         checkScreen(media)
         media.addListener(checkScreen)
         setLoading(false)
-    }, [isLandscape])
+
+    }, [ isLandscape])
 
 
     if (loading) {
@@ -43,7 +48,7 @@ let HomePage = () => {
                 <Bush />
                 <Pole />
                 <div className="welcome__text">Welkom bij <span>AZ Sint-Lucas!</span></div>
-                {!isLandscape ? (<div className="rotate__device"><img src="/svgs/rotate_device2.svg" alt="" /></div>) : ""}
+                {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="" /></div>) : ""}
             </div >
         )
     }

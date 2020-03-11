@@ -12,9 +12,12 @@
         margin-top: 50px
         width: $sr-width * 2.6px
         height:  $sr-height * 2.6px
-        background-color: white
+        background-color: $second-color
         border-radius: $br-main
-        border: 6px solid $second-color
+        border: 2px solid $second-color
+        display: flex
+        justify-content: center
+        align-items: center
 
 
 /* For mobile landscape */
@@ -23,10 +26,9 @@
         width: 100%
         height: 100vh
         .content__game
-            margin-top: 30px
-            width: $sr-width * 3.2px
-            height:  $sr-height * 3.2px
-            border: 6px solid $second-color
+            margin-top: 20px
+            width: $sr-width * 4px
+            height:  $sr-height * 4px
 
 
 @media only screen and (min-width: 768px) 
@@ -36,9 +38,9 @@
         height: 100vh
         .content__game
             margin-top: 20px
-            width: $sr-width * 3.2px
-            height:  $sr-height * 3.2px
-            border: 6px solid $second-color
+            width: $sr-width * 4px
+            height:  $sr-height * 4px
+
 
 @media only screen and (min-width: 1024px) 
     /* For desktop or big tablet */
@@ -46,10 +48,10 @@
         width: 100%
         height: 100vh
         .content__game
-            margin-top: 80px
-            width: $sr-width * 6px
-            height:  $sr-height * 6px
-            border: 6px solid $second-color
+            margin-top: 60px
+            width: $sr-width * 8px
+            height:  $sr-height * 8px
+
 
 @media only screen and (min-width: 1920px) 
     /* For desktop or big tablet */
@@ -60,4 +62,3 @@
             margin-top: 80px
             width: $sr-width * 8px
             height:  $sr-height * 8px
-            border: 6px solid $second-color

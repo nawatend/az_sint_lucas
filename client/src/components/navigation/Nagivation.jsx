@@ -5,6 +5,7 @@ import Sound from '../Sound'
 import Logo from '../Logo'
 
 export default function Nagivation() {
+
     return (
         <nav id="nav-main">
             <div className="nav__main">
