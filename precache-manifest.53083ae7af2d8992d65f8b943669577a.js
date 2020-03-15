@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f2fbc457e503801f0df6565716666e04",
+    "revision": "dac9cc607c3958408d336835ff936b02",
     "url": "/az_sint_lucas/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/az_sint_lucas/static/css/2.f2447c18.chunk.css"
   },
   {
-    "revision": "0d8dd69cc3d904751018",
+    "revision": "9750a334e25e1fa9e853",
     "url": "/az_sint_lucas/static/css/main.47689375.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/az_sint_lucas/static/js/2.aa4158a1.chunk.js.LICENSE"
   },
   {
-    "revision": "0d8dd69cc3d904751018",
-    "url": "/az_sint_lucas/static/js/main.0fa262cc.chunk.js"
+    "revision": "9750a334e25e1fa9e853",
+    "url": "/az_sint_lucas/static/js/main.cadef49c.chunk.js"
   },
   {
     "revision": "17f32570131e0632ebf6",
