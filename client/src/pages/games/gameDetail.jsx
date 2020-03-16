@@ -41,7 +41,7 @@ const GameDetailPage = ({ match }) => {
                         <VirusGame />
                     }
                     {gameName === 'watneemikmee' &&
-                        "Hier komt Wat Neem Ik Mee component"
+                        <BagGame />
                     }
                     {gameName === 'memory' &&
                         <MemoryGame />
