@@ -8,13 +8,11 @@ import {
 
 import { FilmsPage, FilmDetailPage, GamesPage, GameDetailPage, HomePage, PersonsPage, PersonDetailPage, ToursPage, TourDetailPage } from '../pages'
 
-
 export default function router() {
     return (
 
         <Router basename={process.env.PUBLIC_URL} >
             <Switch>
-
                 {/* Tours */}
                 <Route path="/rondleiding" exact component={ToursPage} />
                 <Route path="/rondleiding/:roomName" component={TourDetailPage} />
