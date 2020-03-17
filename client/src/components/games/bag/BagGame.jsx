@@ -20,7 +20,7 @@ export default function BagGame() {
           
                 <Bag id="board-1" className="board">               
                 <div className="bag organs">
-                <svg xmlns="http://www.w3.org/2000/svg" width="285.591" height="336.687" viewBox="0 0 285.591 336.687">
+                <svg id="bagsvg" xmlns="http://www.w3.org/2000/svg" width="285.591" height="336.687" viewBox="0 0 285.591 336.687">
   <defs>
     <clipPath id="clip-path">
       <path id="Path_32" data-name="Path 32" d="M-196.553,170.268a23.494,23.494,0,0,1-11.909,5.455c-7.379,1.1-8.645,14.634-19.268,12.734s-31.387,21.766-21.421,26.429,5.013,14.729,16.642,9.276,16.587-20.452,20.251-21.352,12.233-.153,17.591-2.426a79.817,79.817,0,0,1,13.044-3.777Z" fill="none"/>

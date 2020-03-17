@@ -21,59 +21,82 @@
     .playAgain-container
 
 //GAME-CONTAINER
-.memory-game-container 
-    height: 100vh
+
+.game-container
+    height: 80vh
     display: flex
+    align-content:center
+    justify-content: center  
+    align-items: center
 
 .memory-game 
-    width: 640px
-    height: 640px
-    margin: auto
-    display: flex
-    flex-wrap: wrap
-    perspective: 1000px
+  width: 75vw;
+  height: 75vh;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap
+  justify-content: center
+  align-content: center
+  perspective: 1000px;
 
 
 .memory-card 
-    width: 187px
-    height: 187px
-    margin: 5px
-    position: relative
-    transform: scale(1)
-    transform-style: preserve-3d
-    transition: transform .5s
+  justify-content:center
+  height: 25vh
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
 
 
 .memory-card:active 
-    transform: scale(0.97)
-    transition: transform .2s
+  transform: scale(0.97);
+  transition: transform .2s;
 
 
 .memory-card.flip 
-    transform: rotateY(180deg)
+  transform: rotateY(180deg);
+
+.front-face
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 40px;
+  backface-visibility: hidden;
+
+.back-face 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 40px;
+  background-image: url('/svgs/games/memory/back.svg')
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: bottom
+  backface-visibility: hidden;
+
 
 .front-face 
-    width: 100%
+  transform: rotateY(180deg);
+
+#info
+    height: 70vh
+
+#start
+    height: 66.3vh
+
+#finished
+    height: 70vh 
+
+.infoimg
     height: 100%
-    padding: 20px
-    position: absolute
-    border-radius: 5px
-    background: $second-color
-    backface-visibility: hidden
+    width: auto
 
-.front-face 
-    transform: rotateY(180deg)
+.leveltext:hover
+    stroke-width: 2px
+    stroke: red
+    
 
-
-.back-face
-    height: 100%
-    width: 100%
-    border-radius: 5px
-    background-image: url('/svgs/games/memory/back.svg')
-    background-repeat: no-repeat
-    background-size: 100%
-    background-position: bottom
-
-
-.back-face:hover
-    cursor: pointer
+.playAgain-container
+    height: 70vh

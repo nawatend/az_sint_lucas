@@ -30,6 +30,7 @@ function Card (props){
         onDragStart={dragStart}
         onDragOver={dragOver}
         onDragEnd={dragEnd}
+
         >
             {props.children}
         </div>
