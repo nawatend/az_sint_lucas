@@ -46,6 +46,17 @@ const TourDetailPage = ({ match }) => {
 
     }, [loading, tourSpotsRef])
 
+    let hotspot = (hotSpotDiv, args) => {
+        hotSpotDiv.classList.add('custom-tooltip');
+        var span = document.createElement('span');
+        span.innerHTML = args;
+        hotSpotDiv.appendChild(span);
+        span.style.width = span.scrollWidth - 20 + 'px';
+        span.style.marginLeft = -(span.scrollWidth - hotSpotDiv.offsetWidth) / 2 + 'px';
+        span.style.marginTop = -span.scrollHeight - 12 + 'px';
+        console.log(hotSpotDiv)
+    }
+
     return (
         <div className="page">
             Tour Detail => {roomName}
@@ -69,15 +80,25 @@ const TourDetailPage = ({ match }) => {
 
 
                         {Object.keys(infoSpots).map((key, i) => {
-                            return <Pannellum.Hotspot
-                                key={i}
-                                type="info"
-                                pitch={infoSpots[key].pitch}
-                                yaw={infoSpots[key].yaw}
-                                text={infoSpots[key].description}
+                            // return (
+                            //     <Pannellum.Hotspot
+                            //         key={i}
+                            //         type="info"
+                            //         pitch={infoSpots[key].pitch}
+                            //         yaw={infoSpots[key].yaw}
+                            //         text={infoSpots[key].description}
+                            ///>)
 
-                            // URL="https://github.com/farminf"
-                            />
+                            return (
+                                <Pannellum.Hotspot
+                                    key={i}
+                                    type="custom"
+                                    pitch={infoSpots[key].pitch}
+                                    yaw={infoSpots[key].yaw}
+                                    cssClass="custom-hotspot"
+                                    tooltip={hotspot}
+                                    tooltipArg={infoSpots[key].description}
+                                />)
                         })}
 
                     </Pannellum>

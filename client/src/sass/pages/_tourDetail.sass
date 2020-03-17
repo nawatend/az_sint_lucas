@@ -13,6 +13,11 @@
         background-color: white
         border-radius: $br-main
         border: 6px solid $second-color
+        
+
+
+// .pnlm-sprite 
+//     background-image: url(/svgs/tour/vraagteken.svg) !important
 
 
 /* For mobile landscape */
@@ -59,3 +64,42 @@
             width: $sr-width * 8px
             height:  $sr-height * 8px
             border: 6px solid $second-color
+
+
+.custom-hotspot 
+    height: 50px
+    width: 50px
+    background-image: url(/svgs/tour/vraagteken.svg) !important
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+    
+div.custom-tooltip span 
+    visibility: hidden
+    position: absolute
+    border-radius: 3px
+    background-color: #fff
+    border-radius: $br-xs
+    color: #000
+    text-align: center
+    max-width: 200px
+    padding: 5px 10px
+    margin-left: -220px
+    cursor: default
+    font-family: 'laca'
+
+div.custom-tooltip:hover span
+    visibility: visible
+
+div.custom-tooltip:hover span:after
+    content: ''
+    position: absolute
+    width: 0
+    height: 0
+    border-width: 10px
+    border-style: solid
+    border-color: #fff transparent transparent transparent
+    bottom: -20px
+    left: -10px
+    margin: 0 50%
+    
