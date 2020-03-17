@@ -48,7 +48,7 @@ let ToursPage = () => {
                                 <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/mask.svg`} alt="bottom_middle_place" />
                             </div>
                         </Link>
-                        <Link to="/rondleiding/labo" className="content___tour__menu__item">
+                        <Link to="/rondleiding/lab" className="content___tour__menu__item">
                             <img src={`${process.env.PUBLIC_URL}/svgs/tour/bottom_middle_place.svg`} alt="bottom_middle_place" />
                             <div className="menu__item--icon">
                                 <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/lab.svg`} alt="bottom_middle_place" />

@@ -15,7 +15,7 @@ const PersonDetailPage = ({ match }) => {
     let terms = ['lachen', 'hello', 'spannend', 'Noodle', 'opbsadsadeeun', 'kinding']
     let { person, id } = useParams()
 
-    let imagesNames = {
+    let imagesFileName = {
         fotodokter: "photo_doctor_image",
         kinderdokter: "kid_doctor_image",
         ziekenhuisclowns: "clown_image",
@@ -27,7 +27,7 @@ const PersonDetailPage = ({ match }) => {
 
 
     const personRef = db.ref(`/who_is_who/${id}`)
-    const personImageRef = storage.ref().child(`images/${imagesNames[person]}.jpg`)
+    const personImageRef = storage.ref().child(`images/persons/${imagesFileName[person]}.jpg`)
 
     const [isLandscape, setIsLandscape] = useState(true)
     const [imageUrl, setImageUrl] = useState("")
@@ -82,7 +82,6 @@ const PersonDetailPage = ({ match }) => {
             getPersonImage().then(() => {
                 getPersonsInfo()
             })
-
         }
 
 

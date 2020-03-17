@@ -4,11 +4,18 @@ import { Pannellum } from 'pannellum-react'
 import Lucas from '../../components/Lucas'
 import { useParams } from "react-router-dom";
 import Loading from '../../components/Loading'
+//firebase
+import { db, storage } from '../../utils/firebase'
+
 
 const TourDetailPage = ({ match }) => {
 
     let { roomName } = useParams()
+
+    let tourSpotsRef = db.ref(`/rooms/${roomName}`)
     const [isLandscape, setIsLandscape] = useState(true)
+    const [loading, setLoading] = useState(true)
+    const [infoSpots, setInfoSpots] = useState({})
 
     let checkScreen = (media) => {
         if (media.matches) {
@@ -22,17 +29,30 @@ const TourDetailPage = ({ match }) => {
         let media = window.matchMedia("(orientation: landscape)")
         checkScreen(media)
         media.addListener(checkScreen)
-    }, [isLandscape])
+    }, [])
 
     useEffect(() => {
-        console.log(roomName)
-    }, [match, roomName])
+
+        const getTourSpots = () => {
+            tourSpotsRef.once('value', (snapshots) => {
+                setInfoSpots(snapshots.val())
+                setLoading(false)
+            })
+        }
+
+        if (loading) {
+            getTourSpots()
+        }
+
+    }, [loading, tourSpotsRef])
 
     return (
         <div className="page">
             Tour Detail => {roomName}
             <div className="tour__content">
                 <div className="content__image">
+
+
                     <Pannellum
                         width="100%"
                         height="100%"
@@ -43,19 +63,23 @@ const TourDetailPage = ({ match }) => {
                         autoLoad
                         onLoad={() => {
                             console.log("panorama loaded");
-
                         }}
-                        hotspotDebug
+                    // hotspotDebug
                     >
 
 
-                        <Pannellum.Hotspot
-                            type="info"
-                            pitch={-11.36}
-                            yaw={123.957}
-                            text="Info Hotspot Text 3"
-                        // URL="https://github.com/farminf"
-                        />
+                        {Object.keys(infoSpots).map((key, i) => {
+                            return <Pannellum.Hotspot
+                                key={i}
+                                type="info"
+                                pitch={infoSpots[key].pitch}
+                                yaw={infoSpots[key].yaw}
+                                text={infoSpots[key].description}
+
+                            // URL="https://github.com/farminf"
+                            />
+                        })}
+
                     </Pannellum>
                 </div>
             </div>
