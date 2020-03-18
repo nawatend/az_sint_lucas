@@ -16,7 +16,6 @@ export class Memory extends Component {
         percentage: "",
         firstId: "",
     }
-    
     componentDidMount = () => {
         this.createInfo()
     }
@@ -24,8 +23,6 @@ export class Memory extends Component {
         document.querySelector('#info').classList.remove('hide')
         
     }
-
-
     createGameContainer = () => {
         document.querySelector('.memory-game-container ').classList.remove('hide')
         let cardsArray = ['pleister', 'mondmasker', 'ademhulp', 'spuit', 'prinsespleister', 'verband', 'pot', 'baxter', 'haarnet','carspleister','stokje','witpotje']
@@ -40,7 +37,6 @@ export class Memory extends Component {
                 cardsArrayRandom.push(element)
             }
         }
-
         let count = 0;
         let amountCards = this.state.cards / 2
         document.querySelector('.memory-game').innerHTML = "";
@@ -52,7 +48,6 @@ export class Memory extends Component {
                 i = -1;
             }
         }
-
         const cards = document.querySelectorAll('.memory-card');
         cards.forEach(card => {
             let randomPos = Math.floor(Math.random() * this.state.cards);
@@ -78,7 +73,6 @@ export class Memory extends Component {
 
         this.resetBoard();
     }
-
     flipCard = (event) => {
         if (this.state.firstCard === "" || this.state.secondCard === "") {
             let parent = event.target.parentNode;
@@ -101,7 +95,6 @@ export class Memory extends Component {
             }
         }
     }
-
     checkForMatch = () => {
         if (this.state.firstCard.dataset.framework !== this.state.secondCard.dataset.framework) {
             if (this.state.sound === true) {
@@ -136,7 +129,6 @@ export class Memory extends Component {
             }
         }
     }
-
     playAgain = () => {
         document.querySelector('.playAgain-container').classList.add('hide')
         const cards = document.querySelectorAll('.memory-card');
@@ -146,7 +138,6 @@ export class Memory extends Component {
         })
         this.nextInfo();
     }
-
     dontPlayAgain = () => {
         document.querySelector('.playAgain-container').classList.add('hide')
         document.querySelector('.playAgain-container').classList.add('hide');
@@ -154,14 +145,12 @@ export class Memory extends Component {
         cards.forEach(card => card.removeEventListener('click', this.flipCard));
 
     }
-
     resetBoard = () => {
         this.setState({
             firstCard: "",
             secondCard: ""
         })
     }
-
     changeLevel = (e) => {
         let level = e.target.parentNode.dataset.name
         document.querySelector('#start').classList.add('hide')
@@ -248,7 +237,7 @@ export class Memory extends Component {
                 </div>
                 <div className="game-container">
                 <div className="playAgain-container hide">
-                <svg xmlns="http://www.w3.org/2000/svg" width="607" height="624" viewBox="0 0 607 624">
+                <svg id="playagain" class="playagain" xmlns="http://www.w3.org/2000/svg" width="607" height="624" viewBox="0 0 607 624">
                     <g transform="translate(-709 -157)">
                         <g id="background">
                         <g id="Rectangle_126" data-name="Rectangle 126" transform="translate(727 179)" fill="#e24841" stroke="#707070" stroke-width="1">
@@ -268,13 +257,14 @@ export class Memory extends Component {
                             <path id="Path_2213" data-name="Path 2213" d="M586.59-461.146l-28.867-14.319,6.527-4.355a22.858,22.858,0,0,0-6.773-3.555,26.3,26.3,0,0,0-34.091,18.319,26.274,26.274,0,0,0,20.332,32.423,26.425,26.425,0,0,0,29.241-15.1,10.632,10.632,0,0,1,1.511-2.635,6.422,6.422,0,0,1,8.249-1.316,6.442,6.442,0,0,1,2.733,7.9,37.645,37.645,0,0,1-9.3,13.768,38.432,38.432,0,0,1-20.064,10.287,38.381,38.381,0,0,1-31.441-7.691A37.882,37.882,0,0,1,509.883-452.8a38.241,38.241,0,0,1,9.013-31.171,37.676,37.676,0,0,1,24.17-13.426c12.229-1.741,23.034,1.632,32.328,9.786.051.044.111.078.286.2l8.886-5.872C585.246-482.494,585.913-471.89,586.59-461.146Z" transform="translate(-509.444 497.841)" fill="#fff"/>
                         </g>
                         </g>
-                        <g id="stopknop" onClick={() => this.dontPlayAgain()} transform="translate(99)">
+                        <a href="/spelletjes" ><g id="stopknop" onClick={() => this.dontPlayAgain()} transform="translate(99)">
                         <ellipse id="Ellipse_255-2" data-name="Ellipse 255" cx="80" cy="76.5" rx="80" ry="76.5" transform="translate(924 566)" fill="#e24841"/>
                         <g id="Group_806" data-name="Group 806">
                             <line id="Line_7" data-name="Line 7" x2="60" y2="60" transform="translate(974.5 612.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="15"/>
                             <line id="Line_8" data-name="Line 8" x2="60" y2="60" transform="translate(1034.5 612.5) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="15"/>
                         </g>
                         </g>
+                        </a>
                     </g>
                     </svg>
 
