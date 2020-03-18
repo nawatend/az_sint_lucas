@@ -128,13 +128,13 @@ export default function BodyGame() {
 
     if (gameOver) {
         return (
-            <div className="game__container">
+            <div className="game__container" >
 
                 <div className="game__body--body">
-                    <img className="whole__body" src="/svgs/games/lichaam/end_game/body_final.svg" alt="Lichaam met kleed" />
+                    <img className="whole__body" src={`${process.env.PUBLIC_URL}/svgs/games/lichaam/end_game/body_final.svg`} alt="Lichaam met kleed" />
                 </div>
                 <div className="game__body--labels" onClick={() => resetGame()}>
-                    <img className="whole__body--labels" src="/svgs/games/lichaam/end_game/reset_game.svg" alt="Reset Game" />
+                    <img className="whole__body--labels" src={`${process.env.PUBLIC_URL}/svgs/games/lichaam/end_game/reset_game.svg`} alt="Reset Game" />
 
                 </div>
                 <div className="body__info">
@@ -271,7 +271,7 @@ export default function BodyGame() {
                     </svg>
                 </div>
                 <div className="body__info">
-                    <img src="/svgs/games/lichaam/info.svg" alt="Info van Body Game" />
+                    <img src={`${process.env.PUBLIC_URL}/svgs/games/lichaam/info.svg`} alt="Info van Body Game" />
                 </div>
             </div>
         )
