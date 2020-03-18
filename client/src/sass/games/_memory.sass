@@ -5,7 +5,7 @@
     box-sizing: border-box
 
 .hide
-    display: none
+    display: none !important
 
 .speaker-icon
     width: 50px
@@ -21,23 +21,39 @@
     .playAgain-container
 
 //GAME-CONTAINER
+.memory-body-container
+    height: 100%
+    width: 100%
+    display: flex
+    align-content:center
+    justify-content: center  
+    align-items: center
+
+.memory-game-container
+    height: 100%
+    width: 100%
+    display: flex
+    align-content:center
+    justify-content: center  
+    align-items: center
 
 .game-container
-    height: 80vh
+    height: 100%
+    width: 100%
     display: flex
     align-content:center
     justify-content: center  
     align-items: center
 
 .memory-game 
-  width: 75vw;
-  height: 75vh;
-  margin: auto;
-  display: flex;
+  width: 90%
+  height: 90%
+  margin: auto
+  display: flex
   flex-wrap: wrap
   justify-content: center
   align-content: center
-  perspective: 1000px;
+  perspective: 1000px
 
 
 .memory-card 
