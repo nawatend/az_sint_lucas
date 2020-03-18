@@ -47,6 +47,8 @@ const TourDetailPage = ({ match }) => {
     }, [loading, tourSpotsRef])
 
     let hotspot = (hotSpotDiv, args) => {
+
+        hotSpotDiv.setAttribute('style', `background-image: url("${process.env.PUBLIC_URL}/svgs/tour/vraagteken.svg")`)
         hotSpotDiv.classList.add('custom-tooltip');
         var span = document.createElement('span');
         span.innerHTML = args;
@@ -68,14 +70,14 @@ const TourDetailPage = ({ match }) => {
                         width="100%"
                         height="100%"
                         image={`${process.env.PUBLIC_URL}/images/360tours/${roomName}.jpg`}
-                        pitch={10}
-                        yaw={180}
+                        pitch={-0.28}
+                        yaw={-0.839}
                         hfov={110}
                         autoLoad
                         onLoad={() => {
                             console.log("panorama loaded");
                         }}
-                    // hotspotDebug
+                        hotspotDebug
                     >
 
 

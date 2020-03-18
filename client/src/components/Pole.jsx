@@ -9,8 +9,8 @@ export default function Pole() {
             <div className="pole__items">
 
                 <PoleItem title="er" path="/rondleiding/spoed" />
-                <PoleItem title="kids" path="/rondleiding/kindafdeling" />
-                <PoleItem title="lab" path="/rondleiding/labo" />
+                <PoleItem title="kids" path="/rondleiding/kinderafdeling" />
+                <PoleItem title="lab" path="/rondleiding/lab" />
                 <PoleItem title="radio" path="/rondleiding/radiologie" />
             </div>
         </div>
