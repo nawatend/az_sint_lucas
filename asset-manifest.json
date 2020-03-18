@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/az_sint_lucas/static/css/main.39ea8331.chunk.css",
-    "main.js": "/az_sint_lucas/static/js/main.1c6b128b.chunk.js",
-    "main.js.map": "/az_sint_lucas/static/js/main.1c6b128b.chunk.js.map",
+    "main.js": "/az_sint_lucas/static/js/main.5c040fc8.chunk.js",
+    "main.js.map": "/az_sint_lucas/static/js/main.5c040fc8.chunk.js.map",
     "runtime-main.js": "/az_sint_lucas/static/js/runtime-main.3afcc391.js",
     "runtime-main.js.map": "/az_sint_lucas/static/js/runtime-main.3afcc391.js.map",
     "static/css/2.f2447c18.chunk.css": "/az_sint_lucas/static/css/2.f2447c18.chunk.css",
     "static/js/2.03f52e95.chunk.js": "/az_sint_lucas/static/js/2.03f52e95.chunk.js",
     "static/js/2.03f52e95.chunk.js.map": "/az_sint_lucas/static/js/2.03f52e95.chunk.js.map",
     "index.html": "/az_sint_lucas/index.html",
-    "precache-manifest.00d24bec650af72eb6833d4ec640f862.js": "/az_sint_lucas/precache-manifest.00d24bec650af72eb6833d4ec640f862.js",
+    "precache-manifest.1fa5858ddaeef670841ce27c912fbb8c.js": "/az_sint_lucas/precache-manifest.1fa5858ddaeef670841ce27c912fbb8c.js",
     "service-worker.js": "/az_sint_lucas/service-worker.js",
     "static/css/2.f2447c18.chunk.css.map": "/az_sint_lucas/static/css/2.f2447c18.chunk.css.map",
     "static/css/main.39ea8331.chunk.css.map": "/az_sint_lucas/static/css/main.39ea8331.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.f2447c18.chunk.css",
     "static/js/2.03f52e95.chunk.js",
     "static/css/main.39ea8331.chunk.css",
-    "static/js/main.1c6b128b.chunk.js"
+    "static/js/main.5c040fc8.chunk.js"
   ]
 }
