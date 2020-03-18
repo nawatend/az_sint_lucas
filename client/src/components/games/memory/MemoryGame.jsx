@@ -16,7 +16,6 @@ export class Memory extends Component {
         percentage: "",
         firstId: "",
     }
-
     componentDidMount = () => {
         this.createInfo()
     }
@@ -24,8 +23,6 @@ export class Memory extends Component {
         document.querySelector('#info').classList.remove('hide')
 
     }
-
-
     createGameContainer = () => {
         document.querySelector('.memory-game-container ').classList.remove('hide')
         let cardsArray = ['pleister', 'mondmasker', 'ademhulp', 'spuit', 'prinsespleister', 'verband', 'pot', 'baxter', 'haarnet', 'carspleister', 'stokje', 'witpotje']
@@ -40,7 +37,6 @@ export class Memory extends Component {
                 cardsArrayRandom.push(element)
             }
         }
-
         let count = 0;
         let amountCards = this.state.cards / 2
         document.querySelector('.memory-game').innerHTML = "";
@@ -52,7 +48,6 @@ export class Memory extends Component {
                 i = -1;
             }
         }
-
         const cards = document.querySelectorAll('.memory-card');
         cards.forEach(card => {
             let randomPos = Math.floor(Math.random() * this.state.cards);
@@ -78,7 +73,6 @@ export class Memory extends Component {
 
         this.resetBoard();
     }
-
     flipCard = (event) => {
         if (this.state.firstCard === "" || this.state.secondCard === "") {
             let parent = event.target.parentNode;
@@ -101,7 +95,6 @@ export class Memory extends Component {
             }
         }
     }
-
     checkForMatch = () => {
         if (this.state.firstCard.dataset.framework !== this.state.secondCard.dataset.framework) {
             if (this.state.sound === true) {
@@ -136,7 +129,6 @@ export class Memory extends Component {
             }
         }
     }
-
     playAgain = () => {
         document.querySelector('.playAgain-container').classList.add('hide')
         const cards = document.querySelectorAll('.memory-card');
@@ -146,7 +138,6 @@ export class Memory extends Component {
         })
         this.nextInfo();
     }
-
     dontPlayAgain = () => {
         document.querySelector('.playAgain-container').classList.add('hide')
         document.querySelector('.playAgain-container').classList.add('hide');
@@ -154,14 +145,12 @@ export class Memory extends Component {
         cards.forEach(card => card.removeEventListener('click', this.flipCard));
 
     }
-
     resetBoard = () => {
         this.setState({
             firstCard: "",
             secondCard: ""
         })
     }
-
     changeLevel = (e) => {
         let level = e.target.parentNode.dataset.name
         document.querySelector('#start').classList.add('hide')
@@ -281,7 +270,6 @@ export class Memory extends Component {
                     </div>
                     <div id="info" className="hide" >
                         <img className="infoimg" src={`${process.env.PUBLIC_URL}/svgs/games/memory/start.svg`} alt="Reset Game" onClick={() => this.resetGame()} />
-
                     </div>
 
                     <div id="start" className="game__body--labels hide" >
