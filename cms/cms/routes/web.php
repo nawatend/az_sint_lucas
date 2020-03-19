@@ -35,3 +35,4 @@ Route::resource('general','GeneralController')->except(['create', 'destroy']);
 
 Route::resource('tours','ToursController')->except(['create', 'destroy']);
 
+Route::resource('admin','AdminController');
