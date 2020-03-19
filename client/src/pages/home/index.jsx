@@ -41,7 +41,6 @@ let HomePage = () => {
     } else {
         return (
             <div className="page">
-                HOME
                 <Lucas type="HI" />
                 <Hospital />
                 <Bunny />

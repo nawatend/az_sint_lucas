@@ -31,7 +31,6 @@ const FilmDetailPage = ({ match }) => {
 
     return (
         <div className="page">
-            Film Detail => {id}
             <div className="film__content">
                 <div className="content__video">
                     <Vimeo

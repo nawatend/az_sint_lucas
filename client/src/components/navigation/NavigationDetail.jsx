@@ -8,9 +8,10 @@ export default function NagivationDetail({ path, iconName }) {
     return (
         <nav id="nav-detail">
             <div className="nav__detail">
-                <NavItem path={path} iconName={iconName} />
                 <NavItem path="/" iconName="home" />
-                <BackButton path="/" />
+                <NavItem path={path} iconName={iconName} />
+
+
             </div>
             <div className="nav__setting">
                 <Logo />
