@@ -49,17 +49,6 @@
   <div class="col-sm-6">
     <div class="card">
     <div class="card-header">
-    <h5 class="card-title">Spoed</h5>
-    </div>
-      <div class="card-body">
-        <p class="card-text">Edit Spoed attributes</p>
-        <a href="/rooms/spoed" class="btn btn-primary">Take me there</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-    <div class="card-header">
     <h5 class="card-title">Dagziekenhuis</h5>
     </div>
       <div class="card-body">

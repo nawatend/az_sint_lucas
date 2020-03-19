@@ -39,7 +39,7 @@
     <input type="file" name="audio" class="form-control-file" id="exampleFormControlFile1">
   </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-  <button class="btn btn-danger">Cancel</button>
+  <a href="/games" class="btn btn-danger">Cancel </a>
 </form>
 @stop
 

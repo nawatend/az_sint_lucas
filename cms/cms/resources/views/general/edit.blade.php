@@ -14,7 +14,7 @@
            <a href="/home">Home</a>
            </li>
            <li class="breadcrumb-item">
-           <a href="/hometext">General</a>
+           <a href="/general">General</a>
            </li>
            <li class="breadcrumb-item active">
            Edit {{$post['id']}}
@@ -36,7 +36,7 @@
     <input type="file" name="audio" class="form-control-file" id="exampleFormControlFile1">
   </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-  <button class="btn btn-danger">Cancel</button>
+    <a href="/general" class="btn btn-danger">Cancel </a>
 </form>
 @stop
 

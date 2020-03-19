@@ -35,7 +35,7 @@
     <input type="text" name="title" class="form-control" value="{{$post['title']}}">
   </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-  <button class="btn btn-danger">Cancel</button>
+    <a href="/hometext" class="btn btn-danger">Cancel </a>
 </form>
 @stop
 

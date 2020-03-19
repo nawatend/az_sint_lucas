@@ -35,7 +35,7 @@
     <textarea class="form-control" name="description" id="exampleFormControlTextarea1" >{{$post['description']}}</textarea>
   </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-  <button class="btn btn-danger">Cancel</button>
+    <a href="/rooms" class="btn btn-danger">Cancel </a>
 </form>
 @stop
 

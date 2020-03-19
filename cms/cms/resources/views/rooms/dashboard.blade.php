@@ -17,7 +17,7 @@
            <a href="/rooms">Rooms</a>
            </li>
            <li class="breadcrumb-item active">
-           {{$kamer }}
+           {{$kamer}}
            </li>
            </ol>
         </div>
@@ -33,7 +33,7 @@
         <table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
-            <th>id</th>
+            <th>spot</th>
             <th>description</th>
             <th>Actions</th>
             </tr>
@@ -41,7 +41,7 @@
             <tbody>
             @foreach($all_post as $post)
             <tr>
-            <td>{{$post['id']}}</td>
+            <td>{{$post['spot']}}</td>
                 <td>{{$post['description']}}</td>
                 <td>
                 <a class="btn btn-primary" href="/rooms/{{$post['id']}}/edit" role="button">Edit</a>
