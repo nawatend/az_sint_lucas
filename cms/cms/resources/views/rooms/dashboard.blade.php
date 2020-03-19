@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Rooms Dashboard</h1>
+            <h1>{{$kamer ?? 'Rooms'}}  Dashboard</h1>
         </div>
         <div class="col-sm-6">
            <ol class="breadcrumb float-sm-right">
@@ -17,7 +17,7 @@
            <a href="/rooms">Rooms</a>
            </li>
            <li class="breadcrumb-item active">
-           
+           {{$kamer }}
            </li>
            </ol>
         </div>
@@ -33,18 +33,16 @@
         <table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
-            <th>Title</th>
-            <th>Body</th>
-            <th>Image</th>
+            <th>id</th>
+            <th>description</th>
             <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             @foreach($all_post as $post)
             <tr>
-                <td>{{$post['title']}}</td>
+            <td>{{$post['id']}}</td>
                 <td>{{$post['description']}}</td>
-                <td>{{$post['image']}}</td>
                 <td>
                 <a class="btn btn-primary" href="/rooms/{{$post['id']}}/edit" role="button">Edit</a>
                 </td>

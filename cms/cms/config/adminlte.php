@@ -31,7 +31,7 @@ return [
     */
 
     'logo' => 'AZ SINT LUCAS',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'vendor/adminlte/dist/img/az_sint-lucas_gent.jpg',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -142,9 +142,6 @@ return [
 
     'register_url' => 'register',
 
-    'password_reset_url' => 'password/reset',
-
-    'password_email_url' => 'password/email',
 
     /*
     |--------------------------------------------------------------------------
@@ -218,18 +215,7 @@ return [
                     'icon'        => 'far fa-fw fa-file',
                 ],
             ],
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+        ]
     ],
 
     /*

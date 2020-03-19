@@ -63,7 +63,7 @@ class HomeTextController extends Controller
             'title' => $request->get('title'),
         ]); 
 
-        notify()->success('Character updated successfully');
+        notify()->success('Hometext updated successfully');
         return redirect()->route('hometext.index');
     }
 }

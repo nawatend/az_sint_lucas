@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Who is who Dashboard')
+@section('title', 'Home text Dashboard')
 
 @section('content_header')
 <div class="container-fluid">
