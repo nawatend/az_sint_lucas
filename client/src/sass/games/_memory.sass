@@ -18,7 +18,11 @@
     cursor: pointer
 
 //PLAY AGAIN CONTAINER
-    .playAgain-container
+.playAgain-container
+    max-width: 60%
+    svg
+      max-height: 90%
+      max-width: 90%
 
 //GAME-CONTAINER
 .memory-body-container
@@ -96,13 +100,13 @@
   transform: rotateY(180deg);
 
 #info
-    height: 70vh
+    height: 90%
 
 #start
     height: 66.3vh
 
 #finished
-    height: 70vh 
+    height: 90%
 
 .infoimg
     height: 100%
@@ -111,12 +115,25 @@
 .leveltext:hover
     stroke-width: 2px
     stroke: red
-    
-.playAgain-container
-    height: 70vh
-
+  
 #playagain
-    height: 70vh
+    height: 90%
     
 .playagain
   height: 70vh
+
+
+
+@media only screen and (min-width: 0px) and  (max-width: 768px) 
+  .front-face
+    border-radius: 10px
+
+  .back-face 
+    border-radius: 10px
+
+@media only screen and (min-width: 1024px) and  (max-width: 1920px) 
+  .front-face
+    border-radius: 20px
+
+  .back-face 
+    border-radius: 20px

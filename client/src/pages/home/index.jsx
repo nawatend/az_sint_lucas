@@ -7,7 +7,7 @@ import Bunny from '../../components/Bunny'
 import Bush from '../../components/Bush'
 import Pole from '../../components/Pole'
 import Loading from '../../components/Loading'
-
+import Credit from '../../components/Credit'
 //firebase
 import { db } from '../../utils/firebase'
 
@@ -33,7 +33,7 @@ let HomePage = () => {
         media.addListener(checkScreen)
         setLoading(false)
 
-    }, [ isLandscape])
+    }, [isLandscape])
 
 
     if (loading) {
@@ -47,6 +47,7 @@ let HomePage = () => {
                 <Bunny />
                 <Bush />
                 <Pole />
+                <Credit />
                 <div className="welcome__text">Welkom bij <span>AZ Sint-Lucas!</span></div>
                 {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="" /></div>) : ""}
             </div >
