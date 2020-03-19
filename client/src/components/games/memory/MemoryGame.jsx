@@ -257,13 +257,15 @@ export class Memory extends Component {
                                         <path id="Path_2213" data-name="Path 2213" d="M586.59-461.146l-28.867-14.319,6.527-4.355a22.858,22.858,0,0,0-6.773-3.555,26.3,26.3,0,0,0-34.091,18.319,26.274,26.274,0,0,0,20.332,32.423,26.425,26.425,0,0,0,29.241-15.1,10.632,10.632,0,0,1,1.511-2.635,6.422,6.422,0,0,1,8.249-1.316,6.442,6.442,0,0,1,2.733,7.9,37.645,37.645,0,0,1-9.3,13.768,38.432,38.432,0,0,1-20.064,10.287,38.381,38.381,0,0,1-31.441-7.691A37.882,37.882,0,0,1,509.883-452.8a38.241,38.241,0,0,1,9.013-31.171,37.676,37.676,0,0,1,24.17-13.426c12.229-1.741,23.034,1.632,32.328,9.786.051.044.111.078.286.2l8.886-5.872C585.246-482.494,585.913-471.89,586.59-461.146Z" transform="translate(-509.444 497.841)" fill="#fff" />
                                     </g>
                                 </g>
-                                <g id="stopknop" onClick={() => this.dontPlayAgain()} transform="translate(99)">
+                                <Link to="/spelletjes">
+                                <g id="stopknop"  transform="translate(99)">
                                     <ellipse id="Ellipse_255-2" data-name="Ellipse 255" cx="80" cy="76.5" rx="80" ry="76.5" transform="translate(924 566)" fill="#e24841" />
                                     <g id="Group_806" data-name="Group 806">
                                         <line id="Line_7" data-name="Line 7" x2="60" y2="60" transform="translate(974.5 612.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="15" />
                                         <line id="Line_8" data-name="Line 8" x2="60" y2="60" transform="translate(1034.5 612.5) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="15" />
                                     </g>
                                 </g>
+                                </Link>
                             </g>
                         </svg>
 

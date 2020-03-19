@@ -1,3 +1,4 @@
+
 .flexbox 
     display: flex
     justify-content: center
@@ -6,6 +7,7 @@
     margin: 0 auto
     overflow: hidden
     align-items: center
+
 
 .flexbox .board 
     display: flex
@@ -27,12 +29,12 @@
     display: none
 
 .false
-
     -webkit-filter: grayscale(100%)
     -moz-filter: grayscale(100%)
     -o-filter: grayscale(100%)
     -ms-filter: grayscale(100%)
         filter: grayscale(100%)
+    background: rgba(39,62,84,0.82);
 
 .containerfinished
     display: none
@@ -40,11 +42,7 @@
     height: 100%
     display: flex
     justify-content: center
-
-#finished
-    position: absolute
-    z-index: 1
-    display: none
+    align-items: center
 
 #board-1
     margin: 40px
@@ -58,6 +56,12 @@
     margin: 0 auto;
     height: 100%
     width: 100%
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    background-image: url(/svgs/games/lichaam/body_bg.svg) !important
+    border-radius: $br-sm
+    padding: $p-md
 
 .board
     height: 50%
@@ -70,3 +74,15 @@
             height: auto        
 #bagsvg
     height: 50vh
+
+.card:hover
+    transform: scale(1.3)
+
+.selected
+    transform: scale(1.3)
+
+.finishedbagimg
+    height: 80%
+    width: 80%
+    justify-content: center
+    align-items: center

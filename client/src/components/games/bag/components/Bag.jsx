@@ -12,7 +12,7 @@ function Bag (props) {
         card.style.display = 'block';
         
         e.target.appendChild(card);
-        
+        let book = card_id
         if(correct.includes(card.id)){
             console.log('correct')
             let item = 'bag' + card.id
@@ -24,21 +24,23 @@ function Bag (props) {
             card.setAttribute('finished', true)
             checkScore(score)
         }else{
-            console.log('false')
-            const card = document.getElementById(card_id);
-            console.log(card)
-            if(card.id == "dog"){
-                var div = document.getElementById('board-2');
-            }else if(card.id == "tv"){
-                var div = document.getElementById('board-3');
-            }else if(card.id == "skateboard"){
-                var div = document.getElementById('board-4');
-            }
-            card.setAttribute('draggable',false)
-            card.setAttribute('finished',true)
-            card.classList.add("false");
-            card.classList.remove("organs");
-            div.appendChild(card);
+            console.log('no match')
+            const card = document.getElementById(book);
+            const wrong = document.getElementById('wrong' + book)
+                  console.log(card)
+                  if(card.id == "dog"){
+                      var div = document.getElementById('board-2');
+                  }else if(card.id == "tv"){
+                      var div = document.getElementById('board-3');
+                  }else if(card.id == "skateboard"){
+                      var div = document.getElementById('board-4');
+                  }
+                  card.setAttribute('draggable',false)
+                  card.setAttribute('finished',true)
+                  card.classList.remove("organs");
+                  wrong.classList.remove('hide');
+                  div.appendChild(card);
+      
         }
 
     }
