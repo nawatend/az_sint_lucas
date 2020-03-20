@@ -31,7 +31,6 @@ const GameDetailPage = ({ match }) => {
 
     return (
         <div className="page">
-            Game Detail => {gameName}
             <div className="game__content">
                 <div className="content__game">
                     {gameName === 'lichaam' &&

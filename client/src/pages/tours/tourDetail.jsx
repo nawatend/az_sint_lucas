@@ -61,10 +61,8 @@ const TourDetailPage = ({ match }) => {
 
     return (
         <div className="page">
-            Tour Detail => {roomName}
             <div className="tour__content">
                 <div className="content__image">
-
 
                     <Pannellum
                         width="100%"
