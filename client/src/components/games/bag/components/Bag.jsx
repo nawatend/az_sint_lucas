@@ -1,8 +1,8 @@
-import React from 'react'
+import React ,{ useEffect, useState } from 'react';
 
 function Bag (props) {
     const correct = ['sweatshirt','book','brush','towel','socks','phone'];
-    let score = 0;
+    const [score, setScore] = useState(0)
     let finished = false;
     const drop = e => {
         e.preventDefault();
@@ -19,7 +19,7 @@ function Bag (props) {
             console.log(item)
             let bag = document.getElementById(item);
             bag.style.display = "block"
-            score ++
+            setScore(score + 1)
             console.log(score)
             card.setAttribute('finished', true)
             checkScore(score)
@@ -49,12 +49,14 @@ function Bag (props) {
     }
 
     let checkScore = (score) => {
-        if(score == 6){
-            console.log('finished')
+        if(score == 5){
+            setScore(0)
             var game = document.querySelector(".flexbox")
-            var div = document.getElementById('finished')
+            var title = document.querySelector('.title')
+            var div = document.getElementById('finishedbag')
             game.style.display = "none"
-            div.style.display = "block"
+            title.classList.add('hide')
+            div.classList.remove('hide')
             finished = true;
         }
     }
