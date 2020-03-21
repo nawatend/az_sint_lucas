@@ -6,7 +6,7 @@ import {
     Link, useRouteMatch, useParams
 } from "react-router-dom";
 
-import { FilmsPage, FilmDetailPage, GamesPage, GameDetailPage, HomePage, PersonsPage, PersonDetailPage, ToursPage, TourDetailPage } from '../pages'
+import { Error404Page, FilmsPage, FilmDetailPage, GamesPage, GameDetailPage, HomePage, PersonsPage, PersonDetailPage, ToursPage, TourDetailPage } from '../pages'
 
 export default function router() {
     return (
@@ -30,6 +30,9 @@ export default function router() {
                 <Route path="/wieiswie/:id/:person" component={PersonDetailPage} />
 
                 <Route path="/" exact component={HomePage} />
+
+                {/* Non exist url */}
+                <Error404Page path="*" />
             </Switch>
         </Router >
     )

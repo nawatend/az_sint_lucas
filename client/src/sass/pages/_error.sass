@@ -1,0 +1,42 @@
+.return__home
+    position: absolute
+    top: 55%
+    left: 40%
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    .return__home--text
+        font-size: 60px
+        color: $white-color
+/* For mobile landscape */
+@media only screen and (min-width: 600px) 
+    .return__home
+        top: 45%
+        left: 40%
+        .return__home--text
+            font-size: $font-size-md
+
+@media only screen and (min-width: 768px) 
+    /* For tablet landscape */
+    .return__home
+        top: 55%
+        left: 40%
+        .return__home--text
+            font-size: $font-size-xl
+
+@media only screen and (min-width: 1024px) 
+    /* For desktop or big tablet */
+    .return__home
+        top: 55%
+        left: 40%
+        .return__home--text
+            font-size: $font-size-xl
+
+@media only screen and (min-width: 1920px) 
+    /* For desktop or big tablet */
+    .return__home
+        top: 55%
+        left: 40%
+        .return__home--text
+            font-size: $font-size-xl

@@ -7,7 +7,7 @@ import TourDetailPage from './tours/tourDetail'
 import FilmDetailPage from './films/filmDetail'
 import PersonDetailPage from './persons/personDetail'
 import GameDetailPage from './games/gameDetail'
-
+import Error404Page from './error404'
 export {
-    FilmsPage, GamesPage, PersonsPage, ToursPage, HomePage, TourDetailPage, FilmDetailPage, PersonDetailPage, GameDetailPage
+    FilmsPage, GamesPage, PersonsPage, ToursPage, HomePage, TourDetailPage, FilmDetailPage, PersonDetailPage, GameDetailPage, Error404Page
 }
