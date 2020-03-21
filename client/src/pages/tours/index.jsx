@@ -33,42 +33,49 @@ let ToursPage = () => {
                         <Link to="/rondleiding/dagziekenhuis" className="content___tour__menu__item">
                             <img src={process.env.PUBLIC_URL + "/svgs/tour/top_right_place.svg"} alt="bottom_middle_place" />
                             <div className="menu__item--icon">
+                                <div className="menu__item--title">Dagziekenhuis</div>
                                 <img src={process.env.PUBLIC_URL + "/svgs/tour/icons/sun.svg"} alt="bottom_middle_place" />
                             </div>
                         </Link>
                         <Link to="/rondleiding/radiologie" className="content___tour__menu__item">
                             <img src={`${process.env.PUBLIC_URL}/svgs/tour/right_middle_place.svg`} alt="bottom_middle_place" />
                             <div className="menu__item--icon">
+                                <div className="menu__item--title">Radiologie</div>
                                 <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/leg.svg`} alt="bottom_middle_place" />
                             </div>
                         </Link>
                         <Link to="/rondleiding/operatiekamer" className="content___tour__menu__item">
                             <img src={`${process.env.PUBLIC_URL}/svgs/tour/bottom_right_place.svg`} alt="bottom_middle_place" />
                             <div className="menu__item--icon">
+                                <div className="menu__item--title">Operatiekamer</div>
                                 <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/mask.svg`} alt="bottom_middle_place" />
                             </div>
                         </Link>
                         <Link to="/rondleiding/lab" className="content___tour__menu__item">
                             <img src={`${process.env.PUBLIC_URL}/svgs/tour/bottom_middle_place.svg`} alt="bottom_middle_place" />
                             <div className="menu__item--icon">
+                                <div className="menu__item--title">Lab</div>
                                 <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/lab.svg`} alt="bottom_middle_place" />
                             </div>
                         </Link>
                         <Link to="/rondleiding/spoed" className="content___tour__menu__item">
                             <img src={`${process.env.PUBLIC_URL}/svgs/tour/bottom_left_place.svg`} alt="bottom_middle_place" />
                             <div className="menu__item--icon">
+                                <div className="menu__item--title">Spoed</div>
                                 <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/plus.svg`} alt="bottom_middle_place" />
                             </div>
                         </Link>
                         <Link to="/rondleiding/kinderafdeling" className="content___tour__menu__item">
                             <img src={`${process.env.PUBLIC_URL}/svgs/tour/left_middle_place.svg`} alt="bottom_middle_place" />
                             <div className="menu__item--icon">
+                                <div className="menu__item--title">Kinderafdeling</div>
                                 <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/cap.svg`} alt="bottom_middle_place" />
                             </div>
                         </Link>
                         <Link to="/rondleiding/intensievezorg" className="content___tour__menu__item">
                             <img src={`${process.env.PUBLIC_URL}/svgs/tour/top_left_place.svg`} alt="bottom_middle_place" />
                             <div className="menu__item--icon">
+                                <div className="menu__item--title">Intensievezorg</div>
                                 <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/heart.svg`} alt="bottom_middle_place" />
                             </div>
                         </Link>

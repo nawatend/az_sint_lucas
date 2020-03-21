@@ -75,7 +75,7 @@ const TourDetailPage = ({ match }) => {
                         onLoad={() => {
                             console.log("panorama loaded");
                         }}
-                    //hotspotDebug
+                        hotspotDebug
                     >
 
 

@@ -11,8 +11,6 @@ import { db, storage } from '../../utils/firebase'
 
 const PersonDetailPage = ({ match }) => {
 
-
-    let terms = ['lachen', 'hello', 'spannend', 'Noodle', 'opbsadsadeeun', 'kinding']
     let { person, id } = useParams()
 
     let imagesFileName = {
@@ -22,13 +20,11 @@ const PersonDetailPage = ({ match }) => {
         slaapdokter: "sleep_doctor_image",
         verpleegkundige: "nurse_image",
         spelbegeleider: "game_leader_image",
-        kiderpsycholoog: "kid_psychology_image"
+        kinderpsycholoog: "kid_psychology_image"
     }
-
 
     const personRef = db.ref(`/who_is_who/${id}`)
     const personImageRef = storage.ref().child(`images/persons/${imagesFileName[person]}.jpg`)
-
     const [isLandscape, setIsLandscape] = useState(true)
     const [imageUrl, setImageUrl] = useState("")
     const [personInfo, setPersonInfo] = useState({
@@ -37,7 +33,9 @@ const PersonDetailPage = ({ match }) => {
         'id': 0,
         'image': "unnamed.jpg",
         'title': "testdokter",
+        'tags': "tag1,tag2"
     })
+    const [tags, setTags] = useState([])
     const [loading, setLoading] = useState(true)
 
     let checkScreen = (media) => {
@@ -71,6 +69,7 @@ const PersonDetailPage = ({ match }) => {
                 return data
             }).then((data) => {
                 setPersonInfo(data.val())
+                setTags(data.val().tags.split(','))
                 setLoading(false)
             });
         }
@@ -125,8 +124,8 @@ const PersonDetailPage = ({ match }) => {
                                         height: '100%'
                                     }}>
 
-                                    {terms.map((term, i) => (
-                                        <div key={terms + i} className={(i % 2 === 0) ? "cloud__word--l" : "cloud__word--s"}>{term}</div>
+                                    {tags.map((tag, i) => (
+                                        <div key={tags + i} className={(i % 2 === 0) ? "cloud__word--l" : "cloud__word--s"}>{tag}</div>
                                     ))}
 
                                 </TagCloud>
