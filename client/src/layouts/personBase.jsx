@@ -6,7 +6,7 @@ const PersonLayout = (Page) => {
 
     return () => (
         <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
-            <NavigationDetail path="/wieiswie" iconName="persons" />
+            <NavigationDetail path="/wieiswie" iconName="who" />
             <main className="container">
                 <Page />
             </main>

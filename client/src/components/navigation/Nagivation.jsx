@@ -9,9 +9,9 @@ export default function Nagivation() {
     return (
         <nav id="nav-main">
             <div className="nav__main">
-                <NavItem path="/rondleiding" iconName="tours" title="rondleiding" />
+                <NavItem path="/rondleiding" iconName="tour" title="rondleiding" />
                 <NavItem path="/spelletjes" iconName="games" title="spelletjes" />
-                <NavItem path="/wieiswie" iconName="persons" title="wie is wie?" />
+                <NavItem path="/wieiswie" iconName="who" title="wie is wie?" />
                 <NavItem path="/filmpjes" iconName="films" title="filmpjes" />
             </div>
             <div className="nav__setting">

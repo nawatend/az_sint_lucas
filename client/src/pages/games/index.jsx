@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import NavigationDetail from '../../components/navigation/NavigationDetail'
 import Loading from '../../components/Loading'
+import { checkSound } from '../../utils/SoundControl'
 
 let GamesPage = () => {
+    let audios = ["games"]
 
     const [isLandscape, setIsLandscape] = useState(true)
 
@@ -21,27 +23,30 @@ let GamesPage = () => {
         media.addListener(checkScreen)
     }, [isLandscape])
 
+
     return (
         <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
             <NavigationDetail path="/spelletjes" iconName="games" />
+            <audio id={`audio__${audios[0]}`} autoPlay src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${audios[0]}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`} type="audio/mpeg" ></audio>
+
             <main className="page">
                 <div className="games__content">
                     <div className="content__game__menu">
                         <Link to="/spelletjes/memory" className="content__game__menu__item">
                             <div className="game__title">memory</div>
-                            <div id="hand-memory" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_memory.svg`} alt=""  /></div>
+                            <div id="hand-memory" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_memory.svg`} alt="" /></div>
                         </Link>
                         <Link to="/spelletjes/virusspel" className="content__game__menu__item">
                             <div className="game__title">virusspel</div>
-                            <div id="hand-virus" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_virus.svg`} alt=""  /></div>
+                            <div id="hand-virus" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_virus.svg`} alt="" /></div>
                         </Link>
                         <Link to="/spelletjes/watneemikmee" className="content__game__menu__item">
                             <div className="game__title">wat neem ik mee</div>
-                            <div id="hand-list" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_list.svg`} alt=""  /></div>
+                            <div id="hand-list" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_list.svg`} alt="" /></div>
                         </Link>
                         <Link to="/spelletjes/lichaam" className="content__game__menu__item">
                             <div className="game__title">het lichaam</div>
-                            <div id="hand-body" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_body.svg`} alt=""  /></div>
+                            <div id="hand-body" className="game__hand"><img src={`${process.env.PUBLIC_URL}/svgs/games/hand_body.svg`} alt="" /></div>
                         </Link>
                     </div>
                 </div>

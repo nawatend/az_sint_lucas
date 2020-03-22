@@ -9,7 +9,7 @@ import { db, storage } from '../../utils/firebase'
 
 let PersonsPage = () => {
 
-
+    let audios = ["who"]
     let personsRef = db.ref('/who_is_who')
     let persons = []
 
@@ -60,14 +60,16 @@ let PersonsPage = () => {
             getPersonsInfo()
         }
 
-    }, [ loading, persons, personsImage, personsRef])
+    }, [loading, persons, personsImage, personsRef])
 
     if (loading) {
         return (<Loading />)
     } else {
         return (
             <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
-                <NavigationDetail path="/wieiswie" iconName="persons" />
+                <NavigationDetail path="/wieiswie" iconName="who" />
+                <audio id={`audio__${audios[0]}`} autoPlay src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${audios[0]}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`} type="audio/mpeg" ></audio>
+
                 <main className="page">
                     <div className="persons__content">
 

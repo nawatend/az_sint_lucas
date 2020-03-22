@@ -6,7 +6,7 @@ import NavigationDetail from '../components/navigation/NavigationDetail'
 const TourLayout = (Page) => {
     return () => (
         <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>
-            <NavigationDetail path="/rondleiding" iconName="tours" />
+            <NavigationDetail path="/rondleiding" iconName="tour" />
             <main className="container">
                 <Page />
 

@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import NavigationDetail from '../components/navigation/NavigationDetail'
-import { Link } from 'react-router-dom'
-import Loading from '../components/Loading'
-
 import NavItem from '../components/navigation/NavItem'
 
 let Error404Page = () => {

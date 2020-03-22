@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { checkSound } from '../../../utils/SoundControl'
 
 export default function BodyGame() {
     // TODO
@@ -147,6 +148,7 @@ export default function BodyGame() {
         return (
             <div className="game__container">
                 <div className="game__body--body">
+                    
                     <svg className="whole__body" xmlns="http://www.w3.org/2000/svg" width="330.576" height="876.548" viewBox="0 0 330.576 876.548">
                         <g transform="translate(-286.535 -142.452)"><ellipse cx="81.5" cy="29.5" rx="81.5" ry="29.5" transform="translate(371 960)" fill="#205455" />
                             {/* body */}

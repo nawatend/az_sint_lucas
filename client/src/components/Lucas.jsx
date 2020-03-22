@@ -3,6 +3,7 @@ import fitty from 'fitty'
 export default function Lucas({ type, title = "" }) {
 
 
+    let audios = ["lucas_hi"]
     useEffect(() => {
         let fitties = fitty('.lucas__title--title', {
             minSize: 4,
@@ -15,11 +16,19 @@ export default function Lucas({ type, title = "" }) {
         });
     }, [])
 
+    let handleOnClick = (e) => {
+        document.getElementById("lucas__wave").classList.toggle("wave")
+        let currentSound = document.getElementById(`audio__${audios[0]}`)
+
+        currentSound.play()
+    }
     switch (type) {
         case "HI":
             return (
-                <div className={`lucas__${type}`}>
-                    <img src={`${process.env.PUBLIC_URL}/svgs/lucas/lucas_hi.svg`} alt="Lucas Hi Svg" />
+                <div onClick={(e) => handleOnClick(e)} data-audio="lucas_hi" className={`lucas__${type}`}>
+                    <audio id={`audio__${audios[0]}`} src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${audios[0]}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`} type="audio/mpeg" ></audio>
+                    <img id="lucas__wave" className={`lucas__${type}--hand`} src={`${process.env.PUBLIC_URL}/svgs/lucas/lucas_hand.svg`} alt="Lucas Hi Hand Svg" />
+                    <img src={`${process.env.PUBLIC_URL}/svgs/lucas/lucas_hi2.svg`} alt="Lucas Hi Svg" />
                 </div>
             )
 
