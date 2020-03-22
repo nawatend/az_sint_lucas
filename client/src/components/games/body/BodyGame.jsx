@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { checkSound } from '../../../utils/SoundControl'
 
 export default function BodyGame() {
+
+
+    let audios = ["play_again"]
+
     // TODO
     // order of className elements are importants, organs and labels should be in same order,
     // if first element of same className of organs is heart, then first element of labels element should be heart
     // in our case stomach, small intestine, large intestine, lungs, heart, liver and kidney
     const [clickCount, setClickCount] = useState(0)
-    const [gameOver, setGameOver] = useState(false)
+    const [gameOver, setGameOver] = useState(true)
 
     const [labelSelected, setLabelSelected] = useState()
     const [organSelected, setOrganSelected] = useState()
@@ -49,6 +53,12 @@ export default function BodyGame() {
 
             } else {
                 console.log("WE HAVE MISSED")
+                let missedIcon = document.getElementById("game__missed")
+                missedIcon.classList.add("visible")
+
+                setInterval(() => {
+                    missedIcon.classList.remove("visible")
+                }, 1000);
 
                 Array.from(organsLabels).forEach(function (organ) {
                     organ.classList.remove('white__stroke')
@@ -96,6 +106,13 @@ export default function BodyGame() {
             } else {
                 console.log("WE HAVE MISSED")
 
+                let missedIcon = document.getElementById("game__missed")
+                missedIcon.classList.add("visible")
+
+                setInterval(() => {
+                    missedIcon.classList.remove("visible")
+                }, 1000);
+
                 Array.from(organsLabels).forEach(function (organ) {
                     organ.classList.remove('white__stroke')
                 })
@@ -130,7 +147,12 @@ export default function BodyGame() {
     if (gameOver) {
         return (
             <div className="game__container" >
-
+                <audio
+                    id={`audio__${audios[0]}`}
+                    autoPlay
+                    src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${audios[0]}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`}
+                    type="audio/mpeg" >
+                </audio>
                 <div className="game__body--body">
                     <img className="whole__body" src={`${process.env.PUBLIC_URL}/svgs/games/lichaam/end_game/body_final.svg`} alt="Lichaam met kleed" />
                 </div>
@@ -148,7 +170,10 @@ export default function BodyGame() {
         return (
             <div className="game__container">
                 <div className="game__body--body">
-                    
+                    <div id="game__missed" className="game__missed">
+                        <img src={`${process.env.PUBLIC_URL}/svgs/games/missed.svg`} alt="Missed Icon" />
+
+                    </div>
                     <svg className="whole__body" xmlns="http://www.w3.org/2000/svg" width="330.576" height="876.548" viewBox="0 0 330.576 876.548">
                         <g transform="translate(-286.535 -142.452)"><ellipse cx="81.5" cy="29.5" rx="81.5" ry="29.5" transform="translate(371 960)" fill="#205455" />
                             {/* body */}

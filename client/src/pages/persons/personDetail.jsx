@@ -13,6 +13,7 @@ const PersonDetailPage = ({ match }) => {
 
     let { person, id } = useParams()
 
+    //key based on url params, value is based on filename in firebase
     let imagesFileName = {
         fotodokter: "photo_doctor_image",
         kinderdokter: "kid_doctor_image",
@@ -28,7 +29,8 @@ const PersonDetailPage = ({ match }) => {
     const [isLandscape, setIsLandscape] = useState(true)
     const [imageUrl, setImageUrl] = useState("")
     const [personInfo, setPersonInfo] = useState({
-        'audio': "test.mp3",
+        'audio': "test4.mp3",
+        'audio-tags': "test4.mp3",
         'description': "Geen Description",
         'id': 0,
         'image': "unnamed.jpg",
@@ -90,6 +92,14 @@ const PersonDetailPage = ({ match }) => {
         console.log(person)
     }, [match, person])
 
+    let playSound = (e) => {
+
+        let currentSound = document.getElementById(`audio__${e.target.dataset.audio}`)
+        if (currentSound) {
+            currentSound.play()
+        }
+    }
+
 
     if (loading) {
         return (<Loading />)
@@ -99,6 +109,18 @@ const PersonDetailPage = ({ match }) => {
 
                 <div className="person__content__detail">
                     <div className="content__person__detail">
+                        <audio id={`audio__${personInfo.audio}`}
+                            autoPlay
+                            src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${personInfo.audio}?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`}
+                            type="audio/mpeg" >
+                        </audio>
+
+                        {/* audio for tags */}
+                        <audio id={`audio__${personInfo["audio-tags"]}`}
+                            src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${personInfo["audio-tags"]}?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`}
+                            type="audio/mpeg" >
+                        </audio>
+
                         <div className="person__detail__image" style={{ backgroundImage: `url(${imageUrl})` }}>
                         </div>
                         <div className="person__detail__text">
@@ -114,6 +136,7 @@ const PersonDetailPage = ({ match }) => {
                             <img src={`${process.env.PUBLIC_URL}/svgs/person/mind_terms.svg`} alt="Thinking bubble main" />
                             <div className="mind__terms--text">
                                 <TagCloud
+                                    onMouseEnter={(e) => playSound(e)} onTouchStart={(e) => playSound(e)} data-audio={personInfo["audio-tags"]}
                                     style={{
                                         fontFamily: 'Laca',
                                         fontWeight: 'bold',

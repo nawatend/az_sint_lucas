@@ -12,6 +12,18 @@ const TourDetailPage = ({ match }) => {
 
     let { roomName } = useParams()
 
+    //key based on url params, value is based on filename in firebase
+    let audiosFileName = {
+        intensievezorg: "intensive_care",
+        kinderafdeling: "kids_section",
+        spoed: "emergency",
+        lab: "lab",
+        dagziekenhuis: "day_care",
+        operatie: "operation",
+        radiologie: "radiology"
+    }
+
+    let audios = [audiosFileName[roomName]]
     let tourSpotsRef = db.ref(`/rooms/${roomName}`)
     const [isLandscape, setIsLandscape] = useState(true)
     const [loading, setLoading] = useState(true)
@@ -47,7 +59,6 @@ const TourDetailPage = ({ match }) => {
     }, [loading, tourSpotsRef])
 
     let hotspot = (hotSpotDiv, args) => {
-
         hotSpotDiv.setAttribute('style', `background-image: url("${process.env.PUBLIC_URL}/svgs/tour/vraagteken.svg")`)
         hotSpotDiv.classList.add('custom-tooltip');
         var span = document.createElement('span');
@@ -56,14 +67,18 @@ const TourDetailPage = ({ match }) => {
         span.style.width = span.scrollWidth - 20 + 'px';
         span.style.marginLeft = -(span.scrollWidth - hotSpotDiv.offsetWidth) / 2 + 'px';
         span.style.marginTop = -span.scrollHeight - 12 + 'px';
-        console.log(hotSpotDiv)
     }
 
     return (
         <div className="page">
             <div className="tour__content">
                 <div className="content__image">
-
+                    <audio
+                        id={`audio__${audios[0]}`}
+                        autoPlay
+                        src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${audios[0]}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`}
+                        type="audio/mpeg" >
+                    </audio>
                     <Pannellum
                         width="100%"
                         height="100%"

@@ -16,6 +16,7 @@ export class Memory extends Component {
         percentage: "",
         firstId: "",
     }
+
     componentDidMount = () => {
         this.createInfo()
     }
@@ -221,9 +222,23 @@ export class Memory extends Component {
         document.querySelector('#start').classList.add('hide')
         this.changeLevel()
     }
+
+    playSound = (e) => {
+
+        let currentSound = document.getElementById(`audio__${e.target.dataset.audio}`)
+        if (currentSound) {
+            currentSound.play()
+            console.log(e.target)
+        }
+    }
+
     render() {
+        let audios = ["easy", "normal", "hard"]
         return (
-            <div class="memory-body-container">
+            <div className="memory-body-container">
+                <audio id={`audio__${audios[0]}`} src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${audios[0]}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`} type="audio/mpeg" ></audio>
+                <audio id={`audio__${audios[1]}`} src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${audios[1]}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`} type="audio/mpeg" ></audio>
+                <audio id={`audio__${audios[2]}`} src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${audios[2]}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`} type="audio/mpeg" ></audio>
 
                 <div className="navbar hide">
                     <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
@@ -240,16 +255,16 @@ export class Memory extends Component {
                         <svg xmlns="http://www.w3.org/2000/svg" width="607" height="624" viewBox="0 0 607 624">
                             <g transform="translate(-709 -157)">
                                 <g id="background">
-                                    <g id="Rectangle_126" data-name="Rectangle 126" transform="translate(727 179)" fill="#e24841" stroke="#707070" stroke-width="1">
+                                    <g id="Rectangle_126" data-name="Rectangle 126" transform="translate(727 179)" fill="#e24841" stroke="#707070" strokeWidth="1">
                                         <rect width="589" height="602" rx="107" stroke="none" />
                                         <rect x="0.5" y="0.5" width="588" height="601" rx="106.5" fill="none" />
                                     </g>
-                                    <g id="Rectangle_125" data-name="Rectangle 125" transform="translate(709 157)" fill="#fff" stroke="#707070" stroke-width="1">
+                                    <g id="Rectangle_125" data-name="Rectangle 125" transform="translate(709 157)" fill="#fff" stroke="#707070" strokeWidth="1">
                                         <rect width="589" height="602" rx="107" stroke="none" />
                                         <rect x="0.5" y="0.5" width="588" height="601" rx="106.5" fill="none" />
                                     </g>
-                                    <text id="Het_is_gelukt_" data-name="Het is gelukt!" transform="translate(780 186)" fill="#00b2a1" font-size="100" font-family="Laca-Bold, Laca" font-weight="700"><tspan x="95.95" y="93">Het is </tspan><tspan x="68.6" y="211">gelukt!</tspan></text>
-                                    <text id="speel_opnieuw" data-name="speel opnieuw" transform="translate(1004 511)" fill="#307d7e" font-size="60" font-family="Laca-Medium, Laca" font-weight="500"><tspan x="-179.94" y="0">speel opnieuw</tspan></text>
+                                    <text id="Het_is_gelukt_" data-name="Het is gelukt!" transform="translate(780 186)" fill="#00b2a1" fontSize="100" fontFamily="Laca-Bold, Laca" fontWeight="700"><tspan x="95.95" y="93">Het is </tspan><tspan x="68.6" y="211">gelukt!</tspan></text>
+                                    <text id="speel_opnieuw" data-name="speel opnieuw" transform="translate(1004 511)" fill="#307d7e" fontSize="60" fontFamily="Laca-Medium, Laca" fontWeight="500"><tspan x="-179.94" y="0">speel opnieuw</tspan></text>
                                 </g>
                                 <g id="knop" onClick={() => this.playAgain()} transform="translate(-103)">
                                     <ellipse id="Ellipse_255" data-name="Ellipse 255" cx="80" cy="76.5" rx="80" ry="76.5" transform="translate(924 566)" fill="#1b9a82" />
@@ -258,13 +273,13 @@ export class Memory extends Component {
                                     </g>
                                 </g>
                                 <Link to="/spelletjes">
-                                <g id="stopknop"  transform="translate(99)">
-                                    <ellipse id="Ellipse_255-2" data-name="Ellipse 255" cx="80" cy="76.5" rx="80" ry="76.5" transform="translate(924 566)" fill="#e24841" />
-                                    <g id="Group_806" data-name="Group 806">
-                                        <line id="Line_7" data-name="Line 7" x2="60" y2="60" transform="translate(974.5 612.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="15" />
-                                        <line id="Line_8" data-name="Line 8" x2="60" y2="60" transform="translate(1034.5 612.5) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="15" />
+                                    <g id="stopknop" transform="translate(99)">
+                                        <ellipse id="Ellipse_255-2" data-name="Ellipse 255" cx="80" cy="76.5" rx="80" ry="76.5" transform="translate(924 566)" fill="#e24841" />
+                                        <g id="Group_806" data-name="Group 806">
+                                            <line id="Line_7" data-name="Line 7" x2="60" y2="60" transform="translate(974.5 612.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="15" />
+                                            <line id="Line_8" data-name="Line 8" x2="60" y2="60" transform="translate(1034.5 612.5) rotate(90)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="15" />
+                                        </g>
                                     </g>
-                                </g>
                                 </Link>
                             </g>
                         </svg>
@@ -280,33 +295,36 @@ export class Memory extends Component {
                                 <g id="background">
                                     <rect id="Rectangle_124" data-name="Rectangle 124" width="1318.785" height="749.282" rx="74.98" transform="translate(383.438 244.22)" fill="#e54c43" />
                                     <rect id="Rectangle_123" data-name="Rectangle 123" width="1318.785" height="749.282" rx="74.98" transform="translate(347.438 219.22)" fill="#ffd45c" />
-                                    <text id="Kies_de_moeilijkheidsgraad:" data-name="Kies de moeilijkheidsgraad:" transform="translate(1017 325)" fill="#1b9a82" font-size="65" font-family="Laca-Bold, Laca" font-weight="700"><tspan x="-389.87" y="0">Kies de moeilijkheidsgraad:</tspan></text>
+                                    <text id="Kies_de_moeilijkheidsgraad:" data-name="Kies de moeilijkheidsgraad:" transform="translate(1017 325)" fill="#1b9a82" fontSize="65" fontFamily="Laca-Bold, Laca" fontWeight="700"><tspan x="-389.87" y="0">Kies de moeilijkheidsgraad:</tspan></text>
                                 </g>
-                                <g id="Group_836" className="leveltext" data-organ="makkelijk" onClick={(e) => this.changeLevel(e)} data-name="Group 836" transform="translate(0 -27)">
-                                    <g id="makkelijk" data-name="makkelijk" onClick={(e) => this.changeLevel(e)} >
-                                        <text id="_Makkelijk_2-5j_" data-name="makkelijk" transform="translate(1007 431)" fill="#fff" font-size="72" font-family="Laca-Bold, Laca" font-weight="700"><tspan x="0" y="0"></tspan><tspan x="-253.296" y="86">Makkelijk (2-5j)</tspan><tspan x="0" y="172"></tspan></text>
+                                <g onMouseEnter={(e) => this.playSound(e)} onTouchStart={(e) => this.playSound(e)} data-audio={audios[0]} id="Group_836" className="leveltext" data-organ="makkelijk" onClick={(e) => this.changeLevel(e)} data-name="Group 836" transform="translate(0 -27)">
+                                    <g data-audio={audios[0]} id="makkelijk" data-name="makkelijk" onClick={(e) => this.changeLevel(e)} >
+                                        <text data-audio={audios[0]} id="_Makkelijk_2-5j_" data-name="makkelijk" transform="translate(1007 431)" fill="#fff" fontSize="72" fontFamily="Laca-Bold, Laca" fontWeight="700">
+                                            <tspan data-audio={audios[0]} x="-253.296" y="86">Makkelijk (2-5j)</tspan><tspan x="0" y="172"></tspan></text>
                                     </g>
-                                    <g id="Rectangle_201" data-name="Rectangle 201" transform="translate(656 408)" fill="none" stroke="#ffbc00" stroke-width="1">
-                                        <rect width="702" height="170" rx="30" stroke="none" />
-                                        <rect x="0.5" y="0.5" width="701" height="169" rx="29.5" fill="none" />
-                                    </g>
-                                </g>
-                                <g id="Group_834" className="leveltext" data-name="Group 834" onClick={(e) => this.changeLevel(e)} transform="translate(0 -27)">
-                                    <g id="standard" transform="translate(0 46)">
-                                        <text id="standard" data-name="standard" transform="translate(1007 659)" fill="#fff" font-size="72" font-family="Laca-Bold, Laca" font-weight="700"><tspan x="-277.02" y="0">Gemiddeld (6-8j)</tspan></text>
-                                    </g>
-                                    <g id="Rectangle_202" data-name="Rectangle 202" transform="translate(656 596)" fill="none" stroke="#ffbc00" stroke-width="1">
-                                        <rect width="702" height="170" rx="30" stroke="none" />
-                                        <rect x="0.5" y="0.5" width="701" height="169" rx="29.5" fill="none" />
+                                    <g data-audio={audios[0]} id="Rectangle_201" data-name="Rectangle 201" transform="translate(656 408)" fill="none" stroke="#ffbc00" strokeWidth="1">
+                                        <rect data-audio={audios[0]} width="702" height="170" rx="30" stroke="none" />
+                                        <rect data-audio={audios[0]} x="0.5" y="0.5" width="701" height="169" rx="29.5" fill="none" />
                                     </g>
                                 </g>
-                                <g id="Group_835" className="leveltext" onClick={(e) => this.changeLevel(e)} data-name="Group 835" transform="translate(0 -27)">
-                                    <g id="moeilijk" transform="translate(0 73)">
-                                        <text id="Moeilijk_8-15j_" data-name="moeilijk" transform="translate(1007 813)" fill="#fff" font-size="72" font-family="Laca-Bold, Laca" font-weight="700"><tspan x="-243" y="0">Moeilijk (8-15j)</tspan></text>
+                                <g onMouseEnter={(e) => this.playSound(e)} onTouchStart={(e) => this.playSound(e)} data-audio={audios[1]} id="Group_834" className="leveltext" data-name="Group 834" onClick={(e) => this.changeLevel(e)} transform="translate(0 -27)">
+                                    <g data-audio={audios[1]} id="standard" transform="translate(0 46)">
+                                        <text data-audio={audios[1]} id="standard" data-name="standard" transform="translate(1007 659)" fill="#fff" fontSize="72" fontFamily="Laca-Bold, Laca" fontWeight="700">
+                                            <tspan data-audio={audios[1]} x="-277.02" y="0">Normaal (6-8j)</tspan></text>
                                     </g>
-                                    <g id="Rectangle_203" data-name="Rectangle 203" transform="translate(656 777)" fill="none" stroke="#ffbc00" stroke-width="1">
-                                        <rect width="702" height="170" rx="30" stroke="none" />
-                                        <rect x="0.5" y="0.5" width="701" height="169" rx="29.5" fill="none" />
+                                    <g data-audio={audios[1]} id="Rectangle_202" data-name="Rectangle 202" transform="translate(656 596)" fill="none" stroke="#ffbc00" strokeWidth="1">
+                                        <rect data-audio={audios[1]} width="702" height="170" rx="30" stroke="none" />
+                                        <rect data-audio={audios[1]} x="0.5" y="0.5" width="701" height="169" rx="29.5" fill="none" />
+                                    </g>
+                                </g>
+                                <g onMouseEnter={(e) => this.playSound(e)} onTouchStart={(e) => this.playSound(e)} data-audio={audios[2]} id="Group_835" className="leveltext" onClick={(e) => this.changeLevel(e)} data-name="Group 835" transform="translate(0 -27)">
+                                    <g data-audio={audios[2]} id="moeilijk" transform="translate(0 73)">
+                                        <text data-audio={audios[2]} id="Moeilijk_8-15j_" data-name="moeilijk" transform="translate(1007 813)" fill="#fff" fontSize="72" fontFamily="Laca-Bold, Laca" fontWeight="700">
+                                            <tspan data-audio={audios[2]} x="-243" y="0">Moeilijk (8-15j)</tspan></text>
+                                    </g>
+                                    <g data-audio={audios[2]} id="Rectangle_203" data-name="Rectangle 203" transform="translate(656 777)" fill="none" stroke="#ffbc00" strokeWidth="1">
+                                        <rect data-audio={audios[2]} width="702" height="170" rx="30" stroke="none" />
+                                        <rect data-audio={audios[2]} x="0.5" y="0.5" width="701" height="169" rx="29.5" fill="none" />
                                     </g>
                                 </g>
                             </g>
@@ -329,7 +347,6 @@ export class Memory extends Component {
                 <audio id="explain-the-game">
                     <source src="/sound/memory/memory.mp3" type="audio/ogg" />
                 </audio>
-
             </div>
         )
     }

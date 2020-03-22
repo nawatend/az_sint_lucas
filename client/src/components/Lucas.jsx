@@ -47,9 +47,6 @@ export default function Lucas({ type, title = "" }) {
                         <div className="lucas__title--title">
                             {title}
                         </div>
-
-
-
                     </div>
                 </div>
             )
@@ -60,8 +57,7 @@ export default function Lucas({ type, title = "" }) {
                     <img src={`${process.env.PUBLIC_URL}/svgs/lucas/lucas_bye.svg`} alt="Lucas Hi Svg" />
                 </div>
             )
-
-
+            
         default:
             return (
                 <div className={`lucas__${type}`}>
