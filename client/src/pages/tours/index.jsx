@@ -5,7 +5,18 @@ import Loading from '../../components/Loading'
 
 let ToursPage = () => {
 
-    let audios = ["tour"]
+    let audios = ["tour", "intensive_care", "kids_section", "emergency", "lab", "day_care", "operation", "radiology"]
+
+    let audiosFileName = {
+        intensievezorg: "intensive_care",
+        kinderafdeling: "kids_section",
+        spoed: "emergency",
+        lab: "lab",
+        dagziekenhuis: "day_care",
+        operatie: "operation",
+        radiologie: "radiology"
+    }
+
     const [isLandscape, setIsLandscape] = useState(true)
 
     let checkScreen = (media) => {
@@ -21,7 +32,58 @@ let ToursPage = () => {
         checkScreen(media)
         media.addListener(checkScreen)
     }, [isLandscape])
+    let playSound = (e) => {
 
+        let currentSound = document.getElementById(`audio__${e.target.dataset.audio}`)
+        if (currentSound) {
+            currentSound.play()
+        }
+    }
+    let tours = [
+        {
+            name: "dagziekenhuis",
+            placeSvg: "top_right_place.svg",
+            nameIcon: "sun.svg",
+            audio: "day_care"
+        },
+        {
+            name: "radiologie",
+            placeSvg: "right_middle_place.svg",
+            nameIcon: "leg.svg",
+            audio: "radiology"
+        },
+        {
+            name: "operatiekamer",
+            placeSvg: "bottom_right_place.svg",
+            nameIcon: "mask.svg",
+            audio: "operation"
+        },
+        {
+            name: "lab",
+            placeSvg: "bottom_middle_place.svg",
+            nameIcon: "lab.svg",
+            audio: "lab"
+        },
+        {
+            name: "spoed",
+            placeSvg: "bottom_left_place.svg",
+            nameIcon: "plus.svg",
+            audio: "emergency"
+        },
+        {
+            name: "kinderafdeling",
+            placeSvg: "left_middle_place.svg",
+            nameIcon: "cap.svg",
+            audio: "kids_section"
+        },
+        {
+            name: "intensievezorg",
+            placeSvg: "top_left_place.svg",
+            nameIcon: "heart.svg",
+            audio: "intensive_care"
+        },
+
+    ]
 
     return (
         <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_water.svg)` }}>
@@ -30,57 +92,19 @@ let ToursPage = () => {
 
             <main className="page">
                 <div className="tours__content">
-
                     <div className="content__tour__menu">
-                        <Link to="/rondleiding/dagziekenhuis" className="content___tour__menu__item">
-                            <img src={process.env.PUBLIC_URL + "/svgs/tour/top_right_place.svg"} alt="bottom_middle_place" />
-                            <div className="menu__item--icon">
-                                <div className="menu__item--title">Dagziekenhuis</div>
-                                <img src={process.env.PUBLIC_URL + "/svgs/tour/icons/sun.svg"} alt="bottom_middle_place" />
-                            </div>
-                        </Link>
-                        <Link to="/rondleiding/radiologie" className="content___tour__menu__item">
-                            <img src={`${process.env.PUBLIC_URL}/svgs/tour/right_middle_place.svg`} alt="bottom_middle_place" />
-                            <div className="menu__item--icon">
-                                <div className="menu__item--title">Radiologie</div>
-                                <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/leg.svg`} alt="bottom_middle_place" />
-                            </div>
-                        </Link>
-                        <Link to="/rondleiding/operatiekamer" className="content___tour__menu__item">
-                            <img src={`${process.env.PUBLIC_URL}/svgs/tour/bottom_right_place.svg`} alt="bottom_middle_place" />
-                            <div className="menu__item--icon">
-                                <div className="menu__item--title">Operatiekamer</div>
-                                <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/mask.svg`} alt="bottom_middle_place" />
-                            </div>
-                        </Link>
-                        <Link to="/rondleiding/lab" className="content___tour__menu__item">
-                            <img src={`${process.env.PUBLIC_URL}/svgs/tour/bottom_middle_place.svg`} alt="bottom_middle_place" />
-                            <div className="menu__item--icon">
-                                <div className="menu__item--title">Lab</div>
-                                <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/lab.svg`} alt="bottom_middle_place" />
-                            </div>
-                        </Link>
-                        <Link to="/rondleiding/spoed" className="content___tour__menu__item">
-                            <img src={`${process.env.PUBLIC_URL}/svgs/tour/bottom_left_place.svg`} alt="bottom_middle_place" />
-                            <div className="menu__item--icon">
-                                <div className="menu__item--title">Spoed</div>
-                                <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/plus.svg`} alt="bottom_middle_place" />
-                            </div>
-                        </Link>
-                        <Link to="/rondleiding/kinderafdeling" className="content___tour__menu__item">
-                            <img src={`${process.env.PUBLIC_URL}/svgs/tour/left_middle_place.svg`} alt="bottom_middle_place" />
-                            <div className="menu__item--icon">
-                                <div className="menu__item--title">Kinderafdeling</div>
-                                <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/cap.svg`} alt="bottom_middle_place" />
-                            </div>
-                        </Link>
-                        <Link to="/rondleiding/intensievezorg" className="content___tour__menu__item">
-                            <img src={`${process.env.PUBLIC_URL}/svgs/tour/top_left_place.svg`} alt="bottom_middle_place" />
-                            <div className="menu__item--icon">
-                                <div className="menu__item--title">Intensievezorg</div>
-                                <img src={`${process.env.PUBLIC_URL}/svgs/tour/icons/heart.svg`} alt="bottom_middle_place" />
-                            </div>
-                        </Link>
+                        {tours.map(tour => (
+                            <Link onMouseEnter={(e) => playSound(e)} onTouchStart={(e) => playSound(e)} data-audio={tour.audio} to={`/rondleiding/${tour.name}`} className="content___tour__menu__item">
+                                <audio id={`audio__${tour.audio}`}
+                                    src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${tour.audio}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`}
+                                    type="audio/mpeg" ></audio>
+                                <img data-audio={tour.audio} src={process.env.PUBLIC_URL + `/svgs/tour/${tour.placeSvg}`} alt={`${tour.placeSvg}`} />
+                                <div data-audio={tour.audio} className="menu__item--icon">
+                                    <div data-audio={tour.audio} className="menu__item--title">{tour.name}</div>
+                                    <img data-audio={tour.audio} src={process.env.PUBLIC_URL + `/svgs/tour/icons/${tour.nameIcon}`} alt={`${tour.nameIcon}`} />
+                                </div>
+                            </Link>
+                        ))}
                     </div>
 
                 </div>
