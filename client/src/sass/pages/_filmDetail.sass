@@ -1,0 +1,62 @@
+.film__content
+    z-index: 100
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100vh
+    .content__video
+        z-index: 100
+        overflow: hidden
+        margin-top: 50px
+        width: $sr-width * 2.6px
+        height:  $sr-height * 2.6px
+        background-color: white
+        border-radius: $br-main
+        border: 6px solid $second-color
+
+
+/* For mobile landscape */
+@media only screen and (min-width: 600px) 
+    .film__content
+        width: 100%
+        height: 100vh
+        .content__video
+            margin-top: 30px
+            width: $sr-width * 3.2px
+            height:  $sr-height * 3.2px
+            border: 6px solid $second-color
+
+
+@media only screen and (min-width: 768px) 
+    /* For tablet landscape */
+    .film__content
+        width: 100%
+        height: 100vh
+        .content__video
+            margin-top: 20px
+            width: $sr-width * 3.2px
+            height:  $sr-height * 3.2px
+            border: 6px solid $second-color
+
+@media only screen and (min-width: 1024px) 
+    /* For desktop or big tablet */
+    .film__content
+        width: 100%
+        height: 100vh
+        .content__video
+            margin-top: 80px
+            width: $sr-width * 5px
+            height:  $sr-height * 5px
+            border: 6px solid $second-color
+
+@media only screen and (min-width: 1920px) 
+    /* For desktop or big tablet */
+    .film__content
+        width: 100%
+        height: 100vh
+        .content__video
+            margin-top: 80px
+            width: $sr-width * 8px
+            height:  $sr-height * 8px
+            border: 6px solid $second-color

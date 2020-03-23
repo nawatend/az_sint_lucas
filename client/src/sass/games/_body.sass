@@ -1,0 +1,81 @@
+.game__container
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    background-image: url(/svgs/games/lichaam/body_bg.svg) !important
+    border-radius: $br-sm
+    padding: $p-md
+    .game__body--body
+        max-width: 40%
+        max-height: 90%
+        width: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        .whole__body
+            width: 50%
+            height: auto
+        .organs
+            cursor: pointer
+        .organs__disable
+            display: none
+
+    .game__body--labels
+        max-width: 40%
+        max-height: 90%
+        width: 40%
+        display: flex
+        justify-content: center
+        align-items: center
+        .whole__body--labels
+            width: 80%
+            height: auto
+        .organs__labels
+            cursor: pointer
+        .organs__labels--disable
+            display: none
+    .body__info
+        width: 20%
+        margin-right: 20px
+        
+        img
+            max-width: 100%
+            height: auto
+            display: block
+.organs:hover
+    path
+        stroke-width: 2px
+        stroke: white
+
+.organs__labels:hover
+    rect
+        stroke-width: 4px
+        stroke: white
+
+.organs:active
+    path
+        stroke-width: 2px
+        stroke: white
+
+.disable
+    display: none
+
+.disable__label
+    opacity: 0.2
+
+.white__stroke
+    rect
+        stroke-width: 4px
+        stroke: white
+
+.white__stroke
+    path
+        stroke-width: 4px
+        stroke: white
+
+
+

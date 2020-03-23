@@ -1,0 +1,139 @@
+
+* 
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+.hide
+    display: none !important
+
+.speaker-icon
+    width: 50px
+    position: absolute
+    right: 0
+    top: 0
+    margin: 20px
+
+.speaker-icon:hover
+    cursor: pointer
+
+//PLAY AGAIN CONTAINER
+.playAgain-container
+    max-width: 60%
+    svg
+      max-height: 90%
+      max-width: 90%
+
+//GAME-CONTAINER
+.memory-body-container
+    height: 100%
+    width: 100%
+    display: flex
+    align-content:center
+    justify-content: center  
+    align-items: center
+
+.memory-game-container
+    height: 100%
+    width: 100%
+    display: flex
+    align-content:center
+    justify-content: center  
+    align-items: center
+
+.game-container
+    height: 100%
+    width: 100%
+    display: flex
+    align-content:center
+    justify-content: center  
+    align-items: center
+
+.memory-game 
+  width: 90%
+  height: 90%
+  margin: auto
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-content: center
+  perspective: 1000px
+
+
+.memory-card 
+  justify-content:center
+  height: 25vh
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+
+
+.memory-card:active 
+  transform: scale(0.97);
+  transition: transform .2s;
+
+
+.memory-card.flip 
+  transform: rotateY(180deg);
+
+.front-face
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 40px;
+  backface-visibility: hidden;
+
+.back-face 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 40px;
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: bottom
+  backface-visibility: hidden;
+
+
+.front-face 
+  transform: rotateY(180deg);
+
+#info
+    height: 90%
+
+#start
+    height: 66.3vh
+
+#finished
+    height: 90%
+
+.infoimg
+    height: 100%
+    width: auto
+
+.leveltext:hover
+    stroke-width: 2px
+    stroke: red
+  
+#playagain
+    height: 90%
+    
+.playagain
+  height: 70vh
+
+
+
+@media only screen and (min-width: 0px) and  (max-width: 768px) 
+  .front-face
+    border-radius: 10px
+
+  .back-face 
+    border-radius: 10px
+
+@media only screen and (min-width: 1024px) and  (max-width: 1920px) 
+  .front-face
+    border-radius: 20px
+
+  .back-face 
+    border-radius: 20px

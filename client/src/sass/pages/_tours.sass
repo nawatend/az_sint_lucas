@@ -1,0 +1,154 @@
+.tours__content
+    z-index: 9998
+    margin: 0px auto
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    width: 90%
+    height: 100vh
+    padding: 4% 0
+
+    .content__tour__menu
+        @include on-circle(8, 70%, 90) 
+        margin-top: 80px
+        img
+            display: block 
+            max-width: 100% 
+            transition: .15s
+    .menu__item--icon
+        position: absolute
+        top: -110%
+        left: 25%
+        width: 50%        
+        img
+            max-width: 100%
+            max-height: 100%
+            display: block
+            transition: .15s
+    .menu__item--title
+        width: 200%
+        position: absolute
+        top: -20%
+        left: -50%
+        text-align: center
+        color: $white-color
+        font-size: $font-size-sm
+    
+.content___tour__menu__item:hover
+    .menu__item--icon
+        transition: .15s
+        transform: translateY(-10px)
+
+
+
+/* For mobile landscape */
+@media only screen and (min-width: 600px) 
+    .tours__content
+        width: 90%
+        height: 100vh
+        padding: 4% 0
+
+        .content__tour__menu
+            @include on-circle(8, 70%, 90) 
+            margin-top: 100px
+
+        .menu__item--icon
+            position: absolute
+            top: -110%
+            left: 25%
+            width: 50%        
+        .menu__item--title
+            font-size: $font-size-xs
+
+/* For tablet landscape */
+@media only screen and (min-width: 768px) 
+    
+    .tours__content
+        width: 90%
+        height: 100vh
+        padding: 4% 0
+
+        .content__tour__menu
+            @include on-circle(8, 70%, 100) 
+            margin-top: 100px
+
+        .menu__item--icon
+            position: absolute
+            top: -110%
+            left: 25%
+            width: 50%        
+
+/* For tablet portrair */
+@media only screen and (min-width: 768px) and (orientation: portrait)
+    
+    .tours__content
+        width: 90%
+        height: 100vh
+        padding: 4% 0
+
+        .content__tour__menu
+            @include on-circle(8, 75%, 180) 
+            margin-top: 200px
+
+        .menu__item--icon
+            position: absolute
+            top: -110%
+            left: 25%
+            width: 50%        
+
+
+/* For desktop or big tablet */
+@media only screen and (min-width: 1024px) 
+    
+    .tours__content
+        width: 90%
+        height: 100vh
+        padding: 4% 0
+
+        .content__tour__menu
+            @include on-circle(8, 70%, 200) 
+            margin-top: 200px
+
+        .menu__item--icon
+            position: absolute
+            top: -110%
+            left: 25%
+            width: 50%        
+        .menu__item--title
+            font-size: $font-size-md
+
+/* For desktop or big tablet */
+@media only screen and (min-width: 1024px) and (orientation: portrait)
+    
+    .tours__content
+        width: 90%
+        height: 100vh
+        padding: 4% 0
+
+        .content__tour__menu
+            @include on-circle(8, 90%, 200) 
+            margin-top: 200px
+
+        .menu__item--icon
+            position: absolute
+            top: -110%
+            left: 25%
+            width: 50%            
+
+/* For big desktop*/
+@media only screen and (min-width: 1920px) 
+    .tours__content
+        width: 90%
+        height: 100vh
+        padding: 4% 0
+
+        .content__tour__menu
+            @include on-circle(8, 85%, 200) 
+            margin-top: 200px
+
+        .menu__item--icon
+            position: absolute
+            top: -110%
+            left: 25%
+            width: 50%        

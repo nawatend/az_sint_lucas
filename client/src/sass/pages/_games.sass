@@ -1,0 +1,109 @@
+.games__content
+    z-index: 9998
+    margin: 0px auto
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    width: 90%
+    height: 100vh
+    padding: 4% 0 0 0
+    .content__game__menu
+        z-index: 100
+        position: relative
+        bottom: 0
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+        .content__game__menu__item
+            display: flex
+            justify-content: flex-end
+            flex-direction: column
+            width: 20%
+            text-decoration: none
+            color: $white-color
+            font-size: $font-size-md
+            font-weight: $font-bold-md
+            transform: translateY(10%)
+            .game__title
+                text-align: center
+                padding: $p-lg
+            .game__hand
+                img 
+                    max-width: 100%
+                    max-height: 100%
+                    display: block
+                    transition: .15s
+            #hand-memory
+                width: 120%
+                transform: rotateZ(-15deg)
+            #hand-virus
+                width: 80%
+            #hand-list
+                width: 100%
+            #hand-body
+                width: 120%
+        .content__game__menu__item:hover
+            transform: translateY(4%)
+            transition: .20s
+
+
+.game__missed
+    max-width: 200px
+    height: auto
+    position: absolute
+    top: calc(50% - 100px)
+    left: calc(50% - 100px)
+    visibility: hidden
+    img
+        max-width: 100%
+        max-height: 100%
+        display: block
+
+.visible 
+    visibility: visible
+    opacity: 1
+    transition: opacity 2s linear
+    animation: zoom 1s 
+
+@keyframes zoom
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(1.3)
+    100%
+        transform: scale(1.0)
+
+/* For mobile landscape */
+@media only screen and (min-width: 600px) 
+    .content__game__menu__item
+        font-size: $font-size-md !important
+
+/* For tablet landscape */
+@media only screen and (min-width: 768px) 
+    .content__game__menu__item
+        font-size: $font-size-md !important
+
+/* For tablet portrair */
+@media only screen and (min-width: 768px) and (orientation: portrait)
+    .content__game__menu__item
+        font-size: $font-size-lg !important
+
+
+/* For desktop or big tablet */
+@media only screen and (min-width: 1024px) 
+    .content__game__menu__item
+        font-size: $font-size-xl !important
+
+
+/* For desktop or big tablet */
+@media only screen and (min-width: 1024px) and (orientation: portrait)
+    .content__game__menu__item
+        font-size: $font-size-xl !important
+
+/* For big desktop*/
+@media only screen and (min-width: 1920px) 
+    .content__game__menu__item
+        font-size: $font-size-xl !important
