@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import NavigationDetail from '../../components/navigation/NavigationDetail'
 import { Link } from 'react-router-dom'
 import Loading from '../../components/Loading'
-
+import { checkSound } from '../../utils/SoundControl'
 
 //firebase
-import { db} from '../../utils/firebase'
+import { db } from '../../utils/firebase'
 
 let PersonsPage = () => {
 
@@ -50,10 +50,14 @@ let PersonsPage = () => {
     let playSound = (e) => {
 
         let currentSound = document.getElementById(`audio__${e.target.dataset.audio}`)
-        if (currentSound) {
+        if (currentSound && localStorage.getItem("sound") === 'true') {
             currentSound.play()
         }
     }
+
+    useEffect(() => {
+        checkSound()
+    }, [])
 
     if (loading) {
         return (<Loading />)

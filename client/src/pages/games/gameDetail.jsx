@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { BodyGame, BagGame, MemoryGame, VirusGame } from '../../components/games/index'
 import GameHand from '../../components/GameHand'
 import Loading from '../../components/Loading'
+import { checkSound } from '../../utils/SoundControl'
 
 const GameDetailPage = ({ match }) => {
 
@@ -35,8 +36,8 @@ const GameDetailPage = ({ match }) => {
     }, [isLandscape])
 
     useEffect(() => {
-        console.log(gameName)
-    }, [gameName, match])
+        checkSound()
+    }, [])
 
     return (
         <div className="page">

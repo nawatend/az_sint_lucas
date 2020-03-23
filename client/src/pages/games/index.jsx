@@ -26,10 +26,14 @@ let GamesPage = () => {
     let playSound = (e) => {
         console.log(e.target)
         let currentSound = document.getElementById(`audio__${e.target.dataset.audio}`)
-        if (currentSound) {
+        if (currentSound && localStorage.getItem("sound") === 'true') {
             currentSound.play()
         }
     }
+
+    useEffect(() => {
+        checkSound()
+    }, [])
 
     return (
         <div className="background__main" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/svgs/backgrounds/bg_grass.svg)` }}>

@@ -7,7 +7,7 @@ import Loading from '../../components/Loading'
 
 //firebase
 import { db, storage } from '../../utils/firebase'
-
+import { checkSound } from '../../utils/SoundControl'
 
 const PersonDetailPage = ({ match }) => {
 
@@ -78,7 +78,6 @@ const PersonDetailPage = ({ match }) => {
 
 
 
-
         if (loading) {
             getPersonImage().then(() => {
                 getPersonsInfo()
@@ -89,13 +88,16 @@ const PersonDetailPage = ({ match }) => {
     }, [loading, personImageRef, personRef])
 
     useEffect(() => {
+        checkSound()
+    }, [])
+
+    useEffect(() => {
         console.log(person)
     }, [match, person])
 
     let playSound = (e) => {
-
         let currentSound = document.getElementById(`audio__${e.target.dataset.audio}`)
-        if (currentSound) {
+        if (currentSound && localStorage.getItem("sound") === 'true') {
             currentSound.play()
         }
     }
@@ -110,7 +112,7 @@ const PersonDetailPage = ({ match }) => {
                 <div className="person__content__detail">
                     <div className="content__person__detail">
                         <audio id={`audio__${personInfo.audio}`}
-                            autoPlay
+                            autoPlay={(localStorage.getItem("sound") === 'true') ? true : false}
                             src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${personInfo.audio}?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`}
                             type="audio/mpeg" >
                         </audio>

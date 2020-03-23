@@ -19,7 +19,9 @@ export default function Bunny() {
 
     let handleOnClick = () => {
         let currentSound = document.getElementById(`audio__${audios[0]}`)
-        currentSound.play()
+        if (currentSound && localStorage.getItem("sound") === 'true') {
+            currentSound.play()
+        }
     }
 
     return (

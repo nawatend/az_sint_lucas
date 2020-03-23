@@ -35,17 +35,11 @@ let HomePage = () => {
 
     }, [isLandscape])
 
+    
+
     useEffect(() => {
-        window.addEventListener('load', () => {
-            checkSound()
-            let currentSound = document.getElementById(`audio__${audios[0]}`)
-
-            setTimeout(() => {
-                currentSound.play()
-            }, 300)
-        })
-    }, [audios])
-
+        checkSound()
+    }, [])
 
     if (loading) {
         return (<Loading />)
@@ -59,7 +53,10 @@ let HomePage = () => {
                 <Bush />
                 <Pole />
                 <Credit />
-                <audio id={`audio__${audios[0]}`} autoPlay src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${audios[0]}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`} type="audio/mpeg" ></audio>
+                <audio 
+                id={`audio__${audios[0]}`} 
+                autoPlay={(localStorage.getItem("sound") === 'true') ? true : false}
+                src={`https://firebasestorage.googleapis.com/v0/b/az-sint-lucas-gent.appspot.com/o/audios%2F${audios[0]}.mp3?alt=media&token=19366607-6109-4d6c-9582-324b20c35627`} type="audio/mpeg" ></audio>
                 <div className="welcome__text">Welkom bij <span>AZ Sint-Lucas!</span></div>
                 {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="" /></div>) : ""}
             </div >

@@ -20,7 +20,9 @@ export default function Lucas({ type, title = "" }) {
         document.getElementById("lucas__wave").classList.toggle("wave")
         let currentSound = document.getElementById(`audio__${audios[0]}`)
 
-        currentSound.play()
+        if (currentSound && localStorage.getItem("sound") === 'true') {
+            currentSound.play()
+        }
     }
     switch (type) {
         case "HI":

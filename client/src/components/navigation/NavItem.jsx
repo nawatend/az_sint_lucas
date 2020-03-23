@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
+import { checkSound } from '../../utils/SoundControl'
 
 export default function NavItem({ title = "", path, iconName }) {
     console.log("window.location.origin =>" + window.location.origin)
@@ -12,8 +12,14 @@ export default function NavItem({ title = "", path, iconName }) {
     const playSound = () => {
         let currentSound = document.getElementById(`audio__${iconName}`)
 
-        currentSound.play()
+        if (currentSound && localStorage.getItem("sound") === 'true') {
+            currentSound.play()
+        }
     }
+
+    useEffect(() => {
+        checkSound()
+    }, [])
 
     return (
         <Link onMouseEnter={() => playSound()} onTouchStart={() => playSound()} to={path} className="nav__item">

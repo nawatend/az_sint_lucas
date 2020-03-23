@@ -3,6 +3,7 @@ import FilmLayout from '../../layouts/filmBase';
 import Vimeo from '@u-wave/react-vimeo';
 import { useParams } from "react-router-dom";
 import Loading from '../../components/Loading'
+import { checkSound } from '../../utils/SoundControl'
 
 const FilmDetailPage = ({ match }) => {
 
@@ -26,8 +27,8 @@ const FilmDetailPage = ({ match }) => {
     }, [isLandscape])
 
     useEffect(() => {
-        console.log(id)
-    }, [id, match])
+        checkSound()
+    }, [])
 
     return (
         <div className="page">

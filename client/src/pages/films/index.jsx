@@ -4,6 +4,7 @@ import NavigationDetail from '../../components/navigation/NavigationDetail'
 import Vimeo from '@u-wave/react-vimeo';
 import { Link } from 'react-router-dom'
 import Loading from '../../components/Loading'
+import { checkSound } from '../../utils/SoundControl'
 
 let FilmsPage = () => {
 
@@ -34,6 +35,11 @@ let FilmsPage = () => {
 
         setLoading(false)
     }, [isLandscape])
+
+    useEffect(() => {
+        checkSound()
+    }, [])
+
 
     if (loading) {
         return (<Loading />)

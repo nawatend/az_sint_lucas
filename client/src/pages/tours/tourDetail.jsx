@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import Loading from '../../components/Loading'
 //firebase
 import { db, storage } from '../../utils/firebase'
-
+import { checkSound } from '../../utils/SoundControl'
 
 const TourDetailPage = ({ match }) => {
 
@@ -57,6 +57,10 @@ const TourDetailPage = ({ match }) => {
         }
 
     }, [loading, tourSpotsRef])
+
+    useEffect(() => {
+        checkSound()
+    }, [])
 
     let hotspot = (hotSpotDiv, args) => {
         hotSpotDiv.setAttribute('style', `background-image: url("${process.env.PUBLIC_URL}/svgs/tour/vraagteken.svg")`)
