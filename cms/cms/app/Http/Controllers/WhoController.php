@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Kreait\Firebase\Factory;
 use Google\Cloud\Storage\StorageClient;
 use Illuminate\Support\Facades\Storage;
+use Validator;
 
 class WhoController extends Controller
 {
@@ -89,11 +90,31 @@ class WhoController extends Controller
         $storageClient = $storage->getStorageClient([
             'projectId' => 'az-sint-lucas-gent'
         ]);
-        $file = $request->file('file');
-        if ($request->hasFile('file')) {
-            if ( $file->isValid()) {
-        
-                $name = $file->getClientOriginalName();
+
+        if ($request->hasFile('file') || $request->hasFile('audio')) {
+                if($request->hasFile('audio')){
+                    $file = $request->file('audio');
+                    $extension = $file->getClientOriginalExtension();
+                    $name = $id .'.'. $extension;
+
+                $path = Storage::disk('public')->putFileAs('', $file, $name);
+                $content = Storage::disk('public')->get($path);
+                
+                $defaultBucket = $storage->getBucket();
+
+                $defaultBucket->upload(
+                    $content,
+                    [
+                        'name' => $name
+                    ]);
+                    $database->getReference('who_is_who/'.$id)->update([
+                        'audio' => $name
+                    ]);
+                
+                }
+                if($request->hasFile('file')){
+                    $file = $request->file('file');
+                    $name = $file->getClientOriginalName();
                 $extension = $file->getClientOriginalExtension();
                 //$path = $request->file('file')->store('upload');
         
@@ -108,24 +129,20 @@ class WhoController extends Controller
                         'name' => $name
                     ]);
                     $database->getReference('who_is_who/'.$id)->update([
-                        'title' => $request->get('title'),
-                        'description' => $request->get('description'),
                         'image' => $name
                     ]);
                 }
+                }
+
+                $database->getReference('who_is_who/'.$id)->update([
+                    'title' => $request->get('title'),
+                    'description' => $request->get('description'),
+                ]); 
+        
+                notify()->success('Character updated successfully');
+                return redirect()->route('whoiswho.index');
+                
         }
 
-        $database->getReference('who_is_who/'.$id)->update([
-            'title' => $request->get('title'),
-            'description' => $request->get('description'),
-        ]); 
-
-        notify()->success('Character updated successfully');
-        return redirect()->route('whoiswho.index');
-    }
-
-    public function show(){
-        return view('who.edit');
-    }
     
 }

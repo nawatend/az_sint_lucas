@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Auth::routes();
@@ -28,3 +28,11 @@ Route::resource('whoiswho','WhoController')->except(['create', 'destroy']);
 Route::resource('hometext','HomeTextController')->except(['create', 'destroy']);
 
 Route::resource('exittext','ExitTextController')->except(['create', 'destroy']);
+
+Route::resource('games','GamesController')->except(['create', 'destroy']);
+
+Route::resource('general','GeneralController')->except(['create', 'destroy']);
+
+Route::resource('tours','ToursController')->except(['create', 'destroy']);
+
+Route::resource('admin','AdminController');

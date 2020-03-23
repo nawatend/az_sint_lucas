@@ -11,7 +11,7 @@
   <div class="col-sm-6">
     <div class="card">
     <div class="card-header">
-    <h5 class="card-title">Go to Rooms</h5>
+    <h5 class="card-title">Change Rooms</h5>
     </div>
       <div class="card-body">
         <p class="card-text">Edit Rooms attributes</p>
@@ -22,7 +22,7 @@
   <div class="col-sm-6">
     <div class="card">
     <div class="card-header">
-    <h5 class="card-title">Go to 'Who is Who'</h5>
+    <h5 class="card-title">Change 'Who is Who'</h5>
     </div>
       <div class="card-body">
         <p class="card-text">Edit characters of who is whot</p>
@@ -48,7 +48,41 @@
     <h5 class="card-title">Change Exit Text</h5>
     </div>
       <div class="card-body">
-        <a href="#" class="btn btn-primary">Take me there</a>
+        <a href="/exittext" class="btn btn-primary">Take me there</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+    <div class="card-header">
+    <h5 class="card-title">Change Games</h5>
+    </div>
+      <div class="card-body">
+        <a href="/games" class="btn btn-primary">Take me there</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+    <div class="card-header">
+    <h5 class="card-title">Change Tours</h5>
+    </div>
+      <div class="card-body">
+        <a href="/tours" class="btn btn-primary">Take me there</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+    <div class="card-header">
+    <h5 class="card-title">Change General</h5>
+    </div>
+      <div class="card-body">
+        <a href="/general" class="btn btn-primary">Take me there</a>
       </div>
     </div>
   </div>

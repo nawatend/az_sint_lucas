@@ -14,7 +14,7 @@
            <a href="/home">Home</a>
            </li>
            <li class="breadcrumb-item">
-           <a href="/hometext">Exit Text</a>
+           <a href="/exittext">Exit Text</a>
            </li>
            <li class="breadcrumb-item active">
            Edit {{$post['title']}}
@@ -35,7 +35,7 @@
     <input type="text" name="title" class="form-control" value="{{$post['title']}}">
   </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-  <button class="btn btn-danger">Cancel</button>
+    <a href="/exittext" class="btn btn-danger">Cancel </a>
 </form>
 @stop
 

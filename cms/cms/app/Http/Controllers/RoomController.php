@@ -71,7 +71,7 @@ class RoomController extends Controller
             $all_post[] = $post;
         }
         //return $all_post;
-        return view('rooms.dashboard', compact('all_post'));
+        return view('rooms.dashboard', compact('all_post'))->with('kamer', $id); ;
     }
 
     public function edit($id){
@@ -87,7 +87,6 @@ class RoomController extends Controller
         $references = $database
         ->getReference('rooms/'.$var[4]);
         $posts = $references->getValue();
-
         foreach($posts as $post){
             if($post != null)
 
@@ -97,9 +96,37 @@ class RoomController extends Controller
         
         }
 
-        return view('rooms.edit')->with('post', $found_post); 
+        return view('rooms.edit')
+                ->with('post', $found_post);
+                
+
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $room){
+        $factory = (new Factory)
+        ->withServiceAccount(__DIR__.'/firebasekey.json');
+        $database = $factory->createDatabase();
+         // get all posts
+         $url =  url()->previous();
+
+         $var = preg_split("/\//", $url);
+         $spot;
+         $references = $database
+        ->getReference('rooms/'. $room);
+        $posts = $references->getValue();
+        foreach($posts as $post){
+            if($post != null)
+
+           if($post['id'] == $var[4]){
+                $spot = $post['spot'];
+           }
+        
+        }
+        $database->getReference('rooms/'. $room . '/' . $spot)->update([
+            'description' => $request->get('description'),
+        ]); 
+
+        notify()->success('Room updated successfully');
+        return view('rooms.allrooms');
     }
 }
