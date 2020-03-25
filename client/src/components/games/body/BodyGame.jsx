@@ -11,7 +11,7 @@ export default function BodyGame() {
     // if first element of same className of organs is heart, then first element of labels element should be heart
     // in our case stomach, small intestine, large intestine, lungs, heart, liver and kidney
     const [clickCount, setClickCount] = useState(0)
-    const [gameOver, setGameOver] = useState(true)
+    const [gameOver, setGameOver] = useState(false)
 
     const [labelSelected, setLabelSelected] = useState()
     const [organSelected, setOrganSelected] = useState()
