@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PersonLayout from '../../layouts/personBase';
 import { useParams } from "react-router-dom";
-import TagCloud from 'react-tag-cloud'
+import { TagCloud } from 'react-tagcloud'
 
 import Loading from '../../components/Loading'
 
@@ -23,6 +23,14 @@ const PersonDetailPage = ({ match }) => {
         spelbegeleider: "game_leader_image",
         kinderpsycholoog: "kid_psychology_image"
     }
+
+    const data = [
+        { value: 'jQuery' },
+        { value: 'MongoDB' },
+        { value: 'JavaScript' },
+        { value: 'React' },
+
+    ]
 
     const personRef = db.ref(`/who_is_who/${id}`)
     const personImageRef = storage.ref().child(`images/persons/${imagesFileName[person]}.jpg`)
@@ -71,7 +79,12 @@ const PersonDetailPage = ({ match }) => {
                 return data
             }).then((data) => {
                 setPersonInfo(data.val())
-                setTags(data.val().tags.split(','))
+
+                let tempTags = []
+                data.val().tags.split(',').forEach((tag, index) => {
+                    tempTags.push({ value: tag, i: index })
+                });
+                setTags(tempTags)
                 setLoading(false)
             });
         }
@@ -102,6 +115,34 @@ const PersonDetailPage = ({ match }) => {
         }
     }
 
+    let seed = 1337
+    function random() {
+        const x = Math.sin(seed++) * 10000
+        return x - Math.floor(x)
+    }
+
+    const customRenderer = (tag, size, color) => {
+
+        console.log(tag)
+        return (
+
+            <span
+                key={tag.value}
+                style={{
+                    animation: 'blinker 3s linear infinite',
+                    animationDelay: `${Math.random() * 2}s`,
+                    margin: '3px',
+                    padding: '3px',
+                    display: 'flex',
+                    color: 'ee7358',
+
+                }}
+                className={(tag.i % 2 === 0) ? "cloud__word--l" : "cloud__word--s"}
+            >
+                {tag.value}
+            </span>
+        )
+    }
 
     if (loading) {
         return (<Loading />)
@@ -137,7 +178,7 @@ const PersonDetailPage = ({ match }) => {
                         <div className="mind__terms" >
                             <img src={`${process.env.PUBLIC_URL}/svgs/person/mind_terms.svg`} alt="Thinking bubble main" />
                             <div className="mind__terms--text">
-                                <TagCloud
+                                {/* <TagCloud
                                     onMouseEnter={(e) => playSound(e)} onTouchStart={(e) => playSound(e)} data-audio={personInfo["audio-tags"]}
                                     style={{
                                         fontFamily: 'Laca',
@@ -153,7 +194,14 @@ const PersonDetailPage = ({ match }) => {
                                         <div key={tags + i} className={(i % 2 === 0) ? "cloud__word--l" : "cloud__word--s"}>{tag}</div>
                                     ))}
 
-                                </TagCloud>
+                                </TagCloud> */}
+                                <TagCloud
+                                    minSize={1} maxSize={5}
+                                    tags={tags}
+                                    renderer={customRenderer}
+
+                                />
+
                             </div>
                         </div>
                     </div>
