@@ -2,8 +2,8 @@
 .flexbox 
     display: flex
     justify-content: center
-    width: 70vw
-    height: 70vh
+    width: 70%
+    height: 70%
     margin: 0 auto
     overflow: hidden
     align-items: center
@@ -11,12 +11,12 @@
 
 .flexbox .board 
     display: flex
-    height: 50vh
+    height: 70%
     justify-content: center;
     flex-direction: column;
     width: 100%
     max-width: 300px
-    padding: 5px
+    padding: 2px
 
 .flexbox .board .card
     cursor: pointer
@@ -24,7 +24,10 @@
 
 .cards
     display: flex
-
+    max-height: 80%
+    justify-content: center
+    align-items: center
+    overflow: hidden
 .fullbag
     display: none
 
@@ -45,8 +48,8 @@
     align-items: center
 
 #board-1
-    margin: 40px
-
+    margin: 5px
+    width: 30%
 .title 
     display: block
     justify-content: center
@@ -64,16 +67,17 @@
     padding: $p-md
 
 .board
-    height: 50%
+    height: 20%
     width: auto
+    max-height: 300px
     .bag
         svg
     .card
         svg
-            width: 100%
-            height: auto        
+            width: auto
+            height: 25%   
 #bagsvg
-    height: 50vh
+    width: 100%
 
 .card:hover
     transform: scale(1.3)
@@ -86,3 +90,19 @@
     width: 80%
     justify-content: center
     align-items: center
+
+#board-2
+    height: auto
+    width: 25%
+    margin-left: 5px
+    margin-right: 5px
+#board-3
+    height: auto
+    width: 25%
+    margin-left: 5px
+    margin-right: 5px
+#board-4
+    height: auto
+    width: 25%
+    margin-left: 5px
+    margin-right: 5px

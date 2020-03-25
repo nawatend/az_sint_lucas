@@ -25,12 +25,14 @@ function Card (props){
         <div
         id={props.id}
         className={props.className}
+        /*
         draggable={props.draggable}
         finished={props.finished}
+        
         onDragStart={dragStart}
         onDragOver={dragOver}
         onDragEnd={dragEnd}
-
+        */
         >
             {props.children}
         </div>
