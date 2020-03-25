@@ -28,6 +28,9 @@ const TourDetailPage = ({ match }) => {
     const [isLandscape, setIsLandscape] = useState(true)
     const [loading, setLoading] = useState(true)
     const [infoSpots, setInfoSpots] = useState({})
+    const [pitch, setPitch] = useState(-0.28)
+    const [yaw, setYaw] = useState(-0.839)
+    const [hfov, setHfov] = useState(110)
 
     let checkScreen = (media) => {
         if (media.matches) {
@@ -73,6 +76,35 @@ const TourDetailPage = ({ match }) => {
         span.style.marginTop = -span.scrollHeight - 12 + 'px';
     }
 
+
+    let handleControls = (e) => {
+        const step = 20
+
+        switch (e.target.id) {
+            case "pan-up":
+                setPitch(pitch + step)
+                break;
+            case "pan-down":
+                setPitch(pitch - step)
+                break;
+            case "pan-left":
+                setYaw(yaw - step)
+                break;
+            case "pan-right":
+                setYaw(yaw + step)
+                break;
+
+            case "zoom-in":
+                setHfov(hfov - step)
+                break;
+            case "zoom-out":
+                setHfov(hfov + step)
+                break;
+            default:
+                break;
+        }
+    }
+
     return (
         <div className="page">
             <div className="tour__content">
@@ -84,16 +116,18 @@ const TourDetailPage = ({ match }) => {
                         type="audio/mpeg" >
                     </audio>
                     <Pannellum
+                        id="pannellum-az"
                         width="100%"
                         height="100%"
                         image={`${process.env.PUBLIC_URL}/images/360tours/${roomName}.jpg`}
-                        pitch={-0.28}
-                        yaw={-0.839}
-                        hfov={110}
+                        pitch={pitch}
+                        yaw={yaw}
+                        hfov={hfov}
                         autoLoad
                         onLoad={() => {
                             console.log("panorama loaded");
                         }}
+                        showControls
                     //hotspotDebug
                     >
 
@@ -120,6 +154,16 @@ const TourDetailPage = ({ match }) => {
                         })}
 
                     </Pannellum>
+                    <div id="controls">
+                        <div onClick={(e) => handleControls(e)} class="ctrl" id="pan-up">&#9650;</div>
+                        <div onClick={(e) => handleControls(e)} class="ctrl" id="pan-down">&#9660;</div>
+                        <div onClick={(e) => handleControls(e)} class="ctrl" id="pan-left">&#9664;</div>
+                        <div onClick={(e) => handleControls(e)} class="ctrl" id="pan-right">&#9654;</div>
+                        <div onClick={(e) => handleControls(e)} class="ctrl" id="zoom-in">+</div>
+                        <div onClick={(e) => handleControls(e)} class="ctrl" id="zoom-out">-</div>
+
+                    </div>
+
                 </div>
             </div>
             {!isLandscape ? (<div className="rotate__device"><img src={`${process.env.PUBLIC_URL}/svgs/rotate_device2.svg`} alt="LOADING ..." /></div>) : ""}

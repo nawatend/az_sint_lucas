@@ -36,7 +36,7 @@ const FilmDetailPage = ({ match }) => {
                 <div className="content__video">
                     <Vimeo
                         video={`https://vimeo.com/${id}`}
-                        autoplay
+
                         responsive
                         color="ee7358"
                     />
