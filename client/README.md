@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Deploy
+1. `yarn install` 
+2. `yarn build`
+3. copy all the files from **Build** folder, and paste it your server root
 
 ## Available Scripts
 
