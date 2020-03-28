@@ -10,12 +10,12 @@
 ## Designer - UI
 1. Liesbet Delvoye [Portfolio](https://www.instagram.com/liesbet.graphicdesign)
 2. Thibaut D'haenens [Portfolio](https://www.instagram.com/duperonthewall/)
-3. Sophie Koppen [Portfolio](https://www.nawangtendar.be)
+3. Sophie Koppen 
 4. Kim Kerremans [Portfolio](https://www.kk-design.be)
 
 ## Photo Design: 360* 
 1. Kim Kerremans [Portfolio](https://www.kk-design.be)
 
 ## Project Manager
-1. Freya Claes [Portfolio](https://www.nawangtendar.be)
+1. Freya Claes 
 
