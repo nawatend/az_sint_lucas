@@ -1,6 +1,8 @@
 # AZ Sint-Lucas Hospital
 ### Collab with Artevelde Applied Science University
 
+* Deployment Guide in Client folder README.md
+
 ## Developers
 1. Nawang Tendar - App [Portfolio](https://www.nawangtendar.be)
 2. Quinten Leysen - CMS [Portfolio](https://www.nawangtendar.be)
@@ -15,3 +17,4 @@
 
 ## Project Manager
 1. Freya
+
