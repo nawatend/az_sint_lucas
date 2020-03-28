@@ -10,7 +10,8 @@
 ## Designer - UI
 1. Liesbet
 2. Thibaut
-3. Kim
+3. Sophie
+4. Kim
 
 ## Photo Design: 360* 
 1. Kim
